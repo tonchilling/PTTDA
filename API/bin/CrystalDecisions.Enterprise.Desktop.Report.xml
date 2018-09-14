@@ -1,0 +1,1100 @@
+<?xml version="1.0"?>
+<doc>
+    <members>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TablePrefix.MappedTablePrefix">
+            <summary> 
+            Mapped table prefix 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TablePrefix.UseMappedTablePrefix">
+            <summary> 
+            Flag indicating whether the mapped table prefix is used 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TablePrefix.Name">
+            <summary> 
+            Original table prefix 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TablePrefixes.Item(System.Object)">
+            <summary> 
+            Get TableLocation given an Index.  Index is ordinal position or original table prefix. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TablePrefixes.Count">
+            <summary> 
+            Number of tables 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.ServerName">
+            <summary> 
+            Original database server name from the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.DatabaseName">
+            <summary> 
+            Original database name from the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.UserName">
+            <summary> 
+            User name to logon to the original database from the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.Password">
+            <summary> 
+            Password to logon to the original database from the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.SubReportName">
+            <summary> 
+            Sub report name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.PromptOnDemandViewing">
+            <summary> 
+            Prompt for logon information when viewing on demand 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.CustomServerName">
+            <summary> 
+            Custom data source name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.CustomDatabaseName">
+            <summary> 
+            Custom data source name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.CustomUserName">
+            <summary> 
+            User name to logon on to user specified database 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.CustomPassword">
+            <summary> 
+            Password to logon on to user specified database 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.CustomServerType">
+            <summary> 
+            Custom database server type.  Use this property for predefined server types. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.CustomDatabaseDLLName">
+            <summary> 
+            Custom database server dll name.  Use this property for user defined server types. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.UseOriginalDataSource">
+            <summary> 
+            Use report's original data source 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.SSOEnabled">
+            <summary> 
+            SSO to DB enabled 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.ServerType">
+            <summary> 
+            Original database server type from the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.OLAPDataSource">
+            <summary> 
+            Flag indicating current logon info is pointing to an OLAP data source 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.TableLocationPrefixes">
+            <summary> 
+            Table location prefix mapping collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogon.IsCustomizable">
+            <summary> 
+            Specify whether or not DB logon info is customizable 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogons.Item(System.Object)">
+            <summary> 
+            Get ReportLogon given an Index.  Index is ordinal position or database name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportLogons.Count">
+            <summary> 
+            Number of Report Logons 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameters.Item(System.Object)">
+            <summary> 
+            Get ReportParameter given Index. Index is ordinal position 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameters.Count">
+            <summary> 
+            Number of elements 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ReportParameter.CreateSingleValue">
+            <summary> 
+            Create a new single value 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ReportParameter.CreateRangeValue">
+            <summary> 
+            Create a new range value 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.PromptOnDemandViewing">
+            <summary> 
+            Parameter value should be prompted when viewing on demand 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.EnableShowDescriptionOnly">
+            <summary> 
+            Shows only the description in the pick list. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.ValueType">
+            <summary> 
+            Parameter value type 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.ParameterName">
+            <summary> 
+            Parameter name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.Prompt">
+            <summary> 
+            Parameter prompting string 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.IsDefaultValueSet">
+            <summary> 
+            Parameter has a default value set 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.ReportName">
+            <summary> 
+            Name of the subreport that contains the parameter field.  A blank return string means the parameter is contained in the main report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.IsCurrentValueSet">
+            <summary> 
+            Parameter has a current value set 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.EnableRangeLimit">
+            <summary> 
+            Enable or disable range checking for this parameter 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.MinimumValue">
+            <summary> 
+            Minimum allowable value (length in the case of strings).  Enforced only if range checking is enabled. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.MaximumValue">
+            <summary> 
+            Maximum allowable value (length in the case of strings).  Enforced only if range checking is enabled. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.EditMask">
+            <summary> 
+            Edit mask string (only applicable for string parameters) 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.DisallowEditing">
+            <summary> 
+            Enable or disable edit boxes.  If editing is disabled, the user must select a value from the defaults. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.DefaultValues">
+            <summary> 
+            Collection of the default values of this parameter 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.CurrentValues">
+            <summary> 
+            Collection of the current values of this parameter 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.EnableNullValue">
+            <summary> 
+            Parameter can be set to NULL 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.EnableMultipleValues">
+            <summary> 
+            Parameter can have multiple values 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.PartOfGroup">
+            <summary> 
+            Parameter is part of a group, only applies to boolean parameter types 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.GroupNumber">
+            <summary> 
+            Specifies which group this boolean parameter belongs to 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.EnableExclusiveGroup">
+            <summary> 
+            Only one boolean parameter can be true in each group 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.SupportsDiscreteValues">
+            <summary> 
+            Parameter supports discrete values 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.SupportsRangeValues">
+            <summary> 
+            Parameter supports range values 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.ValueDisplayString">
+            <summary> 
+            String representation of the parameter's value. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.EnableSortBasedOnDesc">
+            <summary> 
+            Picklist is sorted based on description. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.InUse">
+            <summary> 
+            Parameter is in use 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.DynamicCascadePromptData">
+            <summary> 
+            Danamic Cascade Prompts data 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.HasDynamicCascadePrompt">
+            <summary> 
+            Parameter has dynamic cascade prompts data 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameter.DynamicCascadePromptGroupID">
+            <summary> 
+            Get the group id for dynamic cascade prompt 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ReportParameterValues.Add(CrystalDecisions.Enterprise.Desktop.ReportParameterValue)">
+            <summary> 
+            Add parameter value to the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ReportParameterValues.Delete(System.Int32)">
+            <summary> 
+            Remove value from prompt.  Index is an ordinal 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ReportParameterValues.Clear">
+            <summary> 
+            Remove all values from the collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterValues.Item(System.Object)">
+            <summary> 
+            Get ISReportParameterValue given an Index.  Index is 1-based. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterValues.Count">
+            <summary> 
+            Number of elements 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ReportParameterValue.MakeDisplayString">
+            <summary> 
+            Return a string representation of the value 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterValue.IsNull">
+            <summary> 
+            Is this value NULL? 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterValue.IsSingleValue">
+            <summary> 
+            Is this value a single value? 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterValue.IsRangeValue">
+            <summary> 
+            Is this value a range value? 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterValue.SingleValue">
+            <summary> 
+            Single parameter value 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterValue.RangeValue">
+            <summary> 
+            Range parameter value 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterSingleValue.Value">
+            <summary> 
+            Value 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterSingleValue.Description">
+            <summary> 
+            Description 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterSingleValue.ShowDescriptionOnly">
+            <summary> 
+            Show value description only 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterRangeValue.IncludesUpperBound">
+            <summary> 
+            Upper bound is included in range 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterRangeValue.IncludesLowerBound">
+            <summary> 
+            Lower bound is included in range 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterRangeValue.HasNoUpperBound">
+            <summary> 
+            Range has no upper bound 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterRangeValue.HasNoLowerBound">
+            <summary> 
+            Range has no lower bound 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterRangeValue.FromValue">
+            <summary> 
+            The low value of the range 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportParameterRangeValue.ToValue">
+            <summary> 
+            The high value of the range 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.HasColumnHeadings">
+            <summary> 
+            Use column headings 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.UseConstColWidth">
+            <summary> 
+            Use constant column widths 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.ConstColWidth">
+            <summary> 
+            Size of constant column width 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.IsTabularFormat">
+            <summary> 
+            Use tabular format, false otherwise 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.BaseAreaType">
+            <summary> 
+            Specifies which section to base the column width on 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.BaseAreaGroupNum">
+            <summary> 
+            Specifies which group section to base the columns width on.  Only valid when BaseAreaType specifies a group header or group footer 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.CreatePageBreak">
+            <summary> 
+            Create page breaks, false otherwise. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.ConvertDateToString">
+            <summary> 
+            Convert data values to strings, false otherwise. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.ExportPageHeader">
+            <summary> 
+            Export page header and footer, false otherwise. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.ExportAllPages">
+            <summary> 
+            Export all pages 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.StartPageNumber">
+            <summary> 
+            The start page 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.EndPageNumber">
+            <summary> 
+            The end page 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.ExportPageHeaderFooter">
+            <summary> 
+            ReportHeaderFooterOption 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelFormat.ExportShowGridlines">
+            <summary> 
+            ExportShowGridlines 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelDataOnlyFormat.UseConstColWidth">
+            <summary> 
+            Use constant column widths 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelDataOnlyFormat.BaseAreaType">
+            <summary> 
+            Specifies which section to base the column width on 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelDataOnlyFormat.BaseAreaGroupNum">
+            <summary> 
+            Specifies which group section to base the columns width on.  Only valid when BaseAreaType specifies a group header or group footer 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelDataOnlyFormat.ConstColWidth">
+            <summary> 
+            Size of constant column width 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelDataOnlyFormat.ExportPageHeader">
+            <summary> 
+            Export page header and footer, false otherwise. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelDataOnlyFormat.SimplifyPageHeader">
+            <summary> 
+            Simplify the page header, false otherwise. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelDataOnlyFormat.UseWorksheetFunc">
+            <summary> 
+            Use Excel worksheet functions to represent subtotal fields in report, false otherwise.  
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelDataOnlyFormat.ExportImage">
+            <summary> 
+            Export images, false otherwise. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelDataOnlyFormat.UseFormat">
+            <summary> 
+            Export object formats and fonts, false otherwise.  
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelDataOnlyFormat.MaintainColAlignment">
+            <summary> 
+            Maintain column alignment, false otherwise.  
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelDataOnlyFormat.MaintainRelativeObjPosition">
+            <summary> 
+            Maintain Relative Object Position 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ExcelDataOnlyFormat.ShowGroupOutlines">
+            <summary> 
+            Show group outlines 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.WordFormat.ExportAllPages">
+            <summary> 
+            Export all pages 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.WordFormat.StartPageNumber">
+            <summary> 
+            The start page 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.WordFormat.EndPageNumber">
+            <summary> 
+            The end page 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.PDFFormat.ExportAllPages">
+            <summary> 
+            Export all pages 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.PDFFormat.StartPageNumber">
+            <summary> 
+            The start page 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.PDFFormat.EndPageNumber">
+            <summary> 
+            The end page 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.PDFFormat.CreateBookmarksFromGroupTree">
+            <summary> 
+            Create bookmarks from group tree 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.RichTextFormat.ExportAllPages">
+            <summary> 
+            Export all pages 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.RichTextFormat.StartPageNumber">
+            <summary> 
+            The start page 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.RichTextFormat.EndPageNumber">
+            <summary> 
+            The end page 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.RichTextEditableFormat.ExportAllPages">
+            <summary> 
+            Export all pages 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.RichTextEditableFormat.StartPageNumber">
+            <summary> 
+            The start page 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.RichTextEditableFormat.EndPageNumber">
+            <summary> 
+            The end page 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.RichTextEditableFormat.PageBreakAfterEachReportPage">
+            <summary> 
+            whether to insert a page break after each report page 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TextFormatCharacterSeparated.Quote">
+            <summary> 
+            Quote character to use 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TextFormatCharacterSeparated.Separator">
+            <summary> 
+            Field separator 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TextFormatCharacterSeparated.IsSameNumber">
+            <summary> 
+            Use the same number formats as in the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TextFormatCharacterSeparated.IsSameDate">
+            <summary> 
+            Use the same date formats as in the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TextFormatCharacterSeparated.ExportMode">
+            <summary> 
+            Export mode 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TextFormatCharacterSeparated.ReportSectionsOption">
+            <summary> 
+            Report sections option 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TextFormatCharacterSeparated.GroupSectionsOption">
+            <summary> 
+            Group sections option 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TextFormatCharacterSeparated.Delimiter">
+            <summary> 
+            Field delimiter 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TextFormatTabSeparated.IsSameNumber">
+            <summary> 
+            Use the same number formats as in the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TextFormatTabSeparated.IsSameDate">
+            <summary> 
+            Use the same date formats as in the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TextFormatPaginated.LinesPerPage">
+            <summary> 
+            Number of lines per page 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.TextFormatPaginated.CharactersPerInch">
+            <summary> 
+            Characters per inch 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.PlainTextFormat.CharactersPerInch">
+            <summary> 
+            Characters per inch 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportFormatOptions.Format">
+            <summary> 
+            Specifies the format type to export the report to 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportFormatOptions.UseOptionsInReportFile">
+            <summary> 
+            Uses the export options saved in the report file 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportFormatOptions.ExcelFormat">
+            <summary> 
+            Extended excel format options, use when the format type is ceFormatExcel 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportFormatOptions.TextFormatCharacterSeparated">
+            <summary> 
+            Character separated values format options, use when the format type is ceFormatTextCharacterSeparated 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportFormatOptions.TextFormatTabSeparated">
+            <summary> 
+            Tab separated values format options, use when the format type is ceFormatTextTabSeparated 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportFormatOptions.TextFormatPaginated">
+            <summary> 
+            Text paginated format options, use when the format type is ceFormatTextPaginated 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportFormatOptions.ExcelDataOnlyFormat">
+            <summary> 
+            Excel data only format options, use when the format type is ceFormatExcelDataOnly 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportFormatOptions.WordFormat">
+            <summary> 
+            Word format options, use when the format type is ceFormatWord 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportFormatOptions.PDFFormat">
+            <summary> 
+            PDF format options, use when the format type is ceFormatPDF 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportFormatOptions.RichTextFormat">
+            <summary> 
+            Rich Text format options, use when the format type is ceFormatRTF 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportFormatOptions.PlainTextFormat">
+            <summary> 
+            Plain text options, use when the format type is ceFormatTextPlain 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportFormatOptions.RichTextEditableFormat">
+            <summary> 
+            Rich Text Editable format options, use when the format type is ceFormatRTFEditable 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportPrinterOptions.Enabled">
+            <summary> 
+            Print report at schedule time 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportPrinterOptions.PrinterName">
+            <summary> 
+            Printer name. Use printer friendly name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportPrinterOptions.Copies">
+            <summary> 
+            Number of copies 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportPrinterOptions.FromPage">
+            <summary> 
+            Start of the print range 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportPrinterOptions.ToPage">
+            <summary> 
+            End of the print range 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportPrinterOptions.PageLayout">
+            <summary> 
+            Report page layout settings to use 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportPrinterOptions.LandscapeMode">
+            <summary> 
+            Get - is landscape mode. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportPrinterOptions.PageSize">
+            <summary> 
+            Report page size 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportPrinterOptions.PageWidth">
+            <summary> 
+            Page width 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportPrinterOptions.PageHeight">
+            <summary> 
+            Page height 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportPrinterOptions.PrintCollationType">
+            <summary> 
+            Printer Collation 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportHyperlink.HyperlinkString">
+            <summary> 
+            String of the Hyperlink 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportHyperlink.Type">
+            <summary> 
+            Hyperlink type 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportHyperlink.IsFormula">
+            <summary> 
+            Hyperlink is forumla or not 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportHyperlinks.Item(System.Object)">
+            <summary> 
+            Get Property given Index. Index is ordinal position 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportHyperlinks.Count">
+            <summary> 
+            Number of properties in the collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportHyperlinkResolve.HyperlinkName">
+            <summary> 
+            Name of the HyperlinkResolve 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportHyperlinkResolve.ResolveID">
+            <summary> 
+            Hyperlink resolve to id string, cuid or ruid 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportHyperlinkResolve.IsCuid">
+            <summary> 
+            HyperlinkResolve id is CUID or not 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ReportHyperlinkResolves.Add(System.String,System.String,System.Boolean)">
+            <summary> 
+            Add HyperlinkResolve Item into collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ReportHyperlinkResolves.Merge(CrystalDecisions.Enterprise.Desktop.ReportHyperlinkResolves)">
+            <summary> 
+            Merget existing items with items in input collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ReportHyperlinkResolves.Delete(System.Object)">
+            <summary> 
+            Delete existing item from the collection given an Index.  Index can be a ordinal position or Name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportHyperlinkResolves.Item(System.Object)">
+            <summary> 
+            Get Property given Index. Index can be ordinal position or Name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportHyperlinkResolves.Count">
+            <summary> 
+            Number of properties in the collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ProcessingExtension.Path">
+            <summary> 
+            Location of the processing extension 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ProcessingExtension.Description">
+            <summary> 
+            Description of the processing extension 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ProcessingExtension.Name">
+            <summary> 
+            Name of the processing extension 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ProcessingExtensions.Add(System.String,System.String,System.String)">
+            <summary> 
+            Add a processing extension to the collection. Provide Name, Location and Description 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ProcessingExtensions.Add(System.String,System.String)">
+            <summary> 
+            Add a processing extension to the collection. Provide Name, Location and Description 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ProcessingExtensions.Add(System.String)">
+            <summary> 
+            Add a processing extension to the collection. Provide Name, Location and Description 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ProcessingExtensions.Delete(System.Object)">
+            <summary> 
+            Deletes a processing extension from the collection given an Index.  Index can be a ordinal position or Name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ProcessingExtensions.Item(System.Object)">
+            <summary> 
+            Get Property given Index. Index can be ordinal position or Name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ProcessingExtensions.Count">
+            <summary> 
+            Number of properties in the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ReportRefreshOptions.AddOption(CrystalDecisions.Enterprise.Desktop.CeReportRefreshOption)">
+            <summary> 
+            Add an option to refresh 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ReportRefreshOptions.RemoveOption(CrystalDecisions.Enterprise.Desktop.CeReportRefreshOption)">
+            <summary> 
+            Remove an option to refresh 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.ReportRefreshOptions.GetOptionEnabled(CrystalDecisions.Enterprise.Desktop.CeReportRefreshOption)">
+            <summary> 
+            Check whether a refresh option is set 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportGlobal.EmbeddedLinkURL">
+            <summary> 
+            Default report viewing URL location 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportGlobal.ProcessingExtensions">
+            <summary> 
+            List of processing extensions available in the system 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportAlert.ViewerURL">
+            <summary> 
+            Viewer URL associated with an alert that will be included in the alerting email.  It should contain the protocal, the webserver name, and the webserver virtual path, and any other options. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportAlert.AlertSetSize">
+            <summary> 
+            The maximum number of alert sets to be included with the alerting email 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportAlert.Name">
+            <summary> 
+            Report alert name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportAlert.Enabled">
+            <summary> 
+            Flag indicating whether an alert is enabled 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportAlerts.Item(System.Object)">
+            <summary> 
+            Get ReportAlert given an Index.  Index is ordinal position or alert name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportAlerts.Body">
+            <summary> 
+            Message text to be prepended to the alerting email 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.ReportAlerts.Count">
+            <summary> 
+            Number of Report Alerts 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.Report.RefreshProperties">
+            <summary> 
+            Refreshes the properties from the report 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.Report.QueryRepositoryOptions">
+            <summary> 
+            Query for repository options from the report global object.  Use this method together with EnableRepository to refresh a report's repository objects 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Desktop.Report.GetPromptGroupMembers(System.String)">
+            <summary> 
+            Get every members in a dynamic cascade prompt group 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.EnableThumbnail">
+            <summary> 
+            Allows thumbnails to be used when displaying the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.NeedsLogon">
+            <summary> 
+            Must logon to database to run the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.RecordFormula">
+            <summary> 
+            Record selection formula 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.GroupFormula">
+            <summary> 
+            Group selection formula 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ViewingServerGroupChoice">
+            <summary> 
+            Specify how to choose the server group for viewing the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ViewingServerGroup">
+            <summary> 
+            Id of the server group for viewing the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.EnableRepository">
+            <summary> 
+            Use Object Repository when adding or refreshing the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ReportAddProcType">
+            <summary> 
+            Specify how ReportAdd runs 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ViewingUseReportSharingSettings">
+            <summary> 
+            Use the report sharing settings of the report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ViewingShareReport">
+            <summary> 
+            Share the report data 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ViewingShareInterval">
+            <summary> 
+            Report data sharing interval 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ViewingShareHitDbOnRefresh">
+            <summary> 
+            Hit the database when refreshing 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.KeepSavedData">
+            <summary> 
+            Preserves the saved data in the report file, must set this property before the report is added. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.UseOldPromptStyle">
+            <summary> 
+            Save/Refresh report using old prommpt style 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ReportParameters">
+            <summary> 
+            A collection of the parameters in this report 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ReportLogons">
+            <summary> 
+            Report logon collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ReportFormatOptions">
+            <summary> 
+            Report format options, can change to any supported export format 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ReportPrinterOptions">
+            <summary> 
+            Printer options 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ProcessingSecurityExtensions">
+            <summary> 
+            Processing extension list. Leave it empty to not use any plugin 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.MimeType">
+            <summary> 
+            Mime type for the plugin file type 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ReportAlerts">
+            <summary> 
+            Report alert collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ReportHyperlinks">
+            <summary> 
+            Hyperlink collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ReportRefreshOptions">
+            <summary> 
+            Report refresh options 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.HyperlinkResolves">
+            <summary> 
+            Get Hyperlink resolve collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.BusinessViews">
+            <summary> 
+            Business View IDs that this report is assigned to 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.HasDynamicCascadePrompt">
+            <summary> 
+            Report has dynamic cascade prompts 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.CorporateCategories">
+            <summary> 
+            Parent corporate categories returned as IDs. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.PersonalCategories">
+            <summary> 
+            Parent personal categories returned as IDs. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Desktop.Report.ReportFileName">
+            <summary> 
+            Report file name 
+            </summary> 
+        </member>
+    </members>
+</doc>

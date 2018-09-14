@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<doc>
+    <members>
+        <member name="P:CrystalDecisions.Enterprise.Strings.Item(System.Object)">
+            <summary> 
+            Get string given Index. Index must be ordinal position 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Strings.Count">
+            <summary> 
+            Number of strings in the collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ErrorStrings.Count">
+            <summary> 
+            Number of items in the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.UserInfo.GetSecondaryCredential(System.String)">
+            <summary> 
+            User's secondary credential 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.UserInfo.GetProfileString(System.String)">
+            <summary> 
+            Properties indexed by Name from the user's profile 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.UserInfo.SetPassword(System.String,System.String)">
+            <summary> 
+            Change user's password 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.UserInfo.GetPersonalObjectId(System.String)">
+            <summary> 
+            ID of the personal object denoted by kind 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.UserInfo.Locale">
+            <summary> 
+            Locale for the current session 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.UserInfo.TimeZone">
+            <summary> 
+            Default Time zone for the user 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.UserInfo.UserName">
+            <summary> 
+            Name of the user 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.UserInfo.UserDesc">
+            <summary> 
+            Description of the user 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.UserInfo.UserId">
+            <summary> 
+            User unique identifier 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.UserInfo.AuthenMethod">
+            <summary> 
+            Authentication method used to logon 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.UserInfo.PasswordExpiry">
+            <summary> 
+            Return the password expiry period 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.LogonTokenMgr.ReleaseToken(System.String)">
+            <summary> 
+            Release the token which is not going to be used anymore 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.LogonTokenMgr.CreateLogonTokenEx(System.String,System.Int32,System.Int32)">
+            <summary> 
+            Create a logon token that can be used for multiple logons. Specify the client computer name where you want to use the token, the number of minutes it will be valid, and the total usable times of this token 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.LogonTokenMgr.CreateWCAToken(System.String,System.Int32,System.Int32)">
+            <summary> 
+            Create a WCA token that can be used for multiple logons. Specify the client computer name where you want to use the token, the number of days it will be valid, and the total usable times of this token 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.LogonTokenMgr.CreateWCATokenEx(System.String,System.Int32,System.Int32)">
+            <summary> 
+            Create a WCA token that can be used for multiple logons. Specify the client computer name where you want to use the token, the number of minutes it will be valid, and the total usable times of this token 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.LogonTokenMgr.DefaultToken">
+            <summary> 
+            Get the default session logon token. This token should not be manually released 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.EnterpriseSession.Logoff">
+            <summary> 
+            User logoff 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.EnterpriseSession.IsServerLogonSession">
+            <summary> 
+            return true if session is a server logon 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.EnterpriseSession.GetServiceNames(System.String,CrystalDecisions.Enterprise.CeServiceType)">
+            <summary> 
+            Get a list of available services on a particular server 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.Locale">
+            <summary> 
+            Locale for the current session 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.TimeZone">
+            <summary> 
+            Time zone used for the current session 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.APSName">
+            <summary> 
+            Name of the APS currently connected to 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.ClusterName">
+            <summary> 
+            Name of the CMS Cluster connected to, if any 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.ClusterMembers">
+            <summary> 
+            List of CMSs in the cluster 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.LogonTokenMgr">
+            <summary> 
+            LogonTokenMgr object 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.UserInfo">
+            <summary> 
+            UserInfo object 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.PluginManager">
+            <summary> 
+            Get the PluginManager object 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.SystemInfoProperties">
+            <summary> 
+            Get system info properties 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.ServerNames">
+            <summary> 
+            Get a list of available servers 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.APSVersion">
+            <summary> 
+            Return APS Version number 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.EnterpriseVersion">
+            <summary> 
+            Return Enterprise Version number 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.CMSName">
+            <summary> 
+            Name of the CMS currently connected to 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.SerializedSession">
+            <summary> 
+            Serialized session 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.EnterpriseSession.SessionURI">
+            <summary> 
+            returns the session URI 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SystemInfoProperties.Item(System.Object)">
+            <summary> 
+            Get item given Index. Index should be ordinal position or the property name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SystemInfoProperties.Count">
+            <summary> 
+            Number of items in the collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SystemInfoProperty.Value">
+            <summary> 
+            Value of the property 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SystemInfoProperty.Name">
+            <summary> 
+            Name of the property 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.TrustedPrincipal.Name">
+            <summary> 
+            Get trusted principal name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.TrustedPrincipal.CMSName">
+            <summary> 
+            Get trusted principal cms name 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SessionMgr.Logon(System.String,System.String,System.String,System.String)">
+            <summary> 
+            Logon to the specified CMS or Cluster. Clustername starts with '@'. Use InstalledAuthProgIds for possible values on authentication 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SessionMgr.LogonWithToken(System.String)">
+            <summary> 
+            Logon to the CMS using a previously obtained token. See LogonTokenMgr 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SessionMgr.NameFromProgId(System.String)">
+            <summary> 
+            Obtain localized friendly name for an authentication progid 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SessionMgr.GetSession(System.String)">
+            <summary> 
+            Get EnterpriseSession from the serialized string 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SessionMgr.CreateTrustedPrincipal(System.String,System.String)">
+            <summary> 
+            Create a trusted principal 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SessionMgr.LogonTrustedPrincipal(CrystalDecisions.Enterprise.TrustedPrincipal)">
+            <summary> 
+            Logon a trusted principal to the specified CMS or Cluster. Clustername starts with '@'. Use InstalledAuthProgIds for possible values on authentication 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SessionMgr.SOCKSURI">
+            <summary> 
+            The SOCKsURI of the server being logged on to. Empty string means no SOCKsURI 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SessionMgr.InstalledAuthProgIds">
+            <summary> 
+            Collection of available authentication methods 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ExtendedErrorInfo.InterfaceGUID">
+            <summary> 
+            Returns the GUID of the interface that defined the error 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ExtendedErrorInfo.Source">
+            <summary> 
+            Returns error source 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ExtendedErrorInfo.ErrorStringsEnum">
+            <summary> 
+            Returns error parameter strings 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ExtendedErrorInfo.MsgString">
+            <summary> 
+            Returns formatted message string, including parameters 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ExtendedErrorInfo.Discriminant">
+            <summary> 
+            Returns Supplemental Error Discriminant 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ExtendedErrorInfo.SupplErrInfo">
+            <summary> 
+            Returns Supplemental Error Information 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.BatchErrorInfo.FailedItems">
+            <summary> 
+            Returns a list of failed items 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.BatchErrorInfo.FailureCodes">
+            <summary> 
+            Returns error codes for failed items 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.BatchErrorInfo.UntriedItems">
+            <summary> 
+            Returns a list of untried items 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.ExtendedErrorHelper.GetEnterpriseError">
+            <summary> 
+            Retrieve extended error object 
+            </summary> 
+        </member>
+    </members>
+</doc>

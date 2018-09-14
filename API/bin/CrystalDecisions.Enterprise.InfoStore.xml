@@ -1,0 +1,1325 @@
+<?xml version="1.0"?>
+<doc>
+    <members>
+        <member name="M:CrystalDecisions.Enterprise.InfoObjects.Add(CrystalDecisions.Enterprise.PluginInfo)">
+            <summary> 
+            Create a new info Object. If Plugin is NULL you'll get a non-typed infoobject 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoObjects.Copy(CrystalDecisions.Enterprise.InfoObject,CrystalDecisions.Enterprise.CeCopyObject)">
+            <summary> 
+            Create a copy of the provided source Info Object into this collection. The source info object can be in a different collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoObjects.Copy(CrystalDecisions.Enterprise.InfoObject)">
+            <summary> 
+            Create a copy of the provided source Info Object into this collection. The source info object can be in a different collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoObjects.Delete(System.Object)">
+            <summary> 
+            Remove an Info Object from this collection. Provide ObjectToDelete Index (see Item) 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoObjects.Merge(CrystalDecisions.Enterprise.InfoObjects)">
+            <summary> 
+            Merge another collection of info objects into current collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoObjects.Update(CrystalDecisions.Enterprise.InfoObject)">
+            <summary> 
+            Update an existing info object with a one from another collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoObjects.AddEx(System.String)">
+            <summary> 
+            Create a new info object if specified kind 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObjects.Item(System.Object)">
+            <summary> 
+            Get InfoObject given Index. Index can be ordinal position, Object Id, Name or InfoObject reference 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObjects.Count">
+            <summary> 
+            Number of InfoObjects in the collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObjects.InfoStore">
+            <summary> 
+            Parent InfoStore object that was used to create this collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObjects.ResultCount">
+            <summary> 
+            Total amount of objects in query 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObjects.BatchSecurityItems">
+            <summary> 
+            Retrieve an object to check rights on mulitple objects 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoObject.DoAction(System.Int32,System.Int32,System.Object)">
+            <summary> 
+            Ask the plugin to perform a Win32 action 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoObject.QueryProperties(System.Object)">
+            <summary> 
+            Retrieve additional properties from the InfoStore. Provide either a single property name or an array with the property names 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoObject.Equals(CrystalDecisions.Enterprise.InfoObject)">
+            <summary> 
+            Check if the objects are equal 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoObject.Save">
+            <summary> 
+            Save the current object from Object Repository 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoObject.DeleteNow">
+            <summary> 
+            Delete the current object from Object Repository 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoObject.GetPicture(CrystalDecisions.Enterprise.CePictureState)">
+            <summary> 
+            Obtain picture for object 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoObject.GetPluginInterface(System.String)">
+            <summary> 
+            Ask for a plugin specific interface. Necessary for scripting languages 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.Title">
+            <summary> 
+            Title of the InfoObject 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.Description">
+            <summary> 
+            Description of the InfoObject 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.ParentID">
+            <summary> 
+            ID of Parent Info Object in the Enterprise hierarchy 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.Keyword">
+            <summary> 
+            Keyword 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.MarkedAsRead">
+            <summary> 
+            Check whether the object has been read 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.Properties">
+            <summary> 
+            Collection of InfoObject properties 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.ID">
+            <summary> 
+            InfoObject unique ID 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.Instance">
+            <summary> 
+            True if this object is an instance 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.Locale">
+            <summary> 
+            Info Object locale 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.Actions">
+            <summary> 
+            Collection of the actions available to this InfoObject 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.ParentInfoObjects">
+            <summary> 
+            Client side info objects collection which contains this Info Object 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.Picture">
+            <summary> 
+            Obtain picture for object 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.Files">
+            <summary> 
+            get info object's associated files 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.SchedulingInfo">
+            <summary> 
+            Scheduling info for the object. It will be an empty reference if the object does not support scheduling 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.ProcessingInfo">
+            <summary> 
+            Processing info for the object. It will be an empty reference if the object does not support scheduling 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.SecurityInfo">
+            <summary> 
+            Security info for the object 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.PluginInterface">
+            <summary> 
+            Ask for a plugin specific interface. Necessary for scripting languages 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.CUID">
+            <summary> 
+            Get object unique ID in the cluster 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.GUID">
+            <summary> 
+            Get global object unique ID 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.RUID">
+            <summary> 
+            Get object unique ID in the object package 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.ParentCUID">
+            <summary> 
+            CUID of the parent Info Object in the Enterprise hierarchy 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.ProgID">
+            <summary> 
+            get prog id 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.ObjectType">
+            <summary> 
+            Get the object type 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.Parent">
+            <summary> 
+            get parent info object 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.SendToDestination">
+            <summary> 
+            Get ISDestination interface for SendTo 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.Kind">
+            <summary> 
+            get Kind 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoObject.IsDirty">
+            <summary> 
+            Check whether the object is dirty 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Properties.Add(System.String,System.Object,CrystalDecisions.Enterprise.CePropFlags)">
+            <summary> 
+            Add a new property to the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Properties.Add(System.String,System.Object)">
+            <summary> 
+            Add a new property to the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Properties.Add(System.String)">
+            <summary> 
+            Add a new property to the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Properties.Delete(System.Object)">
+            <summary> 
+            Delete a property from the collection. Provide PropertyToDelete Index (see Item) 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Properties.Item(System.Object)">
+            <summary> 
+            Get Property given Index. Index can be ordinal position, property name or Property object reference 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Properties.Count">
+            <summary> 
+            Number of properties in the collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Property.Value">
+            <summary> 
+            Value of the property 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Property.Name">
+            <summary> 
+            Name of the property 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Property.Flags">
+            <summary> 
+            Flags of the property. See CePropFlags for values 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Property.Container">
+            <summary> 
+            True if this property contains other properties 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Property.Properties">
+            <summary> 
+            If this property is a container (bag), Collection of contained properties 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Actions.Add(System.Int32,System.String,CrystalDecisions.Enterprise.CeActionFlags,System.Object)">
+            <summary> 
+            Add an action to the collection. Specify an action id, and name. Optionally specify flags, Picture, and Security right Id to be connected with the Action 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Actions.Add(System.Int32,System.String,CrystalDecisions.Enterprise.CeActionFlags)">
+            <summary> 
+            Add an action to the collection. Specify an action id, and name. Optionally specify flags, Picture, and Security right Id to be connected with the Action 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Actions.Add(System.Int32,System.String)">
+            <summary> 
+            Add an action to the collection. Specify an action id, and name. Optionally specify flags, Picture, and Security right Id to be connected with the Action 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Actions.Clear">
+            <summary> 
+            Clean the Actions collection. Remove all items 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Actions.GetSupports(System.Int32)">
+            <summary> 
+            Given an index, returns TRUE if the action id is present, and false otherwise. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Actions.Item(System.Object)">
+            <summary> 
+            Get Action given Index. Index can be ordinal position, Action Id, Name or Action object reference 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Actions.Count">
+            <summary> 
+            Number of actions available for the InfoObject 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Action.Name">
+            <summary> 
+            Display name of the Action 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Action.ID">
+            <summary> 
+            ID of the action. Can be standard or custom 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Action.Flag">
+            <summary> 
+            Bitwise or'ed ActionFlags values 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Action.RightID">
+            <summary> 
+            Right ID that should be checked to grant or deny the action 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Files.Add(System.Object,System.Int32,System.Object)">
+            <summary> 
+            Add a new File to the collection. LocalData can be a local filename or a byte array.  
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Files.Add(System.Object,System.Int32)">
+            <summary> 
+            Add a new File to the collection. LocalData can be a local filename or a byte array.  
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Files.Add(System.Object)">
+            <summary> 
+            Add a new File to the collection. LocalData can be a local filename or a byte array.  
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Files.Delete(System.Object)">
+            <summary> 
+            Remove a file from the collection, provide ordinal position or File object reference. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Files.Item(System.Object)">
+            <summary> 
+            Get File given Index which can be ordinal position or File object reference 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Files.Count">
+            <summary> 
+            Number of files associated with Info Object 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.File.CopyTo(System.Object@)">
+            <summary> 
+            Get a copy of file from repository. If LocalData is String type - get file to the local file path, EMPTY type - return a byte array. 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.File.Overwrite(System.Object,System.Object)">
+            <summary> 
+            Overwrite the file with LocalData. Can provide FileOptionalInfo to control file overwrite. See CopyTo for description of LocalData 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.File.Overwrite(System.Object)">
+            <summary> 
+            Overwrite the file with LocalData. Can provide FileOptionalInfo to control file overwrite. See CopyTo for description of LocalData 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.File.StreamingOverwrite(System.Int32,System.Object)">
+            <summary> 
+            Overwrite the file with byte array stream data 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.File.StreamingOverwrite(System.Int32)">
+            <summary> 
+            Overwrite the file with byte array stream data 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.File.StreamingOverwrite">
+            <summary> 
+            Overwrite the file with byte array stream data 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.File.Name">
+            <summary> 
+            File name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.File.NthFile">
+            <summary> 
+            File Index in the collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.File.StreamingFile">
+            <summary> 
+            stream file 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.File.Size">
+            <summary> 
+            the size of the file, you can only get it after commit the object 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.File.StreamingUpload">
+            <summary> 
+            Get stream upload file object 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.StreamingFile.OpenFile">
+            <summary> 
+            Open the file 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.StreamingFile.CloseFile">
+            <summary> 
+            Close the file 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.StreamingFile.NextChunk">
+            <summary> 
+            Get next chunk of the file (byte array), array size 0 indicates end of file 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.StreamingUploadFile.PutContent(System.Object)">
+            <summary> 
+            Upload next chunk of the file (byte array) 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.RightNow">
+            <summary> 
+            Set to schedule Right now 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.IntervalMinutes">
+            <summary> 
+            Number of minutes between job processing when using ceScheduleTypeHourly. Used in conjuction with IntervalHours 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.IntervalMonths">
+            <summary> 
+            Number of months between job processing when using ceScheduleTypeMonthly 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.IntervalNthDay">
+            <summary> 
+            Day of the month when to process job when using ceScheduleTypeNthDay 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.IntervalHours">
+            <summary> 
+            Number of hours between job processing when using ceScheduleTypeHourly 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.BeginDate">
+            <summary> 
+            Start time of the schedule. Set it before scheduling to run the schedule at that specific time 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.EndDate">
+            <summary> 
+            End time of schedule processing. Valid only for completed schedules 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.Flags">
+            <summary> 
+            Set to request a change in instance status 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.Type">
+            <summary> 
+            Type of schedule. See CeScheduleType enum for possible values 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.ServerGroupChoice">
+            <summary> 
+            Specify how to choose the server group on which to process the schedule 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.RetryInterval">
+            <summary> 
+            Number of seconds between retries 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.RetriesAllowed">
+            <summary> 
+            Maximum number of retries allowed 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.ServerGroup">
+            <summary> 
+            Server group id where the schedule is running 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.IntervalDays">
+            <summary> 
+            Number of days between job processing when using ceScheduleTypeDaily 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.ScheduleOnBehalfOf">
+            <summary> 
+            The user this object is scheduled on behalf of 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.CalendarTemplate">
+            <summary> 
+            Set calendar template object id 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.Properties">
+            <summary> 
+            Returns a collection of the properties set within SchedulingInfo 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.Dependencies">
+            <summary> 
+            Set/Get the list of dependency events on the schedule 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.Dependants">
+            <summary> 
+            Set/Get the list of dependant events on the schedule 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.CalendarRunDays">
+            <summary> 
+            Collection of days when the schedule will run when using Calendar type scheduling 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.TimeZone">
+            <summary> 
+            Time zone that is used to schedule job. Use EnterpriseSession object to set it. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.Destination">
+            <summary> 
+            DEPRECATED - Get ISDestination interface 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.Outcome">
+            <summary> 
+            After job has finished processing, indicates the result 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.Status">
+            <summary> 
+            Current status of the scheduled job. Indicates wether job has started, pending or completed 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.ErrorMessage">
+            <summary> 
+            Error message for schedule outcome. It may include plugin specific information 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.AlertDestination">
+            <summary> 
+            Get alert destination 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.Notifications">
+            <summary> 
+            Get notifications 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.MultiPassObjects">
+            <summary> 
+            Set/Get the list of user/usergroup IDs on the schedule for multipass 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SchedulingInfo.Destinations">
+            <summary> 
+            Get the ISDestinations interface 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Events.Add(System.Int32)">
+            <summary> 
+            Add a event to the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Events.Delete(System.Object)">
+            <summary> 
+            Remove a event from the collection. Provide ordinal position or Event Id 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Events.Item(System.Object)">
+            <summary> 
+            Get event given Index. Index can be ordinal position or Event Id 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Events.Count">
+            <summary> 
+            Number of events in the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.CalendarDays.Add(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,CrystalDecisions.Enterprise.CeDayOfWeek,System.Int32)">
+            <summary> 
+            Add a new Calendar Day to the collection. Specify start date, end date and weekdays. The schedule will run when all conditions are true. 0 in any parameter means all.  
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.CalendarDays.Add(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,CrystalDecisions.Enterprise.CeDayOfWeek)">
+            <summary> 
+            Add a new Calendar Day to the collection. Specify start date, end date and weekdays. The schedule will run when all conditions are true. 0 in any parameter means all.  
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.CalendarDays.Add(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary> 
+            Add a new Calendar Day to the collection. Specify start date, end date and weekdays. The schedule will run when all conditions are true. 0 in any parameter means all.  
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.CalendarDays.Delete(System.Object)">
+            <summary> 
+            Delete a calendar day from the collection. Index should be ordinal position or Day object reference 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.CalendarDays.Item(System.Object)">
+            <summary> 
+            Get CalendarDay given Index which can be ordinal position or CalendarDay object reference 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.CalendarDays.Count">
+            <summary> 
+            Number of calendar days in the collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.CalendarDay.StartYear">
+            <summary> 
+            property StartYear 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.CalendarDay.StartMonth">
+            <summary> 
+            property StartYear 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.CalendarDay.StartDay">
+            <summary> 
+            property StartDay 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.CalendarDay.EndYear">
+            <summary> 
+            property EndYear 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.CalendarDay.EndMonth">
+            <summary> 
+            property EndYear 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.CalendarDay.EndDay">
+            <summary> 
+            property EndDay 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.CalendarDay.WeekNumber">
+            <summary> 
+            Number of week in the month. 1 is the first week of the month, 5 is the 5th week 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.CalendarDay.DayOfWeek">
+            <summary> 
+            Specific day or all week 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Destination.SetFromPlugin(CrystalDecisions.Enterprise.DestinationPlugin)">
+            <summary> 
+            Set destination properties from the destination plugin 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Destination.CopyToPlugin(CrystalDecisions.Enterprise.DestinationPlugin)">
+            <summary> 
+            Populate destination plugin with destination properties 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Destination.Clear">
+            <summary> 
+            Clears all the destination properties, except the Destination name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Destination.Name">
+            <summary> 
+            Destination name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Destination.Cleanup">
+            <summary> 
+            DEPRECATED, use the one on ISDestinations instead  - Get cleanup instance after scheduling 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Destination.DeliverPerUser">
+            <summary> 
+            Get the principal id 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Destination.Empty">
+            <summary> 
+            Check if destination info is empty except with Destination Name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Destination.UseSystemDefaultOptions">
+            <summary> 
+            Use the job server default destination options  
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.DestinationPlugin.Properties">
+            <summary> 
+            All the properties of the destination plugin 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.DestinationPlugin.ScheduleOptions">
+            <summary> 
+            Get schedule option interface. Each schedule destination plugin will support a schedule destination specific interface 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Notifications.AuditOption">
+            <summary> 
+            Notification through audit 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Notifications.DestinationsOnSuccess">
+            <summary> 
+            Get Notification destination collection on success 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Notifications.DestinationsOnFailure">
+            <summary> 
+            Get Notification destination collection on failure 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Destinations.Add(System.String)">
+            <summary> 
+            Add a destination to the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.Destinations.Delete(System.Object)">
+            <summary> 
+            Remove a destination from the collection. Provide ordinal position, destination name or object reference 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Destinations.Item(System.Object)">
+            <summary> 
+            Get ISDetination given Index. Index can be ordinal position 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Destinations.Cleanup">
+            <summary> 
+            Get cleanup instance after scheduling 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Destinations.Count">
+            <summary> 
+            Number of destinations in the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.ObjectRelativeIDs.Delete(System.Object)">
+            <summary> 
+            Delete a object relative id from the collection.  Index can be an ordinal position or object relative id 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.ObjectRelativeIDs.Clear">
+            <summary> 
+            Clear all object relatives from the collection. 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.ObjectRelativeIDs.Add(System.Int32)">
+            <summary> 
+            Add a new relative id to the collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectRelativeIDs.Item(System.Object)">
+            <summary> 
+            Item method returns an object id based on its ordinal position or object id. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectRelativeIDs.Count">
+            <summary> 
+            Count property returns the size of the collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ProcessingInfo.Properties">
+            <summary> 
+            Returns a collection of the properties set within ScheduleInfo 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityInfo.CheckAction(System.Int32)">
+            <summary> 
+            Given an ActionID returns true if the appropriate rights are granted 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityInfo.CheckRight(System.Int32)">
+            <summary> 
+            Given a right id returns true if the right is permitted for the current user 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityInfo.CheckRights(System.Object,System.Boolean)">
+            <summary> 
+            Get rights from the CMS in a single batch. Provide Array with right ids. Returns boolean array with grant status 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityInfo.CheckRights(System.Object)">
+            <summary> 
+            Get rights from the CMS in a single batch. Provide Array with right ids. Returns boolean array with grant status 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityInfo.CheckSystemRight(System.Int32)">
+            <summary> 
+            Given a non-custom right id returns true if the right is permitted for the current user 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityInfo.CheckCustomRight(System.Int32,System.String)">
+            <summary> 
+            Given a custom right id returns true if the right is permitted for the current user for the kind 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityInfo.CheckSystemRights(System.Object,System.Boolean)">
+            <summary> 
+            Get rights from the CMS in a single batch. Provide Array with right ids. Returns boolean array with grant status 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityInfo.CheckSystemRights(System.Object)">
+            <summary> 
+            Get rights from the CMS in a single batch. Provide Array with right ids. Returns boolean array with grant status 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityInfo.CheckCustomRights(System.Object,System.Object,System.Boolean)">
+            <summary> 
+            Get rights from the CMS in a single batch. Provide Array with right ids. Returns boolean array with grant status 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityInfo.CheckCustomRights(System.Object,System.Object)">
+            <summary> 
+            Get rights from the CMS in a single batch. Provide Array with right ids. Returns boolean array with grant status 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityInfo.GetAnyPrincipal(System.Int32)">
+            <summary> 
+            Return the effective role and rights for a principal. Works with any principal, even if it does not have direct rights on the object 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityInfo.GetObjectPrincipalsEx(CrystalDecisions.Enterprise.CeRightsMode)">
+            <summary> 
+            List of Principals which have rights on this object 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityInfo.ObjectPrincipals">
+            <summary> 
+            List of Principals which have rights on this object 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityInfo.KnownLimits">
+            <summary> 
+            Collection of limits that the object knows about 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityInfo.KnownRights">
+            <summary> 
+            Collection of rights that the object knows about 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityInfo.NewObjectPrincipals">
+            <summary> 
+            Returns a new collection to add rights to 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.ObjectPrincipals.Add(System.Int32)">
+            <summary> 
+            Add a new principal to the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.ObjectPrincipals.Delete(System.Object)">
+            <summary> 
+            Remove a principal from the collection.  See Item for values for ObjectPrincipalToDelete 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectPrincipals.Item(System.Object)">
+            <summary> 
+            Get Principal given Index. Index can be ordinal position, principal id, principal name or ObjectPrincipal object reference 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectPrincipals.Count">
+            <summary> 
+            Number of principals 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectPrincipal.Role">
+            <summary> 
+            Role of the principal for this object. For Advanced Role, see Rights property 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectPrincipal.Inherited">
+            <summary> 
+            True if the principal is inherited from parent objects, and does not have any explicit rights on this object. Does not apply to Limits 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectPrincipal.AdvancedInheritGroups">
+            <summary> 
+            For advanced role, True if rights can be inherited from parent user groups 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectPrincipal.AdvancedInheritFolders">
+            <summary> 
+            For advanced role, True if rights can be inherited from parent container (folder) objects 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectPrincipal.ID">
+            <summary> 
+            Principal Id 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectPrincipal.Name">
+            <summary> 
+            Principal Name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectPrincipal.Rights">
+            <summary> 
+            Array of specific rights set for the principal. Valid only if AttributesSet property has cePrincipalRights flag set 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectPrincipal.InheritedRights">
+            <summary> 
+            Array of rights that the principal is inheriting from groups or parent objects. Read only 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectPrincipal.AttributesSet">
+            <summary> 
+            Bitwise flags indicating whether the principal has rights and/or limits set.  
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.ObjectPrincipal.Limits">
+            <summary> 
+            Array of specific limits set for the principal. Valid only if AttributesSet property has cePrincipalLimits flag set 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityRights.Add(System.Int32)">
+            <summary> 
+            Add a new right to the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityRights.Delete(System.Object)">
+            <summary> 
+            Remove a right from the collection. See Item Index for values of RightToDelete 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityRights.AddSystemRight(System.Int32)">
+            <summary> 
+            Add a new non-custom right to the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityRights.AddCustomRight(System.Int32,System.String)">
+            <summary> 
+            Add a new custom right to the collection for the kind 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityRights.GetItemEx(System.Object,System.String)">
+            <summary> 
+            Get Custom Right given rightID. If no kind is provided current object custom right will return. 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityRights.GetItemEx(System.Object)">
+            <summary> 
+            Get Custom Right given rightID. If no kind is provided current object custom right will return. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityRights.Item(System.Object)">
+            <summary> 
+            Get Right given Index. Index can be ordinal position, right id or SecurityRight object reference 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityRights.Count">
+            <summary> 
+            Number of rights 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityRight.Granted">
+            <summary> 
+            True if the right is granted, false if the right is denied 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityRight.ID">
+            <summary> 
+            Right ID 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityRight.Owner">
+            <summary> 
+            True if this is a owner specific right, false otherwise 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityRight.Inherited">
+            <summary> 
+            True if the right is inherited, which means it cannot be changed on the object 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityRight.Description">
+            <summary> 
+            Localized description of the SecurityRight 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityLimits.Add(System.Int32,System.Int32)">
+            <summary> 
+            Add a new Limit to the collection. Provide new Limit id and initial value 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityLimits.Add(System.Int32)">
+            <summary> 
+            Add a new Limit to the collection. Provide new Limit id and initial value 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.SecurityLimits.Delete(System.Object)">
+            <summary> 
+            Remove a limit from the collection. See Item Index for values of LimitToDelete 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityLimits.Item(System.Object)">
+            <summary> 
+            Get limit given Index. Index can be ordinal position, limit id or SecurityLimit object reference 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityLimits.Count">
+            <summary> 
+            Number of limits 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityLimit.Value">
+            <summary> 
+            Numeric value of the security limit 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityLimit.Inherited">
+            <summary> 
+            True if the limit is inherited, which means it cannot be changed on the object 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityLimit.ID">
+            <summary> 
+            Limit ID 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityLimit.UseMaximumValue">
+            <summary> 
+            True if the maximum value of the security limit in the object inheritance is the valid one. False if it's the minimum value 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.SecurityLimit.Description">
+            <summary> 
+            Localized description of the SecurityLimit 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoStore.Query(System.String)">
+            <summary> 
+            Execute a query against the CMS. Provide a SQL-like query string. An InfoObjects collection will be returned with the matching objects 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoStore.Commit(CrystalDecisions.Enterprise.InfoObjects)">
+            <summary> 
+            Commit to the CMS any changes made to the Info Objects. Only updated objects and properties are commited. 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoStore.Schedule(CrystalDecisions.Enterprise.InfoObjects)">
+            <summary> 
+            Schedule to the CMS the objects that were set with scheduling info. All objects in the collection are scheduled 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoStore.NewInfoObjectCollection">
+            <summary> 
+            Create a new, empty InfoObject collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoStore.NewPropertyCollection(System.String)">
+            <summary> 
+            Create a new, empty, property bag 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoStore.NewPropertyCollection">
+            <summary> 
+            Create a new, empty, property bag 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoStore.CommitBatch(CrystalDecisions.Enterprise.InfoObjects)">
+            <summary> 
+            Commit to the CMS any changes made to the Info Objects. If any error occurs all object in the collection are rolled back. 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoStore.GetLastFailedObjectID">
+            <summary> 
+            Returns the last ID that  
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.InfoStore.SendTo(CrystalDecisions.Enterprise.InfoObjects)">
+            <summary> 
+            Send the objects to the destination specified. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoStore.EnterpriseSession">
+            <summary> 
+            Session object that was used to create this InfoSotre 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoStore.PluginManager">
+            <summary> 
+            PluginManager object which is being used by the InfoStore 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.InfoStore.SessionFolderID">
+            <summary> 
+            ID of the temporary session folder 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.BatchSecurityItems.Add(System.Int32,System.Int32,System.String)">
+            <summary> 
+            Creates item to check a right against an object, if Kind is not specified the right is a system right 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.BatchSecurityItems.Add(System.Int32,System.Int32)">
+            <summary> 
+            Creates item to check a right against an object, if Kind is not specified the right is a system right 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.BatchSecurityItems.Delete(System.Int32)">
+            <summary> 
+            Remove an BatchSecurityItem from this collection. Provide ObjectToDelete Index (see Item) 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.BatchSecurityItems.Fetch">
+            <summary> 
+            Fetches the rights in the collection from the server 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.BatchSecurityItems.Item(System.Object)">
+            <summary> 
+            Get Action given Index. Index can be ordinal position, Action Id, Name or Action object reference 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.BatchSecurityItems.Count">
+            <summary> 
+            Number of security items available for the InfoObject 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.BatchSecurityItem.ObjectID">
+            <summary> 
+            ID of Object to check 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.BatchSecurityItem.RightID">
+            <summary> 
+            Right to check 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.BatchSecurityItem.Kind">
+            <summary> 
+            The Kind of the right ID.  If Kind is empty the system right is checked. 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.OuterInfoObject.PrepareForCommit(System.Boolean)">
+            <summary> 
+            This method will be called on each object before committing to the info store/file server 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.OuterInfoObject.Initialize(CrystalDecisions.Enterprise.InfoObject,System.Boolean)">
+            <summary> 
+            Called when creating a new object. Default implementation for InfoObject is provided. NewObject indicates if this is a new object 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.OuterInfoObject.AddSecurity(CrystalDecisions.Enterprise.DesktopPluginSecurity)">
+            <summary> 
+            Called when security is to be checked on the object. Use ISDesktopPluginSecurity to add rights or limits to plugin, DEPRECATED 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.OuterInfoObject.FormatJobServerError(CrystalDecisions.Enterprise.Properties)">
+            <summary> 
+            Called when user asks for scheduling error message. If error comes from backend processin plugin, the desktop plugin has to format it. 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.OuterInfoObject.PrepareForCopy(System.Boolean,System.Boolean)">
+            <summary> 
+            This method will be called before copying the current object to a target object collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.OuterInfoObject.PrepareForDelete">
+            <summary> 
+            This method will be called on each object before committing to the info store/file server if the infoobject is marked as delete 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.OuterInfoObject.AfterCommit(System.Boolean)">
+            <summary> 
+            This method will be called on each object after committing to the info store/file server 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.OuterInfoObject.AfterDelete">
+            <summary> 
+            This method will be called on each object after committing to the info store/file server if the infoobject is marked as delete 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.OuterInfoObject.PrepareForSendTo">
+            <summary> 
+            This method will be called before commiting SendTo 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.OuterInfoObject.GetStringDescription(System.Int32)">
+            <summary> 
+            Get string description from plugin 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.OuterInfoObject.Importing">
+            <summary> 
+            Return true if it is during import process 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.OuterInfoObject.InfoObject">
+            <summary> 
+            Get internal InfoObject implementation 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.OuterInfoObject.IsUnmanagedDestinationSupported">
+            <summary> 
+            Return true if Unmanaged Destination supported 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.DesktopPluginSecurity.AddRight(CrystalDecisions.Enterprise.CeRole,System.Int16,System.String,System.Boolean)">
+            <summary> 
+            Add a new plugin specific right to the system, DEPRECATED 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.DesktopPluginSecurity.AddRight(CrystalDecisions.Enterprise.CeRole,System.Int16,System.String)">
+            <summary> 
+            Add a new plugin specific right to the system, DEPRECATED 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.DesktopPluginSecurity.AddLimit(System.Int16,System.String,System.Boolean)">
+            <summary> 
+            Add a new plugin specific limit to the system. Provide new Limit id and initial value. UseMaxValue to define limit behavior, DEPRECATED 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.DesktopPluginSecurity.AddLimit(System.Int16,System.String)">
+            <summary> 
+            Add a new plugin specific limit to the system. Provide new Limit id and initial value. UseMaxValue to define limit behavior, DEPRECATED 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.FileOpOptionalInfo.DestSubDir">
+            <summary> 
+            Subdirectory, will be appended to the default parent path 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.FileOpOptionalInfo.DestFileName">
+            <summary> 
+            Destination file name. If not specified, will use default uniquely generated name. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.FileOpOptionalInfo.DestPreFix">
+            <summary> 
+            Prefix for the destination file. Useful when using uniquely generated name. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.FileOpOptionalInfo.DestExt">
+            <summary> 
+            Extension for the destination file 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.FileOpOptionalInfo.DeleteLocalFile">
+            <summary> 
+            If True, delete local file after commit to the file repository 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.FileOpOptionalInfo.UseUniqueName">
+            <summary> 
+            True if you want to save the file to a unique file name on the file sever 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.URIManager.URIFromObject(CrystalDecisions.Enterprise.InfoObject)">
+            <summary> 
+            Given a Crystal Enterprise object, obtain a URI string that identifies the object 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.URIManager.ObjectFromURI(System.String,CrystalDecisions.Enterprise.EnterpriseSession)">
+            <summary> 
+            Create an enterprise object by providing a URI string. If the URI does not have complete logon info, EnterpriseSession is needed 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.URIManager.ObjectFromURI(System.String)">
+            <summary> 
+            Create an enterprise object by providing a URI string. If the URI does not have complete logon info, EnterpriseSession is needed 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.URIManager.ObjectIDFromURI(System.String,CrystalDecisions.Enterprise.EnterpriseSession)">
+            <summary> 
+            Return the object id from the specified URI string. If the URI does not have complete logon info, EnterpriseSession is needed 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.URIManager.ObjectIDFromURI(System.String)">
+            <summary> 
+            Return the object id from the specified URI string. If the URI does not have complete logon info, EnterpriseSession is needed 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.CategoryContent.CorporateCategories">
+            <summary> 
+            Parent corporate categories returned as IDs. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.CategoryContent.PersonalCategories">
+            <summary> 
+            Parent personal categories returned as IDs. 
+            </summary> 
+        </member>
+    </members>
+</doc>

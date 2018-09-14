@@ -8,11 +8,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
  
 
- <script src="<%= ResolveUrl("~/Js/ui/Admin/AccountEdit.js?versionDate=DateTime.Now") %>" type="text/javascript"></script>
- 
- <script src="<%= ResolveUrl("~/Js/jquery-popup-overlay.js?versionDate=DateTime.Now") %>" type="text/javascript"></script>
 
   <script language="javascript">
+
+      var daMxkk = '';
+
     var currentURL= "<%= ResolveUrl("~/ASHX/Admin/AccountEditHandler.ashx") %>"; 
      var accountList= "<%= ResolveUrl("~/UI/Admin/AccountList.aspx") %>"; 
       var pttUserURL= "<%= ResolveUrl("~/ASHX/Admin/PTTUserInfoHandler.ashx") %>"; 
@@ -22,7 +22,7 @@
          var regionURL= "<%= ResolveUrl("~/ASHX/Master/M_RegionHandler.ashx") %>"; 
 
 
-
+    
         
     </script>
 
@@ -497,6 +497,16 @@ input[type="radio"]{
   
    
 </div>
+    <script  type="text/javascript">
+
+        var antiforgery = '<%=((HiddenField)Master.FindControl("antiforgery")).ClientID%>';
+        antiforgery = "#" + antiforgery;
+       
+    </script>
+    
+ <script src="<%= ResolveUrl("~/Js/ui/Admin/AccountEdit.js?ver=2.2") %>" type="text/javascript"></script>
+ 
+ <script src="<%= ResolveUrl("~/Js/jquery-popup-overlay.js?versionDate=DateTime.Now") %>" type="text/javascript"></script>
 
 
 </asp:Content>

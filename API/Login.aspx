@@ -88,7 +88,8 @@
                          formData.append("UserLogin",$('.txtUserLogin').val());
                            formData.append("Password",$('.txtPassword').val());
                            formData.append("UserType",userType)
-                        formData.append("Action","Login");
+                           formData.append("Action", "Login");
+                           formData.append("PTTDAToken", $('#antiforgery').val());
 
 
                     $.ajax({
@@ -161,7 +162,7 @@
           error: function (response, a, b) {
                              $.alert({
                                title: "LOGIN",
-                                 content: "Invalid UserName/Password",
+                               content: response.statusText,
                                   type: 'red',
             animation: "RotateX",
             typeAnimated: true,
@@ -256,14 +257,14 @@ box-shadow: -1px -1px 74px 0px rgba(255,255,255,1);
 
 </head>
 <body>
-    <form id="frmLogin"  runat="server">
+    <form id="frmLogin"   method="post"  runat="server">
    
    <div class="login-block">
        <div class="container loginSection">
 	<div class="row">
 		<div class="col-md-4 login-sec">
 		    <h2 class="text-center">LOGIN</h2>
-		    <form class="login-form">
+		    <form class="login-form" method="post">
             <div class="row">
             
                 <div class="form-group input-group ">
@@ -308,8 +309,7 @@ box-shadow: -1px -1px 74px 0px rgba(255,255,255,1);
 
  </div>
   </div>
-  
-</form>
+               </form>
 
 <div class="copy-text"></div>
 		</div>
@@ -359,7 +359,8 @@ box-shadow: -1px -1px 74px 0px rgba(255,255,255,1);
 	</div>
 </div>
 </div>
-
+          <asp:HiddenField ID="antiforgery" runat="server"/>
+       </div>
     </form>
 </body>
 </html>

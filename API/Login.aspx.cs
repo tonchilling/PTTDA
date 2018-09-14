@@ -17,7 +17,7 @@ public partial class Login : System.Web.UI.Page
     DefectLevel3 level3 = null;
     JavaScriptSerializer json = null;
 
-
+    HiddenField hdnID = null;
     private const string AntiXsrfTokenKey = "148DF7C0CF93F8474257778B167705E37969046F1D0F34056AC343BB78ADDF0F6A69DD511866D90F9230E3D2582F978F753087AC4B38CB173AF285EEF85C2B4C";
     private const string AntiXsrfUserNameKey = "PTTDirectAccess";
     private string _antiXsrfTokenValue;
@@ -25,35 +25,34 @@ public partial class Login : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-       
-
-         level1 = new DefectLevel1();
-         level1.Id = "L1";
-         level1.Name = "D1";
 
 
-         level1.defectLevel2List = loadDefectLevel2(level1.Id);
+        hdnID = (HiddenField)this.FindControl("antiforgery");
 
 
 
-         level1List.Add(level1);
+        if (!this.IsPostBack)
+        {
+            Guid antiforgeryToken = Guid.NewGuid();
+            this.Session["AntiforgeryToken"] = antiforgeryToken;
 
 
+            if (hdnID != null)
+                hdnID.Value = antiforgeryToken.ToString();
 
 
-         level1 = new DefectLevel1();
-         level1.Id = "L2";
-         level1.Name = "D2";
-         level1List.Add(level1);
+        }
+        else
+        {
 
+            Guid stored = (Guid)this.Session["AntiforgeryToken"];
+            Guid sent = new Guid(hdnID.Value);
+            if (sent != stored)
+            {
+                throw new Exception("XSRF Attack Detected!");
+            }
 
-
-        DefectAll dALL = new DefectAll();
-
-        dALL.defectLevel1List = level1List;
-
-        json = new JavaScriptSerializer();
-      string  jsonString = json.Serialize(dALL);
+        }
 
 
     }

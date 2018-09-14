@@ -11,3 +11,9 @@ D:\Web\PTTAPI\API\DTO\bin\Debug\PdfSharp.dll
 D:\Web\PTTAPI\API\DTO\obj\Debug\DTO.dll
 D:\Web\PTTAPI\API\DTO\obj\Debug\DTO.pdb
 D:\Web\PTTAPI\API\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+E:\Github\PTTDA\DTO\bin\Debug\DTO.dll
+E:\Github\PTTDA\DTO\bin\Debug\DTO.pdb
+E:\Github\PTTDA\DTO\bin\Debug\itextsharp.dll
+E:\Github\PTTDA\DTO\bin\Debug\PdfSharp.dll
+E:\Github\PTTDA\DTO\obj\Debug\DTO.dll
+E:\Github\PTTDA\DTO\obj\Debug\DTO.pdb

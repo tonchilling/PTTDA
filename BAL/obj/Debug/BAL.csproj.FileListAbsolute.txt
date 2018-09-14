@@ -22,3 +22,15 @@ D:\Web\PTTAPI\API\BAL\bin\Debug\DocumentFormat.OpenXml.xml
 D:\Web\PTTAPI\API\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
 D:\Web\PTTAPI\API\BAL\obj\Debug\BAL.dll
 D:\Web\PTTAPI\API\BAL\obj\Debug\BAL.pdb
+E:\Github\PTTDA\BAL\bin\Debug\BAL.dll
+E:\Github\PTTDA\BAL\bin\Debug\BAL.pdb
+E:\Github\PTTDA\BAL\bin\Debug\DAO.dll
+E:\Github\PTTDA\BAL\bin\Debug\DocumentFormat.OpenXml.dll
+E:\Github\PTTDA\BAL\bin\Debug\DTO.dll
+E:\Github\PTTDA\BAL\bin\Debug\itextsharp.dll
+E:\Github\PTTDA\BAL\bin\Debug\DAO.pdb
+E:\Github\PTTDA\BAL\bin\Debug\DTO.pdb
+E:\Github\PTTDA\BAL\bin\Debug\DocumentFormat.OpenXml.xml
+E:\Github\PTTDA\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
+E:\Github\PTTDA\BAL\obj\Debug\BAL.dll
+E:\Github\PTTDA\BAL\obj\Debug\BAL.pdb

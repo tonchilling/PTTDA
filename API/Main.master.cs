@@ -21,16 +21,12 @@ public partial class Main : System.Web.UI.MasterPage
         }
          hdnID = (HiddenField)Page.Master.FindControl("antiforgery");
 
-        // Place page-specific code here.
-        //  antiforgery = this.FindControl("antiforgery") as System.Web.UI.WebControls.HiddenField;
+       
 
         if (!this.IsPostBack)
         {
             Guid antiforgeryToken = Guid.NewGuid();
             this.Session["AntiforgeryToken"] = antiforgeryToken;
-          //  antiforgery = this.Master.FindControl("ContentPlaceHolder1").FindControl("antiforgery") as System.Web.UI.WebControls.HiddenField;
-          
-
             if (hdnID != null)
                 hdnID.Value = antiforgeryToken.ToString();
 

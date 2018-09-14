@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<doc>
+    <members>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.Type">
+            <summary> 
+            object Type - unique identifier 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.ProgID">
+            <summary> 
+            ProgID - vendor.component.version 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.CLSID">
+            <summary> 
+            Property CLSID - the CLSID of the plugin object 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.PinFileName">
+            <summary> 
+            .pin file name - which contains plugin info 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.SetupFileName">
+            <summary> 
+            Plugin's setup program. DEPRECATED 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.SetupCommand">
+            <summary> 
+            Command for installing plugin. DEPRECATED 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.UninstallCommand">
+            <summary> 
+            Command for uninstalling plugin. DEPRECATED 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.Name">
+            <summary> 
+            Friendly name or description of the plugin 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.PropertyIndex">
+            <summary> 
+            Plugin property index list 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.Category">
+            <summary> 
+            Plugin category: desktop plugin, admin plugin or destination plugin 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.Version">
+            <summary> 
+            Version - Plugin version No. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.ObjectTypeName">
+            <summary> 
+            Processing Dll Name 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.SilentInstall">
+            <summary> 
+            Get silent installation flag. DEPRECATED 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.IsInstalled">
+            <summary> 
+            Check if a com plug-in is installed. DEPRECATED 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.IsFunctional">
+            <summary> 
+            method IsFunctional: checks if files for plugin are missing or corrupted 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.IsInstalledThisSession">
+            <summary> 
+            method IsInstalledThisSession: checks if the plugin is installed in current session. DEPRECATED 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.InstallDirectory">
+            <summary> 
+            Get the directory where the plugin should be installed. 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.RootFolderID">
+            <summary> 
+            Get the root folder id of this object type 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.SecurityInfo">
+            <summary> 
+            Get the Rights for this object type 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.IsSchedulable">
+            <summary> 
+            Check if this plugin is schedulable 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.Kind">
+            <summary> 
+            Kind 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.RootFolderIDs">
+            <summary> 
+            Get root folder ids of  this object type 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.IsSendable">
+            <summary> 
+            Check if a com plug-in is Sendable.  
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.IsManagedDestination">
+            <summary> 
+            Check if a com plug-in is Managed Destination 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginInfo.IsUseOnlyOwnRights">
+            <summary> 
+            Check if a com plug-in will use rights defined in its own pin file 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginSecurityInfo.Roles">
+            <summary> 
+            Returns a collection of roles and their rights 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginSecurityInfo.KnownRights">
+            <summary> 
+            Returns the all the rights for this object type 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginSecurityInfo.KnownLimits">
+            <summary> 
+            Returns the all the rights for this object type 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginRoles.Item(System.Object)">
+            <summary> 
+            Get Principal given Index. Index can be ordinal position, role id, role name or PluginRole object reference 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginRoles.Count">
+            <summary> 
+            Number of principals 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginRole.Role">
+            <summary> 
+            Returns the Role 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginRole.Description">
+            <summary> 
+            Returns a description of this role 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginRole.Rights">
+            <summary> 
+            Returns a collection of rights that belong to this role 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginRights.Item(System.Object)">
+            <summary> 
+            Get Principal given Index. Index can be ordinal position, role id, role name or PluginRole object reference 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginRights.Count">
+            <summary> 
+            Number of principals 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginRight.Id">
+            <summary> 
+            Returns the right 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginRight.Description">
+            <summary> 
+            Returns a description of this right 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginRight.DescriptionId">
+            <summary> 
+            Returns a description of this right 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.PluginRight.Category">
+            <summary> 
+            Returns a category name of this right 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.RootFolderIDs.Item(System.Object)">
+            <summary> 
+            Get id given Index. Index can be ordinal position 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.RootFolderIDs.Count">
+            <summary> 
+            Number of ids in the collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Plugins.Item(System.Object)">
+            <summary> 
+            Return a PluginInfo given Index. Index can be a string(ProgId), integer(Object Type) or ordinal position in collection 
+            </summary> 
+        </member>
+        <member name="P:CrystalDecisions.Enterprise.Plugins.Count">
+            <summary> 
+            Number of Items in the collection 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.PluginManager.MarkDirty">
+            <summary> 
+            Tells the manager to reinitialize its lists of plugins, DEPRECATED 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.PluginManager.InstallPlugin(System.Object)">
+            <summary> 
+            Download plug-in setup program from APS, and install it on the local machine. DEPRECATED 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.PluginManager.UpgradeAll">
+            <summary> 
+            Upgrade all plugins to the latest version. DEPRECATED 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.PluginManager.Repair">
+            <summary> 
+            Reinstall plugins that have missing or corrupted files. DEPRECATED 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.PluginManager.GetPluginInterface(System.Object)">
+            <summary> 
+            Get Plugin interface, providing progid or object type 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.PluginManager.GetPluginInfo(System.Object)">
+            <summary> 
+            Get Information on an available plugin at the APS 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.PluginManager.GetPlugins(System.String)">
+            <summary> 
+            Collection of available plugins on APS given a category : desktop, admin, auth, dest 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.PluginManager.GetInstalledPluginInfo(System.Object)">
+            <summary> 
+            Get Information on an installed plugin. DEPRECATED 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.PluginManager.GetInstalledPlugins(System.String)">
+            <summary> 
+            Collection of installed Plugins given a category: desktop, admin, auth, dest. DEPRECATED 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.PluginManager.GetIsOlderVersion(System.String)">
+            <summary> 
+            Is the version of given plugin older than the one on APS. DEPRECATED 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.PluginManager.GetPluginPicture(System.String,CrystalDecisions.Enterprise.CePictureState)">
+            <summary> 
+            Obtain picture for a plugin 
+            </summary> 
+        </member>
+        <member name="M:CrystalDecisions.Enterprise.PluginManager.GetPluginPicture(System.String)">
+            <summary> 
+            Obtain picture for a plugin 
+            </summary> 
+        </member>
+    </members>
+</doc>

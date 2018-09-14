@@ -723,7 +723,7 @@ function DisableAll() {
 
 
         </asp:ContentPlaceHolder>
-    <asp:HiddenField ID="antiforgery" runat="server"/>
+    <asp:HiddenField ID="antiforgery"  runat="server"/>
 
   
 
