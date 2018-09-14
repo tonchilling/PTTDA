@@ -1,0 +1,6 @@
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\bin\x86\x86\BAL.dll
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\bin\x86\x86\DAO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\bin\x86\x86\DTO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\bin\x86\x86\itextsharp.dll
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\obj\x86\x86\BAL.csprojResolveAssemblyReference.cache
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\obj\x86\x86\BAL.dll

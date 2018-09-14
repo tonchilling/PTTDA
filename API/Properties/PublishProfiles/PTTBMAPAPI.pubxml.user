@@ -1,0 +1,922 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Web\PTTAPI\Public</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>03/06/2018 23:19:25</publishTime>
+    </File>
+    <File Include="App_Code/DS1.Designer.cs">
+      <publishTime>09/11/2018 21:06:21</publishTime>
+    </File>
+    <File Include="App_Code/DS1.xsc">
+      <publishTime>09/11/2018 20:08:15</publishTime>
+    </File>
+    <File Include="App_Code/DS1.xss">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="App_Code/Report/SummaryRepairReportDS.Designer.cs">
+      <publishTime>09/13/2018 23:25:48</publishTime>
+    </File>
+    <File Include="App_Code/Report/SummaryRepairReportDS.xsc">
+      <publishTime>09/13/2018 23:25:48</publishTime>
+    </File>
+    <File Include="App_Code/Report/SummaryRepairReportDS.xsd">
+      <publishTime>09/13/2018 23:25:47</publishTime>
+    </File>
+    <File Include="App_Code/Report/SummaryRepairReportDS.xss">
+      <publishTime>09/13/2018 23:25:47</publishTime>
+    </File>
+    <File Include="App_Code/Report/TPlaning.Designer.cs">
+      <publishTime>09/13/2018 23:25:49</publishTime>
+    </File>
+    <File Include="App_Code/Report/TPlaning.xsc">
+      <publishTime>09/13/2018 23:25:51</publishTime>
+    </File>
+    <File Include="App_Code/Report/TPlaning.xsd">
+      <publishTime>09/13/2018 23:25:47</publishTime>
+    </File>
+    <File Include="App_Code/Report/TPlaning.xss">
+      <publishTime>09/13/2018 23:25:47</publishTime>
+    </File>
+    <File Include="ASHX/Admin/AccountEditHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Admin/AccountListHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Admin/MenuHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Admin/PTTUserInfoHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Admin/UserGroupAutorizeHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Admin/UserHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Admin/UserPermissionHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Admin/UserRoleAutorizeHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Admin/UserRoleHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_AssertOwnerHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_CoatingTypeHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_CustomerTypeHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_DiameterHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_DIGFromHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_KPHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_LicenseHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_LocationClassHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_MAOPHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_PipeGradHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_PipelineLengthHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_PositionHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_RegionHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_RouteCodeHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_SectionHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_StationHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_TypeOfRouteCodeHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Master/M_UndergroundHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/PageControlHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Plan/CreatePlanHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Plan/T_PlaningHandler.ashx">
+      <publishTime>09/11/2018 23:17:46</publishTime>
+    </File>
+    <File Include="ASHX/Plan/T_Planing_Action_AfterAppliedCoatingHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Plan/T_Planing_Action_AfterRemovalHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Plan/T_Planing_Action_AppliedCoatingHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Plan/T_Planing_Action_BFRemovalHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Plan/T_Planing_Action_SitePreparationHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Plan/T_Planing_Action_SiteRecoveryHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Plan/T_Planing_Action_SiteSurveyHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Plan/T_Planing_WeatherCollectionHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Plan/T_PlanSpecPOHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Report/ReportMHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="ASHX/Util/DropDownListHandler.ashx">
+      <publishTime>09/11/2018 20:08:34</publishTime>
+    </File>
+    <File Include="bin/API.dll">
+      <publishTime>09/14/2018 01:04:36</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>03/06/2018 23:19:25</publishTime>
+    </File>
+    <File Include="bin/BAL.dll">
+      <publishTime>09/11/2018 22:04:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.CrystalReports.Engine.dll">
+      <publishTime>10/14/2007 00:01:52</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Data.AdoDotNetInterop.dll">
+      <publishTime>10/13/2007 22:23:04</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportSource.dll">
+      <publishTime>10/14/2007 00:01:52</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Shared.dll">
+      <publishTime>10/14/2007 00:01:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Web.dll">
+      <publishTime>10/14/2007 00:02:26</publishTime>
+    </File>
+    <File Include="bin/DAO.dll">
+      <publishTime>09/11/2018 22:04:46</publishTime>
+    </File>
+    <File Include="bin/DocumentFormat.OpenXml.dll">
+      <publishTime>01/06/2018 01:25:34</publishTime>
+    </File>
+    <File Include="bin/DooPdfMerge.dll">
+      <publishTime>02/08/2010 18:18:52</publishTime>
+    </File>
+    <File Include="bin/DTO.dll">
+      <publishTime>09/11/2018 22:04:46</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>07/10/2018 21:02:33</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>12/07/2015 19:04:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>03/10/2016 14:26:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>03/09/2016 12:00:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>03/09/2016 11:57:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 02:06:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/23/2012 15:23:58</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>08/03/2014 20:33:56</publishTime>
+    </File>
+    <File Include="bin/PdfSharp.dll">
+      <publishTime>07/10/2018 21:02:10</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>03/18/2010 23:21:56</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>01/28/2015 04:02:42</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>01/28/2015 04:02:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>01/28/2015 04:03:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 04:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 04:02:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="BoostrapMagaMenu.aspx">
+      <publishTime>09/11/2018 20:05:21</publishTime>
+    </File>
+    <File Include="BootstrapIconList.aspx">
+      <publishTime>09/11/2018 20:05:21</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>09/11/2018 22:56:00</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>09/11/2018 22:56:00</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>09/11/2018 22:55:55</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/06/2018 23:19:09</publishTime>
+    </File>
+    <File Include="Index.html">
+      <publishTime>09/11/2018 20:36:04</publishTime>
+    </File>
+    <File Include="Index1.aspx.cs.exclude">
+      <publishTime>09/11/2018 20:05:33</publishTime>
+    </File>
+    <File Include="Index1.aspx.exclude">
+      <publishTime>09/11/2018 20:05:33</publishTime>
+    </File>
+    <File Include="index_.html">
+      <publishTime>09/11/2018 20:05:33</publishTime>
+    </File>
+    <File Include="Js/boostrap-confirm.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/boostrap-select.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/Boostrap.Select2.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/boostrap.table.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/boostrap.validation.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/bootstrap-datepicker.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/bootstrap-filestyle.min.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/bootstrap-waitingDialog.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/bootstrap.bundle.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/bootstrap.bundle.min.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/bootstrap.fd.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/bootstrap.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/bootstrap.min.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/chart/Chart.bundle.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/chart/Chart.bundle.min.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/chart/Chart.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/chart/Chart.min.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/chartNew/Chart.Canvas.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/datagrid-groupview.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/datagrid_data.json">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/dataTables.bootstrap4.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/Drawline.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ExportToCSVFile.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ExportToPDF.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/interact_v1.3.3.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/jquery-popup-overlay.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/jquery-ui.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/jquery.dataTables.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/jquery.easing.compatibility.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/jquery.easing.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/jquery.easing.min.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/jquery.easyui.min.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/jquery.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/jquery.min.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/Kinetic.Line.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/Main.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/MultiSelect.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/sb-admin-charts.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/sb-admin-charts.min.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/sb-admin-datatables.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/sb-admin-datatables.min.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/sb-admin.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/sb-admin.min.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/stickytable/jquery.stickytable.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/stickytable/jquery.stickytable.min.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/sweetalert.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Admin/AccountEdit.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Admin/AccountList.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Admin/MenuPage.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Admin/UserAutorize.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Admin/UserGroupAutorizing.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Admin/UserRole.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Admin/UserRoleAutorize.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Index.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_AssertOwner.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_CoatingType.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_CustomerType.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_Diameter.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_DIGFrom.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_KP.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_License.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_LocationClass.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_MAOP.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_PipeGrad.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_PipelineLength.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_Position.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_Region.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_RouteCode.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_Section.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_Station.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Master/M_TypeOfRouteCode.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/CreatePlan.js">
+      <publishTime>09/14/2018 00:50:20</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/PlanEdit.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/Report-charts.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_Planing_Action_AfterAppliedCoating.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_Planing_Action_AfterRemoval.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_Planing_Action_AfterRemoval_Dragdrop1.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_Planing_Action_AfterRemoval_Dragdrop_.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_Planing_Action_AppliedCoating.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_Planing_Action_BFRemoval.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_Planing_Action_BFRemoval_Dragdrop.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_Planing_Action_BFRemoval_Dragdrop_bk.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_Planing_Action_SitePreparation.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_Planing_Action_SiteRecovery.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_Planing_Action_SiteSurvey.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_Planing_Action_WeatherCollection.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_PlanList.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Plan/T_PlanList_new.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Report/SummaryCompleteReport.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Report/SummaryOverAllProgressReport.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Report/SummaryRepaireChart.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/ui/Report/SummaryRiskReport.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/XLine.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Js/xport.js">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>09/13/2018 21:18:02</publishTime>
+    </File>
+    <File Include="Main.master">
+      <publishTime>09/14/2018 00:07:50</publishTime>
+    </File>
+    <File Include="MasterLR.master">
+      <publishTime>09/11/2018 20:05:33</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/13/2018 23:22:48</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.js">
+      <publishTime>03/06/2018 23:19:25</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.min.js">
+      <publishTime>03/06/2018 23:19:25</publishTime>
+    </File>
+    <File Include="scripts/bootstrap.js">
+      <publishTime>09/11/2018 22:56:00</publishTime>
+    </File>
+    <File Include="scripts/bootstrap.min.js">
+      <publishTime>09/11/2018 22:56:00</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.js">
+      <publishTime>09/11/2018 22:56:01</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.min.js">
+      <publishTime>09/11/2018 22:56:01</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.min.map">
+      <publishTime>09/11/2018 22:56:01</publishTime>
+    </File>
+    <File Include="scripts/jquery.min.js">
+      <publishTime>03/06/2018 23:38:38</publishTime>
+    </File>
+    <File Include="scripts/modernizr-2.6.2.js">
+      <publishTime>09/11/2018 22:56:12</publishTime>
+    </File>
+    <File Include="TestAPI.aspx">
+      <publishTime>09/11/2018 20:05:35</publishTime>
+    </File>
+    <File Include="TestHtml.aspx">
+      <publishTime>09/11/2018 20:05:35</publishTime>
+    </File>
+    <File Include="UI/Admin/AccountEdit.aspx">
+      <publishTime>09/11/2018 20:05:10</publishTime>
+    </File>
+    <File Include="UI/Admin/AccountList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Admin/AccountListAndEdit.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Admin/MenuPage.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Admin/UserAutorizing.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Admin/UserGroupAutorizing.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Admin/UserRoleAutorizing.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Admin/UserRoleList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Index.aspx">
+      <publishTime>09/14/2018 00:07:54</publishTime>
+    </File>
+    <File Include="UI/Index_bk.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/AssertOwnerList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/CoatingTypeList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/CustomerTypeList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/DiameterList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/DigFromList.aspx">
+      <publishTime>09/11/2018 20:53:27</publishTime>
+    </File>
+    <File Include="UI/Master/KPList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/LicenseList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/LocationClassList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/MainMasterList.aspx">
+      <publishTime>09/11/2018 20:48:58</publishTime>
+    </File>
+    <File Include="UI/Master/MAOPList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/M_PositionList.aspx">
+      <publishTime>09/11/2018 20:53:27</publishTime>
+    </File>
+    <File Include="UI/Master/PipeGradList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/PipelineLengthList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/RegionList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/RouteCodeList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/SectionList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/StationList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Master/TypeOfRouteCodeList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/ActivityFlow.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/CreatePlan.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/CreatingPlan.aspx.cs.exclude">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/CreatingPlan_bk.aspx.exclude">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/InspectionData.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/InspectionDataEdit.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/InspectionDataView.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/MobileDataList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/PlanActionAfterAppliedCoating.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/PlanActionAfterCoatingRemoval.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/PlanActionAppliedCoating.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/PlanActionBeforeCoatingRemoval.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/PlanActionSitePreparation.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/PlanActionSiteRecovery.aspx">
+      <publishTime>09/13/2018 22:58:47</publishTime>
+    </File>
+    <File Include="UI/Plan/PlanActionSiteSurvey.aspx">
+      <publishTime>09/13/2018 22:36:09</publishTime>
+    </File>
+    <File Include="UI/Plan/PlanActionWeatherCollection.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/PlanEdit.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/PlanList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/RepairtHistoryList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/ReportList.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Plan/WeatherColllectionPopup.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/ExportPlan.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/ExportPlanView.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/MReport.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/MReport.aspx.cs">
+      <publishTime>09/11/2018 23:19:19</publishTime>
+    </File>
+    <File Include="UI/Report/QuaterlyReport.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/AfterApplieCoating.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/AfterCoatingRemoval.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/AfterCoatingRemoval_WallThickness.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/ApplieCoating.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/ApplieCoating_SurfecProfile.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/BeforeCoatingRemoval.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/ExportPlan.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/ExportPlanSub.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/ExportPlanSub_bkk.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/ExportPlan_bk20180805.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/SitePreparation.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/SitePreparation_under.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/SiteRecovery.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/SiteSurvey.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/SummaryRepairReportRPT.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/TPlaingFile.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/TPlaingFile2.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/TPlaning.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/RPT/WeaterCollection.rpt">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/SummaryCompleteReport.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/SummaryOverAllProgressReport.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/SummaryRepairReport.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/SummaryReportView.aspx.cs.exclude">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/SummaryReportView.aspx.exclude">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="UI/Report/SummaryRiskReport.aspx">
+      <publishTime>09/11/2018 20:05:11</publishTime>
+    </File>
+    <File Include="Views/Home/Index.html">
+      <publishTime>09/13/2018 23:11:13</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>09/13/2018 23:11:13</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>09/13/2018 23:11:13</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>09/13/2018 23:11:13</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/14/2018 00:55:01</publishTime>
+    </File>
+    <File Include="WebTest.aspx">
+      <publishTime>09/11/2018 20:16:01</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

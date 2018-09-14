@@ -1,0 +1,10 @@
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\bin\x86\Debug\BAL.dll
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\bin\x86\Debug\BAL.pdb
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\bin\x86\Debug\DAO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\bin\x86\Debug\DTO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\bin\x86\Debug\itextsharp.dll
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\bin\x86\Debug\DAO.pdb
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\bin\x86\Debug\DTO.pdb
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\obj\x86\Debug\BAL.csprojResolveAssemblyReference.cache
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\obj\x86\Debug\BAL.dll
+D:\Web\PTT\Web\Intranet\PTTProject\BAL\obj\x86\Debug\BAL.pdb

@@ -1,0 +1,4 @@
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\bin\x86\x86\DTO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\bin\x86\x86\itextsharp.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\bin\x86\x86\PdfSharp.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\obj\x86\x86\DTO.dll

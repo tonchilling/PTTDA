@@ -1,0 +1,8 @@
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\bin\x86\Debug\DAO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\bin\x86\Debug\DAO.pdb
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\bin\x86\Debug\DTO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\bin\x86\Debug\itextsharp.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\bin\x86\Debug\DTO.pdb
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\obj\x86\Debug\DAO.csprojResolveAssemblyReference.cache
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\obj\x86\Debug\DAO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\obj\x86\Debug\DAO.pdb

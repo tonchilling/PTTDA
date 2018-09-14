@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SummaryRepairReportDS" targetNamespace="http://tempuri.org/SummaryRepairReportDS.xsd" xmlns:mstns="http://tempuri.org/SummaryRepairReportDS.xsd" xmlns="http://tempuri.org/SummaryRepairReportDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SummaryRepairReportDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="SummaryRepairReportDS" msprop:Generator_UserDSName="SummaryRepairReportDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SummaryRepairReportDS" msprop:Generator_TableClassName="SummaryRepairReportDSDataTable" msprop:Generator_TableVarName="tableSummaryRepairReportDS" msprop:Generator_RowChangedName="SummaryRepairReportDSRowChanged" msprop:Generator_TablePropName="_SummaryRepairReportDS" msprop:Generator_RowDeletingName="SummaryRepairReportDSRowDeleting" msprop:Generator_RowChangingName="SummaryRepairReportDSRowChanging" msprop:Generator_RowEvHandlerName="SummaryRepairReportDSRowChangeEventHandler" msprop:Generator_RowDeletedName="SummaryRepairReportDSRowDeleted" msprop:Generator_RowClassName="SummaryRepairReportDSRow" msprop:Generator_UserTableName="SummaryRepairReportDS" msprop:Generator_RowEvArgName="SummaryRepairReportDSRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="No" msprop:Generator_ColumnVarNameInTable="columnNo" msprop:Generator_ColumnPropNameInRow="No" msprop:Generator_ColumnPropNameInTable="NoColumn" msprop:Generator_UserColumnName="No" type="xs:string" minOccurs="0" />
+              <xs:element name="PipelineType" msprop:Generator_ColumnVarNameInTable="columnPipelineType" msprop:Generator_ColumnPropNameInRow="PipelineType" msprop:Generator_ColumnPropNameInTable="PipelineTypeColumn" msprop:Generator_UserColumnName="PipelineType" type="xs:string" minOccurs="0" />
+              <xs:element name="AssertOwnerName" msprop:Generator_ColumnVarNameInTable="columnAssertOwnerName" msprop:Generator_ColumnPropNameInRow="AssertOwnerName" msprop:Generator_ColumnPropNameInTable="AssertOwnerNameColumn" msprop:Generator_UserColumnName="AssertOwnerName" type="xs:string" minOccurs="0" />
+              <xs:element name="AssertOwnerID" msprop:Generator_ColumnVarNameInTable="columnAssertOwnerID" msprop:Generator_ColumnPropNameInRow="AssertOwnerID" msprop:Generator_ColumnPropNameInTable="AssertOwnerIDColumn" msprop:Generator_UserColumnName="AssertOwnerID" type="xs:string" minOccurs="0" />
+              <xs:element name="Region" msprop:Generator_ColumnVarNameInTable="columnRegion" msprop:Generator_ColumnPropNameInRow="Region" msprop:Generator_ColumnPropNameInTable="RegionColumn" msprop:Generator_UserColumnName="Region" type="xs:string" minOccurs="0" />
+              <xs:element name="RC" msprop:Generator_ColumnVarNameInTable="columnRC" msprop:Generator_ColumnPropNameInRow="RC" msprop:Generator_ColumnPropNameInTable="RCColumn" msprop:Generator_UserColumnName="RC" type="xs:string" minOccurs="0" />
+              <xs:element name="PipelineSection" msprop:Generator_ColumnVarNameInTable="columnPipelineSection" msprop:Generator_ColumnPropNameInRow="PipelineSection" msprop:Generator_ColumnPropNameInTable="PipelineSectionColumn" msprop:Generator_UserColumnName="PipelineSection" type="xs:string" minOccurs="0" />
+              <xs:element name="KP" msprop:Generator_ColumnVarNameInTable="columnKP" msprop:Generator_ColumnPropNameInRow="KP" msprop:Generator_ColumnPropNameInTable="KPColumn" msprop:Generator_UserColumnName="KP" type="xs:string" minOccurs="0" />
+              <xs:element name="RepairLength" msprop:Generator_ColumnVarNameInTable="columnRepairLength" msprop:Generator_ColumnPropNameInRow="RepairLength" msprop:Generator_ColumnPropNameInTable="RepairLengthColumn" msprop:Generator_UserColumnName="RepairLength" type="xs:string" minOccurs="0" />
+              <xs:element name="Digfrom" msprop:Generator_ColumnVarNameInTable="columnDigfrom" msprop:Generator_ColumnPropNameInRow="Digfrom" msprop:Generator_ColumnPropNameInTable="DigfromColumn" msprop:Generator_UserColumnName="Digfrom" type="xs:string" minOccurs="0" />
+              <xs:element name="RiskLevel" msprop:Generator_ColumnVarNameInTable="columnRiskLevel" msprop:Generator_ColumnPropNameInRow="RiskLevel" msprop:Generator_ColumnPropNameInTable="RiskLevelColumn" msprop:Generator_UserColumnName="RiskLevel" type="xs:string" minOccurs="0" />
+              <xs:element name="CoatingType" msprop:Generator_ColumnVarNameInTable="columnCoatingType" msprop:Generator_ColumnPropNameInRow="CoatingType" msprop:Generator_ColumnPropNameInTable="CoatingTypeColumn" msprop:Generator_UserColumnName="CoatingType" type="xs:string" minOccurs="0" />
+              <xs:element name="CoatingDamageType" msprop:Generator_ColumnVarNameInTable="columnCoatingDamageType" msprop:Generator_ColumnPropNameInRow="CoatingDamageType" msprop:Generator_ColumnPropNameInTable="CoatingDamageTypeColumn" msprop:Generator_UserColumnName="CoatingDamageType" type="xs:string" minOccurs="0" />
+              <xs:element name="CoatingDmageNumber" msprop:Generator_ColumnVarNameInTable="columnCoatingDmageNumber" msprop:Generator_ColumnPropNameInRow="CoatingDmageNumber" msprop:Generator_ColumnPropNameInTable="CoatingDmageNumberColumn" msprop:Generator_UserColumnName="CoatingDmageNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="PipelineDamageType" msprop:Generator_ColumnVarNameInTable="columnPipelineDamageType" msprop:Generator_ColumnPropNameInRow="PipelineDamageType" msprop:Generator_ColumnPropNameInTable="PipelineDamageTypeColumn" msprop:Generator_UserColumnName="PipelineDamageType" type="xs:string" minOccurs="0" />
+              <xs:element name="PipelineDamageNumber" msprop:Generator_ColumnVarNameInTable="columnPipelineDamageNumber" msprop:Generator_ColumnPropNameInRow="PipelineDamageNumber" msprop:Generator_ColumnPropNameInTable="PipelineDamageNumberColumn" msprop:Generator_UserColumnName="PipelineDamageNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="Note" msprop:Generator_ColumnVarNameInTable="columnNote" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_UserColumnName="Note" type="xs:string" minOccurs="0" />
+              <xs:element name="RegionID" msprop:Generator_ColumnVarNameInTable="columnRegionID" msprop:Generator_ColumnPropNameInRow="RegionID" msprop:Generator_ColumnPropNameInTable="RegionIDColumn" msprop:Generator_UserColumnName="RegionID" type="xs:string" minOccurs="0" />
+              <xs:element name="PipelineSectionID" msprop:Generator_ColumnVarNameInTable="columnPipelineSectionID" msprop:Generator_ColumnPropNameInRow="PipelineSectionID" msprop:Generator_ColumnPropNameInTable="PipelineSectionIDColumn" msprop:Generator_UserColumnName="PipelineSectionID" type="xs:string" minOccurs="0" />
+              <xs:element name="DigfromID" msprop:Generator_ColumnVarNameInTable="columnDigfromID" msprop:Generator_ColumnPropNameInRow="DigfromID" msprop:Generator_ColumnPropNameInTable="DigfromIDColumn" msprop:Generator_UserColumnName="DigfromID" type="xs:string" minOccurs="0" />
+              <xs:element name="CoatingTypeID" msprop:Generator_ColumnVarNameInTable="columnCoatingTypeID" msprop:Generator_ColumnPropNameInRow="CoatingTypeID" msprop:Generator_ColumnPropNameInTable="CoatingTypeIDColumn" msprop:Generator_UserColumnName="CoatingTypeID" type="xs:string" minOccurs="0" />
+              <xs:element name="DamageTypeID" msprop:Generator_ColumnVarNameInTable="columnDamageTypeID" msprop:Generator_ColumnPropNameInRow="DamageTypeID" msprop:Generator_ColumnPropNameInTable="DamageTypeIDColumn" msprop:Generator_UserColumnName="DamageTypeID" type="xs:string" minOccurs="0" />
+              <xs:element name="PipelineTypeID" msprop:Generator_ColumnVarNameInTable="columnPipelineTypeID" msprop:Generator_ColumnPropNameInRow="PipelineTypeID" msprop:Generator_ColumnPropNameInTable="PipelineTypeIDColumn" msprop:Generator_UserColumnName="PipelineTypeID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,138 @@
+﻿using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+
+public partial class UI_Report_SummaryReportView : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            ReportDocument crystalReport = new ReportDocument();
+            BindReport(crystalReport);
+        }
+    }
+
+    private void BindReport(ReportDocument crystalReport)
+    {
+
+
+        CrystalReportViewer1.DisplayToolbar = true;
+        CrystalReportViewer1.HasSearchButton = true;
+        CrystalReportViewer1.HasExportButton = true;
+        CrystalReportViewer1.HasPrintButton = true;
+       // CrystalReportViewer1.ToolPanelView = ToolPanelViewType.None;
+
+        crystalReport.Load(Server.MapPath("~/UI/Report/SummaryRepairReportRPT.rpt"));
+        DataTable dsCustomers = GetData("select top 5 * from customers");
+        crystalReport.SetDataSource(dsCustomers);
+        CrystalReportViewer1.ReportSource = crystalReport;
+       
+        CrystalReportViewer1.DataBind();
+
+
+
+
+    }
+
+
+    private DataTable GetData(string query)
+    {
+        
+        DataTable dt = new DataTable();
+
+        dt.Columns.Add("No");
+        dt.Columns.Add("PipelineType");
+        dt.Columns.Add("AssertOwnerName");
+        dt.Columns.Add("Region");
+        dt.Columns.Add("RC");
+        dt.Columns.Add("PipelineSection");
+        dt.Columns.Add("KP");
+        dt.Columns.Add("RepairLength");
+        dt.Columns.Add("Digfrom");
+        dt.Columns.Add("RiskLevel");
+        dt.Columns.Add("CoatingType");
+        dt.Columns.Add("CoatingDamageType");
+        dt.Columns.Add("CoatingDmageNumber");
+        dt.Columns.Add("PipelineDamageType");
+        dt.Columns.Add("PipelineDamageNumber");
+
+        dt.Columns.Add("Note");
+        dt.Columns.Add("PipelineTypeID");
+        dt.Columns.Add("AssertOwnerID");
+        dt.Columns.Add("RegionID");
+        dt.Columns.Add("PipelineSectionID");
+        dt.Columns.Add("DigfromID");
+        dt.Columns.Add("CoatingTypeID");
+        dt.Columns.Add("DamageTypeID");
+
+        DataRow dr = null;
+
+        dr = dt.NewRow();
+        dr["No"] = "1";
+        dr["PipelineType"] = "PipelineType 1";
+        dr["AssertOwnerName"] = "AssertOwner 1";
+        dr["Region"] = "3";
+        dr["PipelineSection"] = "OCS3-BCS";
+        dr["KP"] = "52+290";
+        dr["RepairLength"] = "5";
+        dr["Digfrom"] = "CPS/DCVG";
+        dr["RiskLevel"] = "";
+        dr["CoatingType"] = "FBE";
+        dr["CoatingDamageType"] = "Note 1''";
+        dr["CoatingDmageNumber"] = "0";
+        dr["PipelineDamageType"] = "N/A";
+        dr["PipelineDamageNumber"] = "0";
+
+        dr["Note"] = "";
+        dr["RegionID"] = "3";
+        dr["PipelineSectionID"] = "1";
+        dr["DigfromID"] = "";
+        dr["CoatingTypeID"] = "";
+        dr["DamageTypeID"] = "";
+
+        dr["PipelineTypeID"] = "1";
+        dr["AssertOwnerID"] = "1";
+
+        dt.Rows.Add(dr);
+
+        dr = dt.NewRow();
+        dr["No"] = "1";
+        dr["PipelineType"] = "PipelineType 1";
+        dr["AssertOwnerName"] = "AssertOwner 2";
+        dr["Region"] = "3";
+        dr["PipelineSection"] = "OCS3-BCS";
+        dr["KP"] = "52+290";
+        dr["RepairLength"] = "5";
+        dr["Digfrom"] = "CPS/DCVG";
+        dr["RiskLevel"] = "";
+        dr["CoatingType"] = "FBE";
+        dr["CoatingDamageType"] = "Note 1''";
+        dr["CoatingDmageNumber"] = "0";
+        dr["PipelineDamageType"] = "N/A";
+        dr["PipelineDamageNumber"] = "0";
+
+        dr["Note"] = "";
+        dr["RegionID"] = "3";
+        dr["PipelineSectionID"] = "1";
+        dr["DigfromID"] = "";
+        dr["CoatingTypeID"] = "";
+        dr["DamageTypeID"] = "";
+
+        dr["PipelineTypeID"] = "1";
+        dr["AssertOwnerID"] = "1";
+
+        dt.Rows.Add(dr);
+
+        return dt;
+
+       
+    }
+
+}

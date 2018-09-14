@@ -1,0 +1,517 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeFile="CreatingPlan.aspx.cs" Inherits="UI_Plan_CreatingPlan" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<script language=javascript>
+
+    $(document).ready(function () {
+        var navListItems = $('div.setup-panel div a'),
+          allWells = $('.setup-content'),
+          allNextBtn = $('.nextBtn');
+
+        allWells.hide();
+
+        navListItems.click(function (e) {
+            e.preventDefault();
+            var $target = $($(this).attr('href')),
+              $item = $(this);
+
+            if (!$item.hasClass('disabled')) {
+                navListItems.removeClass('btn-primary').addClass('btn-default');
+                $item.addClass('btn-primary');
+                allWells.hide();
+                $target.show();
+                $target.find('input:eq(0)').focus();
+            }
+        });
+
+        allNextBtn.click(function () {
+            var curStep = $(this).closest(".setup-content"),
+          curStepBtn = curStep.attr("id"),
+          nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+          curInputs = curStep.find("input[type='text'],input[type='url']"),
+          isValid = true;
+
+            $(".form-group").removeClass("has-error");
+            for (var i = 0; i < curInputs.length; i++) {
+                if (!curInputs[i].validity.valid) {
+                    isValid = false;
+                    $(curInputs[i]).closest(".form-group").addClass("has-error");
+                }
+            }
+
+            if (isValid)
+                nextStepWizard.removeAttr('disabled').trigger('click');
+        });
+
+        $('div.setup-panel div a.btn-success').trigger('click');
+
+
+        $('.btnSubmit').on("click", function (e) {
+            window.location.href = ' <%= ResolveUrl("~/UI/Plan/PlanList.aspx") %>';
+        });
+    });
+
+
+    function bs_input_file() {
+        $(".input-file").before(
+		function () {
+		    if (!$(this).prev().hasClass('input-ghost')) {
+		        var element = $("<input type='file' class='input-ghost' style='visibility:hidden; height:0'>");
+		        element.attr("name", $(this).attr("name"));
+		        element.change(function () {
+		            element.next(element).find('input').val((element.val()).split('\\').pop());
+		        });
+		        $(this).find("button.btn-choose").click(function () {
+		            element.click();
+		        });
+		        $(this).find("button.btn-reset").click(function () {
+		            element.val(null);
+		            $(this).parents(".input-file").find('input').val('');
+		        });
+		        $(this).find('input').css("cursor", "pointer");
+		        $(this).find('input').mousedown(function () {
+		            $(this).parents('.input-file').prev().click();
+		            return false;
+		        });
+		        return element;
+		    }
+		}
+	);
+    }
+    $(function () {
+        bs_input_file();
+    });
+</script>
+<style  type="text/css">
+
+.stepwizard-step p {
+    margin-top: 10px;
+}
+.stepwizard-row {
+    display: table-row;
+}
+.stepwizard {
+    display: table;
+    width: 50%;
+    position: relative;
+}
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+.stepwizard-row:before {
+    top: 30px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+}
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+.btn-circle {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 16px;
+    line-height: 3;
+   border: 2px solid #c7c7c7; 
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+  
+}
+
+[type=reset],
+[type=submit],
+button,
+html [type=button] {
+    -webkit-appearance:none;
+}
+</style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+ <div class="content-wrapper">
+  <div class="container-fluid">
+
+  <div class="card cardbody">
+ <div class="card-header"><i class="fa fa-cog fa-spin fa-2x" style="color:green"></i> Creating Plan </div>
+     <div class="card-body">
+    <div class="row">
+<div class="stepwizard col-md-offset-3">
+    <div class="stepwizard-row setup-panel">
+      <div class="stepwizard-step">
+        <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
+        <p>Create Plan</p>
+      </div>
+      <div class="stepwizard-step">
+        <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+        <p>Complete Date</p>
+      </div>
+    
+    </div>
+  </div>
+
+      </div>
+
+
+   <div class="row setup-content" id="step-1">
+      <div class="col-xs-6 col-md-offset-3">
+        <div class="col-md-12">
+          <div class="card">
+          <div class="card-header"><h3 style="color:#007bff"><i class="glyphicon glyphicon-file"></i>&nbsp; CREATE PLAN</h3> </div>
+            <div class="card-body">
+
+        <!--- Body --->
+
+         <div class="row" style="padding-top:10px;">
+
+          
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon" id="Span2" style=" width:160px">DIG from </span>
+    <select   class="form-control selectDIGFrom" id="selectDIGFrom"  >
+   
+  </select>
+</div>
+          </div>
+           
+          </div>
+
+            <div class="row" style="padding-top:10px;">
+
+         
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span  id="Span1" style=" width:160px">North </span>
+    <input   class="form-control txtNorth" id="txtNorth"></input>
+</div>
+          </div>
+           
+          </div>
+           <div class="row" style="padding-top:10px;">
+
+        
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span  id="Span3" style=" width:160px">East </span>
+    <input   class="form-control txtEast" id="txtEast"></input>
+</div>
+          </div>
+           
+          </div>
+
+           <div class="row" style="padding-top:10px;">
+
+         
+             <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon" id="Span4" style=" width:160px">Region </span>
+    <select   class="form-control selectRegion" id="selectRegion"  >
+   
+  </select>
+</div>
+          </div>
+           
+          </div>
+            <div class="row" style="padding-top:10px;">
+
+        
+            <div class="col-sm-10">
+             <div class="input-group">
+                <span  id="Span5" style=" width:160px">Type of Pipeline </span>
+             <select   class="form-control selectPipeline" id="selectPipeline"></select>
+             </div>
+            </div>
+          </div>
+
+           <div class="row" style="padding-top:10px;">
+        
+           <div class="col-sm-10">
+           <div class="input-group">
+  <span  id="Span6" style=" width:160px">Asset Owner </span>
+    <input   class="form-control txtEast" id="Text1"></input>
+</div>
+          </div>
+           
+          </div>
+           <div class="row" style="padding-top:10px;">
+
+          <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon" id="Span7" style=" width:160px">Route Code </span>
+    <select   class="form-control selectRouteCode" id="selectRouteCode"  >
+  </select>
+</div>
+          </div>
+           
+          </div>
+            <div class="row" style="padding-top:10px;">
+
+          <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon" id="Span8" style=" width:160px">Section </span>
+    <input   class="form-control txtSection" id="txtSection"  />
+</div>
+          </div>
+           
+          </div>
+            <div class="row" style="padding-top:10px;">
+
+        
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon" id="Span9" style=" width:160px">KP </span>
+    <input   class="form-control txtKP" id="txtKP"  />
+</div>
+          </div>
+           
+          </div>
+           <div class="row" style="padding-top:10px;">
+
+         
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon" id="Span10" style=" width:160px">Risk Score </span>
+    <input   class="form-control txtRiskScore" id="txtRiskScore"  />
+</div>
+          </div>
+           
+          </div>
+          <div class="row" style="padding-top:10px;">
+
+          <div class="col-sm-10">
+          
+        <button type="button" class="btn btn-lg btn-success nextBtn">Next</button>
+       
+          </div>
+          </div>
+         <!--- Body --->
+
+       </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="row setup-content" id="step-2">
+      <div class="col-xs-6 col-md-offset-3">
+        <div class="col-md-12">
+      <div class="card">
+          <div class="card-header"><h3 style="color:#007bff"><i class="glyphicon glyphicon-time"></i>&nbsp; COMPLETE DATE</h3> </div>
+            <div class="card-body">
+
+        <!--- Body --->
+
+         <div class="row" style="padding-top:10px;">
+
+          
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon" id="Span11" style=" width:160px">Repair Using </span>
+     <input   class="form-control txtEast" id="Text8" />
+</div>
+          </div>
+           
+          </div>
+
+              <div class="row" style="padding-top:10px;">
+
+          
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon" id="Span12" style=" width:160px">Repair Length(m) </span>
+     <input   class="form-control txtEast" id="Text2" />
+</div>
+          </div>
+           
+          </div>
+           <div class="row" style="padding-top:10px;">
+
+          
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon" id="Span13" style=" width:160px">KP Repair Start </span>
+     <input   class="form-control txtEast" id="Text3" />
+</div>
+          </div>
+           
+          </div>
+
+          <div class="row" style="padding-top:10px;">
+
+          
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon" id="Span14" style=" width:160px">GPS (@KP Start) N </span>
+     <input   class="form-control txtEast" id="Text9" />
+</div>
+          </div>
+           
+          </div>
+            <div class="row" style="padding-top:10px;">
+
+          
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon" id="Span15" style=" width:160px">E </span>
+     <input   class="form-control txtEast" id="Text10" />
+</div>
+          </div>
+           
+          </div>
+
+             <div class="row" style="padding-top:10px;">
+
+          
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon" id="Span16" style=" width:160px">pH </span>
+     <input   class="form-control txtEast" id="Text4" />
+</div>
+          </div>
+           
+          </div>
+          <div class="row" style="padding-top:10px;">
+
+          
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon" id="Span17" style=" width:160px">Bacteria </span>
+     <input   class="form-control txtEast" id="Text11" />
+</div>
+          </div>
+           
+          </div>
+        <div class="row" style="padding-top:10px;">
+
+          
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon text-right" id="Span18" style=" width:160px">DFT(um) </span>
+     <input   class="form-control txtEast" id="Text5" />
+</div>
+          </div>
+           
+          </div>
+          <div class="row" style="padding-top:10px;">
+
+          
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon text-right" id="Span19" style=" width:160px">Holiday Test </span>
+     <select   class="form-control txtEast" id="Text6" ></select>
+</div>
+          </div>
+           
+          </div>
+         <div class="row" style="padding-top:10px;">
+
+          
+            <div class="col-sm-10">
+           <div class="input-group">
+  <span class="input-group-addon text-right" id="Span20" style=" width:160px">Holiday Test Value </span>
+     <input   class="form-control txtEast" id="Text7" />
+</div>
+          </div>
+           
+          </div>
+             <div class="row" style="padding-top:10px;">
+
+          
+            <div class="col-sm-10">
+       <div class="form-group">
+		<div class="input-group input-file" name="Fichier1">
+    		<input type="text" class="form-control" placeholder='Choose a file...' />			
+            <span class="input-group-btn">
+        		<button class="btn btn-default btn-choose" type="button">Choose</button>
+    		</span>
+
+
+		</div>
+	</div>
+          </div>
+           
+          </div>
+               <div class="row" style="padding-top:0px;">
+
+          
+            <div class="col-sm-10">
+       <div class="form-group">
+		<div class="input-group input-file" name="Fichier1">
+    		<input type="text" class="form-control" placeholder='Choose a file...' />			
+            <span class="input-group-btn">
+        		<button class="btn btn-default btn-choose" type="button">Choose</button>
+    		</span>
+
+
+		</div>
+	</div>
+          </div>
+           
+          </div>
+               <div class="row" style="padding-top:0px;">
+
+          
+            <div class="col-sm-10">
+       <div class="form-group">
+		<div class="input-group input-file" name="Fichier1">
+    		<input type="text" class="form-control" placeholder='Choose a file...' />			
+            <span class="input-group-btn">
+        		<button class="btn btn-default btn-choose" type="button">Choose</button>
+    		</span>
+
+
+		</div>
+	</div>
+          </div>
+           
+          </div>
+               <div class="row" style="padding-top:0px;">
+
+          
+            <div class="col-sm-10">
+       <div class="form-group">
+		<div class="input-group input-file" name="Fichier1">
+    		<input type="text" class="form-control" placeholder='Choose a file...' />			
+            <span class="input-group-btn">
+        		<button class="btn btn-default btn-choose" type="button">Choose</button>
+    		</span>
+
+
+		</div>
+	</div>
+          </div>
+           
+          </div>
+          <div class="row" style="padding-top:10px;">
+
+          <div class="col-sm-1">
+          
+        <button type="button" class="btn btn-lg btn-primary btnSubmit">บันทึก</button>
+       
+          </div>
+          <div class="col-sm-2">
+            &nbsp;<button type="button" class="btn btn-lg btn-default btnSubmit">ยกเลิก</button>
+          </div>
+          </div>
+
+         <!--- Body --->
+
+       </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+
+    </div>
+    </div>
+    </div>
+</asp:Content>
+

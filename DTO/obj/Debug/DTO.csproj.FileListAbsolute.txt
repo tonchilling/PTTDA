@@ -1,0 +1,13 @@
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\bin\Debug\DTO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\bin\Debug\DTO.pdb
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\bin\Debug\itextsharp.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\bin\Debug\PdfSharp.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\obj\Debug\DTO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\obj\Debug\DTO.pdb
+D:\Web\PTTAPI\API\DTO\bin\Debug\DTO.dll
+D:\Web\PTTAPI\API\DTO\bin\Debug\DTO.pdb
+D:\Web\PTTAPI\API\DTO\bin\Debug\itextsharp.dll
+D:\Web\PTTAPI\API\DTO\bin\Debug\PdfSharp.dll
+D:\Web\PTTAPI\API\DTO\obj\Debug\DTO.dll
+D:\Web\PTTAPI\API\DTO\obj\Debug\DTO.pdb
+D:\Web\PTTAPI\API\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache

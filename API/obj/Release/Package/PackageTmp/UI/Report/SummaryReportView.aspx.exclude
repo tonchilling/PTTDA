@@ -1,0 +1,43 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.master"   AutoEventWireup="true" CodeFile="SummaryReportView.aspx.cs" Inherits="UI_Report_SummaryReportView" %>
+
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+
+
+
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<div class="card cardbody">
+ <div class="card-header"><i class="fa fa-cog fa-spin fa-2x" style="color:#428bca"></i> Report </div>
+     <div class="card-body">
+
+
+      
+<div class="row">
+<div class="col-sm-12">
+
+ <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" 
+        AutoDataBind="true"
+        
+          
+            HasCrystalLogo="False"
+    EnableDatabaseLogonPrompt="False" EnableParameterPrompt="False"
+    GroupTreeImagesFolderUrl="~/aspnet_client/System_Web/4_0_30319/crystalreportviewers115/images/Tree/"
+    ToolbarImagesFolderUrl="~/aspnet_client/system_web/4_0_30319/crystalreportviewers115/images/toolbar/" 
+      CssFilename="~/aspnet_client/system_web/4_0_30319/crystalreportviewers115/css/default.css"
+         />
+
+
+
+
+
+</div>
+   
+
+        </div>
+        </div>
+        </div>
+</asp:Content>
+

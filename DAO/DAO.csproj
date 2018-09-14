@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0077297A-7B44-4650-8846-500802301DE1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAO</RootNamespace>
+    <AssemblyName>DAO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x86|AnyCPU'">
+    <OutputPath>bin\x86\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x86|x86'">
+    <OutputPath>bin\x86\x86\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PTTDB.cs" />
+    <Compile Include="PTT\Admin\PTTUserInfoDAO.cs" />
+    <Compile Include="PTT\Admin\USERGroupAutorizeDAO.cs" />
+    <Compile Include="PTT\Admin\USERRoleAutorizeDAO.cs" />
+    <Compile Include="PTT\Admin\UserRoleDAO.cs" />
+    <Compile Include="PTT\Master\M_DIGFromDAO.cs" />
+    <Compile Include="PTT\Master\M_UndergroundDAO.cs" />
+    <Compile Include="PTT\Master\M_PositionDAO.cs" />
+    <Compile Include="PTT\Master\M_TypeOfRouteCodeDAO.cs" />
+    <Compile Include="PTT\Master\M_PipelineLengthDAO.cs" />
+    <Compile Include="PTT\Master\M_LocationClassDAO.cs" />
+    <Compile Include="PTT\Master\M_MAOPDAO.cs" />
+    <Compile Include="PTT\Master\M_RouteCodeDAO.cs" />
+    <Compile Include="PTT\Master\M_CustomerTypeDAO.cs" />
+    <Compile Include="PTT\Master\M_PipeGradDAO.cs" />
+    <Compile Include="PTT\Master\M_DiameterDAO.cs" />
+    <Compile Include="PTT\Master\M_CoatingTypeDAO.cs" />
+    <Compile Include="PTT\Master\M_KPDAO.cs" />
+    <Compile Include="PTT\Master\M_LicenseDAO.cs" />
+    <Compile Include="PTT\Master\M_StationDAO.cs" />
+    <Compile Include="PTT\Master\M_AssertOwnerDAO.cs" />
+    <Compile Include="PTT\Master\M_SectionDAO.cs" />
+    <Compile Include="PTT\LogDAO.cs" />
+    <Compile Include="PTT\Admin\MenuDAO.cs" />
+    <Compile Include="PTT\Master\M_RegionDAO.cs" />
+    <Compile Include="PTT\Admin\UserDAO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PTT\Admin\UserPermissionDAO.cs" />
+    <Compile Include="PTT\Plan\T_Planing_Action_AfterRemovalDAO.cs" />
+    <Compile Include="PTT\Plan\T_Planing_Action_SiteRecoveryDAO.cs" />
+    <Compile Include="PTT\Plan\T_Planing_Action_AfterAppliedCoatingDAO.cs" />
+    <Compile Include="PTT\Plan\T_Planing_Action_AppliedCoatingDAO.cs" />
+    <Compile Include="PTT\Plan\T_Planing_Action_BFRemovalDAO.cs" />
+    <Compile Include="PTT\Plan\T_Planing_WeatherCollectionDAO.cs" />
+    <Compile Include="PTT\Plan\T_Planing_Action_SitePreparationDAO.cs" />
+    <Compile Include="PTT\Plan\T_Planing_Action_SiteSurveyDAO.cs" />
+    <Compile Include="PTT\Plan\T_Planing_SpecPODAO.cs" />
+    <Compile Include="PTT\Plan\T_PlaningDAO.cs" />
+    <Compile Include="PTT\Util\DropDownListDAO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{F8ABA6A6-EA56-4BEA-9A2B-6E35CA85C945}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,16 @@
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\bin\Release\DAO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\bin\Release\DAO.pdb
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\bin\Release\DTO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\bin\Release\itextsharp.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\bin\Release\DTO.pdb
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\obj\Release\DAO.csprojResolveAssemblyReference.cache
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\obj\Release\DAO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DAO\obj\Release\DAO.pdb
+D:\Web\PTTAPI\API\DAO\bin\Release\DAO.dll
+D:\Web\PTTAPI\API\DAO\bin\Release\DAO.pdb
+D:\Web\PTTAPI\API\DAO\bin\Release\DTO.dll
+D:\Web\PTTAPI\API\DAO\bin\Release\itextsharp.dll
+D:\Web\PTTAPI\API\DAO\bin\Release\DTO.pdb
+D:\Web\PTTAPI\API\DAO\obj\Release\DAO.csprojResolveAssemblyReference.cache
+D:\Web\PTTAPI\API\DAO\obj\Release\DAO.dll
+D:\Web\PTTAPI\API\DAO\obj\Release\DAO.pdb

@@ -1,0 +1,6 @@
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\bin\Release\DTO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\bin\Release\DTO.pdb
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\bin\Release\itextsharp.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\bin\Release\PdfSharp.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\obj\Release\DTO.dll
+D:\Web\PTT\Web\Intranet\PTTProject\DTO\obj\Release\DTO.pdb
