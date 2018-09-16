@@ -109,15 +109,19 @@
 
 
         function ExportFile(reportNo) {
-
-
+            
             var param = "";
             var formData = new FormData();
 
-           
+            formData.append("Action", "ExportSummaryPlan");
+
+            formData.append("AssetOwnerID", $('.ddlAssertOwner').val());
+            formData.append("RegionID", $('.ddlRegion').val());
+            formData.append("RouteCodeID", $('.ddlRouteCode').val());
+            formData.append("Year", $('.ddlYear').val());
 
 
-            waitingDialog.show('Exporting to Excel', { dialogSize: 'lg', progressType: 'light' });
+            waitingDialog.show('Exporting -  Summary Complete Report', { dialogSize: 'lg', progressType: 'light' });
 
 
 
@@ -132,8 +136,6 @@
             }, 3000);
 
             window.open(exportPlan + "&RPTType=report1_summarycomplete" + param, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=200,width=5,height=5");
-
-
 
 
         }

@@ -93,54 +93,47 @@ function ExportFile(reportNo)
 
 
  function ViewSummaryReport()
-  {
-      
- var formData = new FormData();
+ {     
+    var formData = new FormData();
    
-     formData.append("Action", "SumOverAllReport");
+    formData.append("Action", "SumOverAllReport");
+    formData.append("AssetOwnerID", $('.ddlAssetOwner').val());
+    formData.append("STMonth", $('.ddlFrom').val());
+    formData.append("ENMonth", $('.ddlTo').val());
+    formData.append("Year", $('.ddlYear').val());  
 
-     formData.append("AssetOwnerID", $('.ddlAssetOwner').val());
-      formData.append("STMonth", $('.ddlFrom').val());
-        formData.append("ENMonth", $('.ddlTo').val());
-     formData.append("Year", $('.ddlYear').val());
-  
+    waitingDialog.show('Exporting to Excel', { dialogSize: 'lg', progressType: 'light' });
 
-     waitingDialog.show('Exporting to Excel', { dialogSize: 'lg', progressType: 'light' });
-
-     $.ajax({
+    $.ajax({
         url: currentURL,
         type: "POST",
         data: formData,
         contentType: false,
         processData: false,
         success: function (result) {
-
-         var obj = JSON.parse(result)
-
-         if(obj!=null && obj.DonutGraphRiskBeforeReport!=null)
-         {
-       LoadOverAllChart(obj.DonutGraphReport);
-       LoadRiskBeforeChart(obj.DonutGraphRiskBeforeReport);
-         LoadCoatingTypeChart(obj.DonutGraphCoatingTypeReport);
-         LoadRiskAfterChart(obj.DonutGraphRiskAfterReport);
-             LoadPipelineTypeChart(obj.DonutGraphPipelineTypeReport);
-       }
-        if(obj!=null && obj.OverAllTableReport!=null)
-         {
-
-         reportObject=obj.OverAllTableReport;
-       LoadTable(obj.OverAllTableReport)
-       }
-         setTimeout(function () { waitingDialog.hide(); }, 1000);
+            var obj = JSON.parse(result)
+            if(obj!=null && obj.DonutGraphRiskBeforeReport!=null)
+            {
+                LoadOverAllChart(obj.DonutGraphReport);
+                LoadRiskBeforeChart(obj.DonutGraphRiskBeforeReport);
+                LoadCoatingTypeChart(obj.DonutGraphCoatingTypeReport);
+                LoadRiskAfterChart(obj.DonutGraphRiskAfterReport);
+                LoadPipelineTypeChart(obj.DonutGraphPipelineTypeReport);
+            }
+            if(obj!=null && obj.OverAllTableReport!=null)
+            {
+                reportObject=obj.OverAllTableReport;
+                LoadTable(obj.OverAllTableReport)
+            }
+            setTimeout(function () { waitingDialog.hide(); }, 1000);
         },
-         error: function(data) {
-          alert("error");
+        error: function(data) {
+            alert("error");
+            console.log("##### Error :", data);
+            setTimeout(function () { waitingDialog.hide(); }, 1000);
         }
-
-});
-
-  
-  }
+    });  
+ }
 
 
   function LoadTable(objList)

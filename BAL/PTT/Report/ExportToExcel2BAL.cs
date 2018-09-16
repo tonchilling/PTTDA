@@ -1057,6 +1057,8 @@ namespace BAL.PTT.Report
 
                     exportStackedColumnSummaryCompletelyChart(sheetData, cell, mergeCells, drawingsPart, summaryPlanReport, dto);
 
+                    exportStackedColumnSummaryCompletelyQuoterChart(sheetData, cell, mergeCells, drawingsPart, summaryPlanReport, dto);
+
                     drawingsPart.WorksheetDrawing.Save();
 
                     worksheetPart.Worksheet.InsertAfter(mergeCells, worksheetPart.Worksheet.Elements<SheetData>().First());
@@ -1075,7 +1077,7 @@ namespace BAL.PTT.Report
 
         public void exportStackedColumnSummaryCompletelyChart(SheetData sheetData, Cell cell, MergeCells mergeCells, DrawingsPart drawingsPart, SummaryPlanReport summaryPlanReport, SearchDTO searchDto)
         {
-            int lRow = 30;
+            int lRow = 45;
             #region Header
             cell = openExcelUtil.GetCell(sheetData, "B", (uint)lRow);
             cell.CellValue = new CellValue("Region");
@@ -1229,7 +1231,7 @@ namespace BAL.PTT.Report
             */
 
             //Series Value
-            string formulaVal = "SummaryCompletely!$C$32:$C$" + (32 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
+            string formulaVal = "SummaryCompletely!$C$47:$C$" + (47 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
             DocumentFormat.OpenXml.Drawing.Charts.Values values = barChartSeries.AppendChild(new DocumentFormat.OpenXml.Drawing.Charts.Values());
 
             values.AppendChild(new NumberReference()
@@ -1241,7 +1243,7 @@ namespace BAL.PTT.Report
             CategoryAxisData categoryAxisData = barChartSeries.AppendChild(new CategoryAxisData());
             // Category
             // Constructing the chart category
-            string formulaCat = "SummaryCompletely!$B$32:$B$" + (32 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
+            string formulaCat = "SummaryCompletely!$B$47:$B$" + (47 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
 
             StringReference stringReference = categoryAxisData.AppendChild(new StringReference()
             {
@@ -1255,7 +1257,7 @@ namespace BAL.PTT.Report
                     new SeriesText(new NumericValue() { Text = "Plan" })
                 ));
             //Series Value
-            string formulaVal2 = "SummaryCompletely!$D$32:$D$" + (32 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
+            string formulaVal2 = "SummaryCompletely!$D$47:$D$" + (47 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
             DocumentFormat.OpenXml.Drawing.Charts.Values values2 = barChartSeries2.AppendChild(new DocumentFormat.OpenXml.Drawing.Charts.Values());
 
             values2.AppendChild(new NumberReference()
@@ -1280,7 +1282,7 @@ namespace BAL.PTT.Report
                     new SeriesText(new NumericValue() { Text = "Postpone" })
                 ));
             //Series Value
-            string formulaVal3 = "SummaryCompletely!$E$32:$E$" + (32 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
+            string formulaVal3 = "SummaryCompletely!$E$47:$E$" + (47 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
             DocumentFormat.OpenXml.Drawing.Charts.Values values3 = barChartSeries3.AppendChild(new DocumentFormat.OpenXml.Drawing.Charts.Values());
 
             values3.AppendChild(new NumberReference()
@@ -1297,119 +1299,7 @@ namespace BAL.PTT.Report
             {
                 Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaCat }
             });
-
-            LineChartSeries barChartSeries4 = barChart.AppendChild(new LineChartSeries(
-                    new Index() { Val = (uint)3 },
-                    new Order() { Val = (uint)3 },
-                    new Marker(
-                        new Symbol() { Val = new EnumValue<MarkerStyleValues>(MarkerStyleValues.Diamond) }
-                    ),
-                    new SeriesText(new NumericValue() { Text = "Q1" })
-                ));
-
-            //Series Value
-            string formulaVal4 = "SummaryCompletely!$F$32:$F$" + (32 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
-            DocumentFormat.OpenXml.Drawing.Charts.Values values4 = barChartSeries4.AppendChild(new DocumentFormat.OpenXml.Drawing.Charts.Values());
-
-            values4.AppendChild(new NumberReference()
-            {
-                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaVal4 }
-            });
-
-            // Adding category axis to the chart
-            CategoryAxisData categoryAxisData4 = barChartSeries4.AppendChild(new CategoryAxisData());
-            // Category
-            // Constructing the chart category
-
-            StringReference stringReference4 = categoryAxisData4.AppendChild(new StringReference()
-            {
-                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaCat }
-            });
-
-
-            LineChartSeries barChartSeries5 = barChart.AppendChild(new LineChartSeries(
-                    new Index() { Val = (uint)4 },
-                    new Order() { Val = (uint)4 },
-                    new Marker(
-                        new Symbol() { Val = new EnumValue<MarkerStyleValues>(MarkerStyleValues.Dash) }
-                    ),
-                    new SeriesText(new NumericValue() { Text = "Q2" })
-                ));
-            //Series Value
-            string formulaVal5 = "SummaryCompletely!$G$32:$G$" + (32 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
-            DocumentFormat.OpenXml.Drawing.Charts.Values values5 = barChartSeries5.AppendChild(new DocumentFormat.OpenXml.Drawing.Charts.Values());
-
-            values5.AppendChild(new NumberReference()
-            {
-                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaVal5 }
-            });
-
-            // Adding category axis to the chart
-            CategoryAxisData categoryAxisData5 = barChartSeries5.AppendChild(new CategoryAxisData());
-            // Category
-            // Constructing the chart category
-
-            StringReference stringReference5 = categoryAxisData5.AppendChild(new StringReference()
-            {
-                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaCat }
-            });
-
-
-            LineChartSeries barChartSeries6 = barChart.AppendChild(new LineChartSeries(
-                    new Index() { Val = (uint)5 },
-                    new Order() { Val = (uint)5 },
-                    new Marker(
-                        new Symbol() { Val = new EnumValue<MarkerStyleValues>(MarkerStyleValues.Dash) }
-                    ),
-                    new SeriesText(new NumericValue() { Text = "Q3" })
-                ));
-            //Series Value
-            string formulaVal6 = "SummaryCompletely!$H$32:$H$" + (32 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
-            DocumentFormat.OpenXml.Drawing.Charts.Values values6 = barChartSeries6.AppendChild(new DocumentFormat.OpenXml.Drawing.Charts.Values());
-
-            values6.AppendChild(new NumberReference()
-            {
-                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaVal6 }
-            });
-
-            // Adding category axis to the chart
-            CategoryAxisData categoryAxisData6 = barChartSeries6.AppendChild(new CategoryAxisData());
-            // Category
-            // Constructing the chart category
-
-            StringReference stringReference6 = categoryAxisData6.AppendChild(new StringReference()
-            {
-                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaCat }
-            });
-
-
-            LineChartSeries barChartSeries7 = barChart.AppendChild(new LineChartSeries(
-                    new Index() { Val = (uint)6 },
-                    new Order() { Val = (uint)6 },
-                    new Marker(
-                        new Symbol() { Val = new EnumValue<MarkerStyleValues>(MarkerStyleValues.Dash) }
-                    ),
-                    new SeriesText(new NumericValue() { Text = "Q4" })
-                ));
-            //Series Value
-            string formulaVal7 = "SummaryCompletely!$I$32:$I$" + (32 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
-            DocumentFormat.OpenXml.Drawing.Charts.Values values7 = barChartSeries7.AppendChild(new DocumentFormat.OpenXml.Drawing.Charts.Values());
-
-            values7.AppendChild(new NumberReference()
-            {
-                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaVal6 }
-            });
-
-            // Adding category axis to the chart
-            CategoryAxisData categoryAxisData7 = barChartSeries7.AppendChild(new CategoryAxisData());
-            // Category
-            // Constructing the chart category
-
-            StringReference stringReference7 = categoryAxisData7.AppendChild(new StringReference()
-            {
-                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaCat }
-            });
-
+            
             barChart.AppendChild(new DataLabels(
                                 new ShowLegendKey() { Val = true },
                                 new ShowValue() { Val = false },
@@ -1487,6 +1377,232 @@ namespace BAL.PTT.Report
                     new NonVisualDrawingProperties()
                     {
                         Id = 2u,
+                        Name = "Sample Chart"
+                    },
+                    new NonVisualGraphicFrameDrawingProperties()
+                ));
+
+            graphicFrame.Append(new Transform(
+                    new DocumentFormat.OpenXml.Drawing.Offset() { X = 0L, Y = 0L },
+                    new DocumentFormat.OpenXml.Drawing.Extents() { Cx = 0L, Cy = 0L }
+                ));
+
+            graphicFrame.Append(new DocumentFormat.OpenXml.Drawing.Graphic(
+                    new DocumentFormat.OpenXml.Drawing.GraphicData(
+                            new ChartReference() { Id = drawingsPart.GetIdOfPart(chartPart) }
+                        )
+                    { Uri = "http://schemas.openxmlformats.org/drawingml/2006/chart" }
+                ));
+
+            twoCellAnchor.Append(new ClientData());
+
+        }
+
+        public void exportStackedColumnSummaryCompletelyQuoterChart(SheetData sheetData, Cell cell, MergeCells mergeCells, DrawingsPart drawingsPart, SummaryPlanReport summaryPlanReport, SearchDTO searchDto)
+        {
+            // Add a new chart and set the chart language
+            ChartPart chartPart = drawingsPart.AddNewPart<ChartPart>();
+            chartPart.ChartSpace = new ChartSpace();
+            chartPart.ChartSpace.AppendChild(new EditingLanguage() { Val = "en-US" });
+            Chart chart = chartPart.ChartSpace.AppendChild(new Chart());
+            //chart.AppendChild(new AutoTitleDeleted() { Val = true }); // We don't want to show the chart title
+            //chart.Legend = new Legend();
+            AddChartTitle(chart, "PM Transmission " + searchDto.Year);
+
+            // Create a new Clustered Column Chart
+            PlotArea plotArea = chart.AppendChild(new PlotArea());
+            Layout layout = plotArea.AppendChild(new Layout());
+            
+            BarChart barChart = plotArea.AppendChild(new BarChart(
+                        new BarDirection() { Val = new EnumValue<BarDirectionValues>(BarDirectionValues.Column) },
+                        new BarGrouping() { Val = new EnumValue<BarGroupingValues>(BarGroupingValues.PercentStacked) },
+                        new VaryColors() { Val = false }
+                    ));
+
+            // Constructing header
+            Row row = new Row();
+            barChart.AppendChild(new Overlap() { Val = 100 });
+            barChart.AppendChild(new GapWidth() { Val = 250 });
+
+            // Create chart series
+            BarChartSeries barChartSeriesQ1 = barChart.AppendChild(new BarChartSeries(
+                    new Index() { Val = (uint)0 },
+                    new Order() { Val = (uint)0 },
+                    new SeriesText(new NumericValue() { Text = "Q1" })
+                ));
+
+            //Series Value
+            string formulaCat = "SummaryCompletely!$B$47:$B$" + (47 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
+            string formulaValQ1 = "SummaryCompletely!$F$47:$F$" + (47 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
+            DocumentFormat.OpenXml.Drawing.Charts.Values valuesQ1 = barChartSeriesQ1.AppendChild(new DocumentFormat.OpenXml.Drawing.Charts.Values());
+
+            valuesQ1.AppendChild(new NumberReference()
+            {
+                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaValQ1 }
+            });
+
+            // Adding category axis to the chart
+            CategoryAxisData categoryAxisDataQ1 = barChartSeriesQ1.AppendChild(new CategoryAxisData());
+            // Category
+            // Constructing the chart category
+
+            StringReference stringReferenceQ1 = categoryAxisDataQ1.AppendChild(new StringReference()
+            {
+                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaCat }
+            });
+
+
+            BarChartSeries barChartSeriesQ2 = barChart.AppendChild(new BarChartSeries(
+                    new Index() { Val = (uint)1 },
+                    new Order() { Val = (uint)1 },
+                    new SeriesText(new NumericValue() { Text = "Q2" })
+                ));
+            //Series Value
+            string formulaValQ2 = "SummaryCompletely!$G$47:$G$" + (47 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
+            DocumentFormat.OpenXml.Drawing.Charts.Values valuesQ2 = barChartSeriesQ2.AppendChild(new DocumentFormat.OpenXml.Drawing.Charts.Values());
+
+            valuesQ2.AppendChild(new NumberReference()
+            {
+                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaValQ2 }
+            });
+
+            // Adding category axis to the chart
+            CategoryAxisData categoryAxisDataQ2 = barChartSeriesQ2.AppendChild(new CategoryAxisData());
+            // Category
+            // Constructing the chart category
+
+            StringReference stringReferenceQ2 = categoryAxisDataQ2.AppendChild(new StringReference()
+            {
+                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaCat }
+            });
+
+
+            BarChartSeries barChartSeriesQ3 = barChart.AppendChild(new BarChartSeries(
+                    new Index() { Val = (uint)2 },
+                    new Order() { Val = (uint)2 },
+                    new SeriesText(new NumericValue() { Text = "Q3" })
+                ));
+            //Series Value
+            string formulaValQ3 = "SummaryCompletely!$H$47:$H$" + (47 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
+            DocumentFormat.OpenXml.Drawing.Charts.Values valuesQ3 = barChartSeriesQ3.AppendChild(new DocumentFormat.OpenXml.Drawing.Charts.Values());
+
+            valuesQ3.AppendChild(new NumberReference()
+            {
+                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaValQ3 }
+            });
+
+            // Adding category axis to the chart
+            CategoryAxisData categoryAxisDataQ3 = barChartSeriesQ3.AppendChild(new CategoryAxisData());
+            // Category
+            // Constructing the chart category
+
+            StringReference stringReferenceQ3 = categoryAxisDataQ3.AppendChild(new StringReference()
+            {
+                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaCat }
+            });
+
+
+            BarChartSeries barChartSeriesQ4 = barChart.AppendChild(new BarChartSeries(
+                    new Index() { Val = (uint)3 },
+                    new Order() { Val = (uint)3 },
+                    new SeriesText(new NumericValue() { Text = "Q4" })
+                ));
+            //Series Value
+            string formulaValQ4 = "SummaryCompletely!$I$47:$I$" + (47 + summaryPlanReport.SumaryCompletelyByRegionTable.Count - 1);
+            DocumentFormat.OpenXml.Drawing.Charts.Values valuesQ4 = barChartSeriesQ4.AppendChild(new DocumentFormat.OpenXml.Drawing.Charts.Values());
+
+            valuesQ4.AppendChild(new NumberReference()
+            {
+                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaValQ4 }
+            });
+
+            // Adding category axis to the chart
+            CategoryAxisData categoryAxisDataQ4 = barChartSeriesQ4.AppendChild(new CategoryAxisData());
+            // Category
+            // Constructing the chart category
+
+            StringReference stringReferenceQ4 = categoryAxisDataQ4.AppendChild(new StringReference()
+            {
+                Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaCat }
+            });
+
+            barChart.AppendChild(new DataLabels(
+                                new ShowLegendKey() { Val = true },
+                                new ShowValue() { Val = false },
+                                new ShowCategoryName() { Val = false },
+                                new ShowSeriesName() { Val = true },
+                                new ShowPercent() { Val = false },
+                                new ShowBubbleSize() { Val = false }
+                            ));
+            barChart.Append(new AxisId() { Val = 48650113u });
+            barChart.Append(new AxisId() { Val = 48672769u });
+
+            // Adding Category Axis
+            plotArea.AppendChild(
+                new CategoryAxis(
+                    new AxisId() { Val = 48650113u },
+                    new Scaling(new Orientation() { Val = new EnumValue<DocumentFormat.OpenXml.Drawing.Charts.OrientationValues>(DocumentFormat.OpenXml.Drawing.Charts.OrientationValues.MinMax) }),
+                    new Delete() { Val = false },
+                    new AxisPosition() { Val = new EnumValue<AxisPositionValues>(AxisPositionValues.Bottom) },
+                    new TickLabelPosition() { Val = new EnumValue<TickLabelPositionValues>(TickLabelPositionValues.NextTo) },
+                    new CrossingAxis() { Val = 48672769u },
+                    new Crosses() { Val = new EnumValue<CrossesValues>(CrossesValues.AutoZero) },
+                    new AutoLabeled() { Val = true },
+                    new LabelAlignment() { Val = new EnumValue<LabelAlignmentValues>(LabelAlignmentValues.Center) }
+                ));
+
+            // Adding Value Axis
+            plotArea.AppendChild(
+                new ValueAxis(
+                    new AxisId() { Val = 48672769u },
+                    new Scaling(new Orientation() { Val = new EnumValue<DocumentFormat.OpenXml.Drawing.Charts.OrientationValues>(DocumentFormat.OpenXml.Drawing.Charts.OrientationValues.MinMax) }),
+                    new Delete() { Val = false },
+                    new AxisPosition() { Val = new EnumValue<AxisPositionValues>(AxisPositionValues.Left) },
+                    new MajorGridlines(),
+                    new DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat()
+                    {
+                        FormatCode = "General",
+                        SourceLinked = true
+                    },
+                    new TickLabelPosition() { Val = new EnumValue<TickLabelPositionValues>(TickLabelPositionValues.NextTo) },
+                    new CrossingAxis() { Val = 48650113u },
+                    new Crosses() { Val = new EnumValue<CrossesValues>(CrossesValues.AutoZero) },
+                    new CrossBetween() { Val = new EnumValue<CrossBetweenValues>(CrossBetweenValues.Between) }
+                ));
+
+            chart.Append(
+                    new PlotVisibleOnly() { Val = true },
+                    new DisplayBlanksAs() { Val = new EnumValue<DisplayBlanksAsValues>(DisplayBlanksAsValues.Gap) },
+                    new ShowDataLabelsOverMaximum() { Val = false }
+                );
+
+            chartPart.ChartSpace.Save();
+
+            // Positioning the chart on the spreadsheet
+            TwoCellAnchor twoCellAnchor = drawingsPart.WorksheetDrawing.AppendChild(new TwoCellAnchor());
+
+            twoCellAnchor.Append(new DocumentFormat.OpenXml.Drawing.Spreadsheet.FromMarker(
+                    new ColumnId("1"),
+                    new ColumnOffset("0"),
+                    new RowId("22"),
+                    new RowOffset("0")
+                ));
+
+            twoCellAnchor.Append(new DocumentFormat.OpenXml.Drawing.Spreadsheet.ToMarker(
+                    new ColumnId("17"),
+                    new ColumnOffset("0"),
+                    new RowId("41"),
+                    new RowOffset("0")
+                ));
+
+            // Append GraphicFrame to TwoCellAnchor
+            GraphicFrame graphicFrame = twoCellAnchor.AppendChild(new GraphicFrame());
+            graphicFrame.Macro = string.Empty;
+
+            graphicFrame.Append(new NonVisualGraphicFrameProperties(
+                    new NonVisualDrawingProperties()
+                    {
+                        Id = 3u,
                         Name = "Sample Chart"
                     },
                     new NonVisualGraphicFrameDrawingProperties()

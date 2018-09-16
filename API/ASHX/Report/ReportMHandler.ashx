@@ -24,7 +24,6 @@ public class ReportMHandler : IHttpHandler, IRequiresSessionState
     M_AssertOwnerDTO dto = null;
     bool result = false;
     JavaScriptSerializer json = null;
-    BAL.PTT.Report.ExportToExcelBAL exportToExcelBAL = null;
     string desPath = System.Configuration.ConfigurationManager.AppSettings["UploadPlan"];
 
 
@@ -76,11 +75,11 @@ public class ReportMHandler : IHttpHandler, IRequiresSessionState
 
                         break;
 
-
+/*
                     case "ExportSummaryPlan": ExportSummaryPlan(context);//Export(context);
 
 
-                        break;
+                        break;*/
 
 
                     case "ExportSRR": GetDataExportToCSV(context);//Export(context);
@@ -259,7 +258,7 @@ public class ReportMHandler : IHttpHandler, IRequiresSessionState
 
     }
 
-
+    /*
 
     public void ExportSummaryPlan(HttpContext context)
     {
@@ -290,7 +289,7 @@ public class ReportMHandler : IHttpHandler, IRequiresSessionState
         }
     }
 
-
+    */
 
 
     public void ExportTest(HttpContext context)

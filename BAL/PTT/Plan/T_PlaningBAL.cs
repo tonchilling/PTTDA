@@ -601,7 +601,7 @@ namespace BAL.PTT.Plan
 
 
                 //รอดำเนินการ
-                graphAllTempList = graphAllList.Where(plan => plan.status == "1").OrderBy(plan => Convert.ToInt32(plan.RegionCode)).ToList();
+                graphAllTempList = graphAllList.Where(plan => plan.status == "1").OrderBy(plan => plan.RegionCode).ToList();
 
                 if (graphAllTempList != null && graphAllTempList.Count > 0)
                 {
@@ -626,7 +626,7 @@ namespace BAL.PTT.Plan
 
 
                 //เสร็จ
-                graphAllTempList = graphAllList.Where(plan => plan.status == "2").OrderBy(plan => Convert.ToInt32(plan.RegionCode)).ToList();
+                graphAllTempList = graphAllList.Where(plan => plan.status == "2").OrderBy(plan => plan.RegionCode).ToList();
 
                 if (graphAllTempList != null && graphAllTempList.Count > 0)
                 {
@@ -651,7 +651,7 @@ namespace BAL.PTT.Plan
 
 
                 //เลื่อแผน
-                graphAllTempList = graphAllList.Where(plan => plan.status == "3").OrderBy(plan => Convert.ToInt32(plan.RegionCode)).ToList();
+                graphAllTempList = graphAllList.Where(plan => plan.status == "3").OrderBy(plan => plan.RegionCode).ToList();
 
                 if (graphAllTempList != null && graphAllTempList.Count > 0)
                 {
@@ -679,7 +679,7 @@ namespace BAL.PTT.Plan
 
 
                 //Q1
-                graphAllTempList = graphAllList.Where(plan => plan.status == "4").OrderBy(plan => Convert.ToInt32(plan.RegionCode)).ToList();
+                graphAllTempList = graphAllList.Where(plan => plan.status == "4").OrderBy(plan => plan.RegionCode).ToList();
 
                 if (graphAllTempList != null && graphAllTempList.Count > 0)
                 {
@@ -708,7 +708,7 @@ namespace BAL.PTT.Plan
 
 
                 //Q2
-                graphAllTempList = graphAllList.Where(plan => plan.status == "5").OrderBy(plan => Convert.ToInt32(plan.RegionCode)).ToList();
+                graphAllTempList = graphAllList.Where(plan => plan.status == "5").OrderBy(plan => plan.RegionCode).ToList();
 
                 if (graphAllTempList != null && graphAllTempList.Count > 0)
                 {
@@ -735,7 +735,7 @@ namespace BAL.PTT.Plan
                 }
 
                 //Q3
-                graphAllTempList = graphAllList.Where(plan => plan.status == "6").OrderBy(plan => Convert.ToInt32(plan.RegionCode)).ToList();
+                graphAllTempList = graphAllList.Where(plan => plan.status == "6").OrderBy(plan => plan.RegionCode).ToList();
 
                 if (graphAllTempList != null && graphAllTempList.Count > 0)
                 {
@@ -763,7 +763,7 @@ namespace BAL.PTT.Plan
 
 
                 //Q4
-                graphAllTempList = graphAllList.Where(plan => plan.status == "7").OrderBy(plan => Convert.ToInt32(plan.RegionCode)).ToList();
+                graphAllTempList = graphAllList.Where(plan => plan.status == "7").OrderBy(plan => plan.RegionCode).ToList();
 
                 if (graphAllTempList != null && graphAllTempList.Count > 0)
                 {
@@ -1108,7 +1108,6 @@ namespace BAL.PTT.Plan
         {
 
             Byte[] reusult = null;
-             BAL.PTT.Report.ExportToExcelBAL exportBal = new BAL.PTT.Report.ExportToExcelBAL();
             BAL.PTT.Report.ExportToExcel2BAL export2Bal = new BAL.PTT.Report.ExportToExcel2BAL();
             ExportPlanReport exportPlanReport = null;
             List<ExportPlaningDTO> planResult = null;
