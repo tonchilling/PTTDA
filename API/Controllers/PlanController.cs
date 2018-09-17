@@ -94,6 +94,10 @@ namespace API.Controllers
                     dto.Year = DateTime.Now.Year.ToString();
                 }
                 string UserID = context.Request.Form["UserID"];
+                if (ObjUtil.isEmpty(UserID))
+                {
+                    throw new Exception("UserID is require");
+                }
                 dto.CreateBy = UserID;
                 dto.UpdateBy = UserID;
 
@@ -128,6 +132,10 @@ namespace API.Controllers
 
                 T_PlaningDTO planingDTO = GetRequestToObject(context);
                 string UserID = context.Request.Form["UserID"];
+                if (ObjUtil.isEmpty(UserID))
+                {
+                    throw new Exception("UserID is require");
+                }
                 planingDTO.CreateBy = UserID;
                 planingDTO.UpdateBy = UserID;
 
@@ -157,6 +165,10 @@ namespace API.Controllers
 
                 T_PlaningDTO planingDTO = GetRequestToObject(context);
                 string UserID = context.Request.Form["UserID"];
+                if (ObjUtil.isEmpty(UserID))
+                {
+                    throw new Exception("UserID is require");
+                }
                 planingDTO.CreateBy = UserID;
                 planingDTO.UpdateBy = UserID;
 
@@ -190,9 +202,17 @@ namespace API.Controllers
                 
                 dto = ConvertX.GetReqeustForm<T_PlaningDTO>();
                 string RoleLevel = context.Request.Form["RoleLevel"];
-                string UserID = context.Request.Form["UserID"];
+                if (ObjUtil.isEmpty(RoleLevel))
+                {
+                    throw new Exception("RoleLevel is require");
+                }
                 if (RoleLevel == "1")
                 {
+                    string UserID = context.Request.Form["UserID"];
+                    if (ObjUtil.isEmpty(UserID))
+                    {
+                        throw new Exception("UserID is require");
+                    }
                     dto.CreateBy = UserID;
                     dto.UpdateBy = UserID;
                 }

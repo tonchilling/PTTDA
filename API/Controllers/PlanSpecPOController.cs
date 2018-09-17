@@ -104,6 +104,10 @@ namespace API.Controllers
                     bal = new T_Planing_SpecPOBAL();
 
                     string UserID = context.Request.Form["UserID"];
+                    if (ObjUtil.isEmpty(UserID))
+                    {
+                        throw new Exception("UserID is require");
+                    }
                     dto.CreateBy = UserID;
                     dto.UpdateBy = UserID;
                     string currentDate = string.Format("{0}/{1}/{2}", DateTime.Now.Day.ToString("##00")
@@ -190,6 +194,10 @@ namespace API.Controllers
 
                 T_Planing_SpecPODTO dto = ConvertX.GetReqeustForm<T_Planing_SpecPODTO>();
                 string UserID = context.Request.Form["UserID"];
+                if (ObjUtil.isEmpty(UserID))
+                {
+                    throw new Exception("UserID is require");
+                }
                 dto.CreateBy = UserID;
                 dto.UpdateBy = UserID;
 
