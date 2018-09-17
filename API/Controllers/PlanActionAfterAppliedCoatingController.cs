@@ -43,7 +43,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                logger.error("LoadList error:" + ex.ToString());
+                logger.error("Search error:" + ex.ToString());
                 response.statusText = ex.ToString();
             }
 
@@ -83,7 +83,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                logger.error("LoadDetail error:" + ex.ToString());
+                logger.error("View error:" + ex.ToString());
                 response.statusText = ex.ToString();
             }
 

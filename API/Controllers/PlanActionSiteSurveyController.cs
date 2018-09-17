@@ -11,32 +11,32 @@ using System.Web.Script.Serialization;
 
 namespace API.Controllers
 {
-    [RoutePrefix("api/PlanActionSiteRecovery")]
-    public class PlanActionSiteRecoveryController : ApiController
+    [RoutePrefix("api/PlanActionSiteSurvey")]
+    public class PlanActionSiteSurveyController : ApiController
     {
-        Logger logger = new Logger("PlanActionSiteRecoveryController");
-        string planPath = System.Configuration.ConfigurationManager.AppSettings["SiteRecoveryPath"];
-        T_Planing_Action_SiteRecoveryBAL bal = null;
+        Logger logger = new Logger("PlanActionSiteSurveyController");
+        string planPath = System.Configuration.ConfigurationManager.AppSettings["SiteSurveyPath"];
+        T_Planing_Action_SiteSurveyBAL bal = null;
 
         [HttpPost]
         [Route("Search")]
         public HttpResponseMessage Search()
         {
             var deserializer = new JavaScriptSerializer();
-            bal = new T_Planing_Action_SiteRecoveryBAL();
+            bal = new T_Planing_Action_SiteSurveyBAL();
             ResposeType response = new ResposeType();
             HttpResponseMessage mapMessage = null;
             
-            T_Planing_Action_SiteRecoveryDTO dto = null;
-            List<T_Planing_Action_SiteRecoveryDTO> objList = null;
+            T_Planing_Action_SiteSurveyDTO dto = null;
+            List<T_Planing_Action_SiteSurveyDTO> objList = null;
 
             try
             {
                 var context = HttpContext.Current;
 
-                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteRecoveryDTO>();
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteSurveyDTO>();
 
-                logger.debug("Search dto :" + dto.ToString());
+                logger.debug("Search dto:" + dto.ToString());
                 objList = bal.FindByObjList(dto);
 
                 response.statusCode = true;
@@ -57,19 +57,19 @@ namespace API.Controllers
         public HttpResponseMessage View()
         {
             var deserializer = new JavaScriptSerializer();
-            bal = new T_Planing_Action_SiteRecoveryBAL();
+            bal = new T_Planing_Action_SiteSurveyBAL();
             ResposeType response = new ResposeType();
             HttpResponseMessage mapMessage = null;
             
-            T_Planing_Action_SiteRecoveryDTO dto = null;
+            T_Planing_Action_SiteSurveyDTO dto = null;
 
             try
             {
                 var context = HttpContext.Current;
 
-                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteRecoveryDTO>();
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteSurveyDTO>();
 
-                logger.debug("View dto :" + dto.ToString());
+                logger.debug("View dto:" + dto.ToString());
                 dto = bal.FindByPK(dto);
 
                 if (dto != null && dto.UploadFileList != null)
@@ -96,11 +96,11 @@ namespace API.Controllers
         [Route("Add")]
         public HttpResponseMessage Add()
         {
-            bal = new T_Planing_Action_SiteRecoveryBAL();
+            bal = new T_Planing_Action_SiteSurveyBAL();
             ResposeType response = new ResposeType();
             HttpResponseMessage mapMessage = null;
             
-            T_Planing_Action_SiteRecoveryDTO dto = null;
+            T_Planing_Action_SiteSurveyDTO dto = null;
             List<T_Planing_File> fileList = null;
 
             try
@@ -108,8 +108,7 @@ namespace API.Controllers
                 var context = HttpContext.Current;
                 context.Response.ContentType = "multipart/form-data";
 
-                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteRecoveryDTO>();
-
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteSurveyDTO>();
                 string UserID = context.Request.Form["UserID"];
                 if (ObjUtil.isEmpty(UserID))
                 {
@@ -124,7 +123,7 @@ namespace API.Controllers
                     fileList = new List<T_Planing_File>();
                     int no = 1;
                     int fileType = 1;
-
+                    
                     for (var i = 0; i < fileCount; i++)
                     {
                         string keyName = context.Request.Files.GetKey(i);
@@ -157,7 +156,7 @@ namespace API.Controllers
                     dto.UploadFileList = fileList;
                 }
 
-                logger.debug("Add dto :" + dto.ToString());
+                logger.debug("Add dto:" + dto.ToString());
                 response.statusCode = bal.Add(dto);
                 
                 if (response.statusCode)
@@ -209,20 +208,20 @@ namespace API.Controllers
         [Route("Delete")]
         public HttpResponseMessage Delete()
         {
-            bal = new T_Planing_Action_SiteRecoveryBAL();
+            bal = new T_Planing_Action_SiteSurveyBAL();
             ResposeType response = new ResposeType();
             HttpResponseMessage mapMessage = null;
             
-            T_Planing_Action_SiteRecoveryDTO dto = null;
+            T_Planing_Action_SiteSurveyDTO dto = null;
 
             try
             {
                 var context = HttpContext.Current;
                 //context.Response.ContentType = "multipart/form-data";
 
-                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteRecoveryDTO>();
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteSurveyDTO>();
 
-                logger.debug("Delete dto :" + dto.ToString());
+                logger.debug("Delete dto:" + dto.ToString());
                 List<T_Planing_File> fileList = bal.DeleteByPK(dto);
 
                 response.statusCode = true;
@@ -254,20 +253,20 @@ namespace API.Controllers
         [Route("Delete")]
         public HttpResponseMessage Delete()
         {
-            bal = new T_Planing_Action_SiteRecoveryBAL();
+            bal = new T_Planing_Action_SiteSurveyBAL();
             ResposeType response = new ResposeType();
             HttpResponseMessage mapMessage = null;
 
-            T_Planing_Action_SiteRecoveryDTO dto = null;
+            T_Planing_Action_SiteSurveyDTO dto = null;
 
             try
             {
                 var context = HttpContext.Current;
                 //context.Response.ContentType = "multipart/form-data";
 
-                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteRecoveryDTO>();
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteSurveyDTO>();
 
-                logger.debug("Delete dto :" + dto.ToString());
+                logger.debug("Delete dto:" + dto.ToString());
                 bal.Delete(dto);
 
                 response.statusCode = true;
@@ -276,131 +275,6 @@ namespace API.Controllers
             catch (Exception ex)
             {
                 logger.error("Delete error:" + ex.ToString());
-                response.statusText = ex.ToString();
-            }
-
-            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
-            return mapMessage;
-        }
-
-        [HttpPost]
-        [Route("Approve")]
-        public HttpResponseMessage Approve()
-        {
-            bal = new T_Planing_Action_SiteRecoveryBAL();
-            ResposeType response = new ResposeType();
-            HttpResponseMessage mapMessage = null;
-            
-            T_Planing_Action_SiteRecoveryDTO dto = null;
-
-            try
-            {
-                var context = HttpContext.Current;
-                //context.Response.ContentType = "multipart/form-data";
-
-                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteRecoveryDTO>();
-                string UserID = context.Request.Form["UserID"];
-                if (ObjUtil.isEmpty(UserID))
-                {
-                    throw new Exception("UserID is require");
-                }
-                string RoleLevel = context.Request.Form["RoleLevel"];
-                if (ObjUtil.isEmpty(RoleLevel))
-                {
-                    throw new Exception("RoleLevel is require");
-                }
-
-                if (RoleLevel == "1")
-                {
-                    dto.Approval1 = UserID;
-                    dto.ApproveStatus = RoleLevel;
-                    dto.ApprovalDate1 = string.Format("{0}/{1}/{2}", DateTime.Now.Month.ToString("##00")
-                                                       , DateTime.Now.Day.ToString("##00")
-                                                       , DateTime.Now.Year.ToString());
-                }
-                else if (RoleLevel == "2")
-                {
-                    dto.Approval2 = UserID;
-                    dto.ApproveStatus = RoleLevel;
-                    dto.ApprovalDate2 = string.Format("{0}/{1}/{2}", DateTime.Now.Month.ToString("##00")
-                                                       , DateTime.Now.Day.ToString("##00")
-                                                       , DateTime.Now.Year.ToString());
-                }
-                else if (RoleLevel == "3" || RoleLevel == "4" || RoleLevel == "5")
-                {
-                    dto.Approval3 = UserID;
-                    dto.ApproveStatus = "3";
-                    dto.ApprovalDate3 = string.Format("{0}/{1}/{2}", DateTime.Now.Month.ToString("##00")
-                                                       , DateTime.Now.Day.ToString("##00")
-                                                       , DateTime.Now.Year.ToString());
-                }
-                dto.CreateBy = UserID;
-                dto.UpdateBy = UserID;
-                logger.debug("Approve dto :" + dto.ToString());
-                response.statusCode = bal.Approve(dto);
-            }
-            catch (Exception ex)
-            {
-                logger.error("Approve error:" + ex.ToString());
-                response.statusText = ex.ToString();
-            }
-
-            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
-            return mapMessage;
-        }
-
-        [HttpPost]
-        [Route("Reject")]
-        public HttpResponseMessage Reject()
-        {
-            bal = new T_Planing_Action_SiteRecoveryBAL();
-            ResposeType response = new ResposeType();
-            HttpResponseMessage mapMessage = null;
-            
-            T_Planing_Action_SiteRecoveryDTO dto = null;
-
-            try
-            {
-                var context = HttpContext.Current;
-                //context.Response.ContentType = "multipart/form-data";
-
-                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteRecoveryDTO>();
-                string UserID = context.Request.Form["UserID"];
-                if (ObjUtil.isEmpty(UserID))
-                {
-                    throw new Exception("UserID is require");
-                }
-                string RoleLevel = context.Request.Form["RoleLevel"];
-                if (ObjUtil.isEmpty(RoleLevel))
-                {
-                    throw new Exception("RoleLevel is require");
-                }
-
-                if (RoleLevel == "1")
-                {
-                    dto.Rejecter = UserID;
-                    dto.RejectStatus = RoleLevel;
-                }
-                else if (RoleLevel == "2")
-                {
-                    dto.Rejecter = UserID;
-                    dto.RejectStatus = RoleLevel;
-                }
-                else if (RoleLevel == "3" || RoleLevel == "4" || RoleLevel == "5")
-                {
-                    dto.Rejecter = UserID;
-                    dto.RejectStatus = "3";
-                }
-
-                dto.CreateBy = UserID;
-                dto.UpdateBy = UserID;
-
-                logger.debug("Reject dto :" + dto.ToString());
-                response.statusCode = bal.Reject(dto);
-            }
-            catch (Exception ex)
-            {
-                logger.error("Reject error:" + ex.ToString());
                 response.statusText = ex.ToString();
             }
 

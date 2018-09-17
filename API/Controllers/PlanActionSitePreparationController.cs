@@ -36,7 +36,7 @@ namespace API.Controllers
 
                 dto = ConvertX.GetReqeustForm<T_Planing_Action_SitePreparationDTO>();
 
-                logger.debug("LoadList dto :" + dto.ToString());
+                logger.debug("Search dto :" + dto.ToString());
                 objList = bal.FindByObjList(dto);
 
                 response.statusCode = true;
@@ -44,7 +44,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                logger.error("LoadList error:" + ex.ToString());
+                logger.error("Search error:" + ex.ToString());
                 response.statusText = ex.ToString();
             }
 
@@ -69,7 +69,7 @@ namespace API.Controllers
 
                 dto = ConvertX.GetReqeustForm<T_Planing_Action_SitePreparationDTO>();
 
-                logger.debug("LoadDetail dto :" + dto.ToString());
+                logger.debug("View dto :" + dto.ToString());
                 dto = bal.FindByPK(dto);
 
                 if (dto != null && dto.UploadFileList != null)
@@ -84,7 +84,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                logger.error("LoadDetail error:" + ex.ToString());
+                logger.error("View error:" + ex.ToString());
                 response.statusText = ex.ToString();
             }
 
