@@ -385,7 +385,7 @@ namespace BAL.PTT.Report
 
             // Category
             // Constructing the chart category
-            string formulaCat = "OverAll!$J$25:$V$27";
+            string formulaCat = "OverAll!$J$25:$J$27";
 
             StringReference stringReference = categoryAxisData.AppendChild(new StringReference()
             {
