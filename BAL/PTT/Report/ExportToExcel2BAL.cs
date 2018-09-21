@@ -2613,7 +2613,7 @@ namespace BAL.PTT.Report
 
                     workbookPart.Workbook.Save();
 
-                    exportSummaryRiskChart(sheetData, cell, mergeCells, drawingsPart, summaryRepareReport);
+                    exportSummaryRepairChart(sheetData, cell, mergeCells, drawingsPart, summaryRepareReport);
 
                     drawingsPart.WorksheetDrawing.Save();
 
@@ -2631,7 +2631,7 @@ namespace BAL.PTT.Report
             return stream.ToArray();
         }
 
-        public void exportSummaryRiskChart(SheetData sheetData, Cell cell, MergeCells mergeCells, DrawingsPart drawingsPart, SummaryRepaireAll summaryRepareReport)
+        public void exportSummaryRepairChart(SheetData sheetData, Cell cell, MergeCells mergeCells, DrawingsPart drawingsPart, SummaryRepaireAll summaryRepareReport)
         {
             int lRow = 1;
             #region Header
@@ -2672,7 +2672,7 @@ namespace BAL.PTT.Report
             cell.StyleIndex = 2;
 
             cell = openExcelUtil.GetCell(sheetData, "E", (uint)lRow);
-            cell.CellValue = new CellValue("S");
+            cell.CellValue = new CellValue("KP");
             cell.StyleIndex = 2;
 
             cell = openExcelUtil.GetCell(sheetData, "F", (uint)lRow);

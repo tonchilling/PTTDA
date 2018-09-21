@@ -51,29 +51,15 @@
 
 
     function ExportFile(reportNo) {
-
-
         var param = "";
-        var formData = new FormData();
-
-
-
-
         waitingDialog.show('Exporting to Excel', { dialogSize: 'lg', progressType: 'light' });
-
-
-
-      
-
-
-        formData.append("Year", $('.ddlYear').val());
-        param = param + "&AssetOwnerID=" + $('.ddlAssertOwner').val();
+        
+        param = param + "&AssertOwnerID=" + $('.ddlAssertOwner').val();
         param = param + "&RegionID=" + $('.ddlRegion').val();
         param = param + "&RouteID=" + $('.ddlRouteCode').val();
         param = param + "&Year=" + $('.ddlYear').val();
-        param = param + "&PipelineID=" + $('.ddlPipeline').val();
         param = param + "&DIGFromID=" + $('.ddlDIGFrom').val();
-        param = param + "&QuaterID=" + $('.ddlQuarter').val();
+        param = param + "&PipelineLengthID=" + $('.ddlPipeline').val();
 
         setTimeout(function () {
 
@@ -81,12 +67,6 @@
         }, 3000);
 
         window.open(exportPlan + "&RPTType=report2_summaryrepaire" + param, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=200,width=5,height=5");
-
-
-
-
-
-
 
     }
 

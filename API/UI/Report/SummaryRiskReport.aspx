@@ -117,37 +117,22 @@
 
 
     function ExportFile(reportNo) {
-
-
         var param = "";
-        var formData = new FormData();
-
-
-
 
         waitingDialog.show('Exporting to Excel', { dialogSize: 'lg', progressType: 'light' });
 
-
-
-
-        formData.append("Year", $('.ddlYear').val());
-        param = param + "&AssetOwnerID=" + $('.ddlAssertOwner').val();
+        param = param + "&AssertOwnerID=" + $('.ddlAssertOwner').val();
         param = param + "&RegionID=" + $('.ddlRegion').val();
-        param = param + "&RouteID=" + $('.ddlRouteCode').val();
+        param = param + "&DIGFromID=" + $('.ddlDIGFrom').val();
+        param = param + "&PipelineLengthID=" + $('.ddlPipeline').val();
+        param = param + "&RouteCodeID=" + $('.ddlRouteCode').val();
         param = param + "&Year=" + $('.ddlYear').val();
 
         setTimeout(function () {
-
             waitingDialog.hide();
         }, 3000);
 
         window.open(exportPlan + "&RPTType=report1_summaryrisk" + param, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=200,width=5,height=5");
-
-
-
-
-
-
 
     }
 
