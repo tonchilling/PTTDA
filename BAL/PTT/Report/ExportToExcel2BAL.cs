@@ -236,8 +236,7 @@ namespace BAL.PTT.Report
                     new SeriesText(new NumericValue() { Text = "Test" })
                 )
             );
-
-
+            
             string formulaVal = "OverAll!$D$25:$D$27";
             DocumentFormat.OpenXml.Drawing.Charts.Values values = pieChartSeries.AppendChild(new DocumentFormat.OpenXml.Drawing.Charts.Values());
 
@@ -2361,14 +2360,19 @@ namespace BAL.PTT.Report
             Row row = new Row();
             barChart.AppendChild(new Overlap() { Val = 100 });
             barChart.AppendChild(new GapWidth() { Val = 250 });
-
+            
             // Create chart series
             BarChartSeries barChartSeries = barChart.AppendChild(new BarChartSeries(
                     new Index() { Val = (uint)0 },
                     new Order() { Val = (uint)0 },
-                    new SeriesText(new NumericValue() { Text = "Low" })
+                    new SeriesText(new NumericValue() { Text = "Low" }),
+                    new ChartShapeProperties(
+                        new DocumentFormat.OpenXml.Drawing.SolidFill(
+                            new DocumentFormat.OpenXml.Drawing.RgbColorModelHex() { Val = "5B9BD5" }
+                        )
+                    )
                 ));
-
+            
             /*
             barChartSeries.ChartShapeProperties = new ChartShapeProperties();
             var outline = barChartSeries.ChartShapeProperties.AppendChild<DocumentFormat.OpenXml.Drawing.Outline>(new DocumentFormat.OpenXml.Drawing.Outline());
@@ -2399,7 +2403,12 @@ namespace BAL.PTT.Report
             BarChartSeries barChartSeries2 = barChart.AppendChild(new BarChartSeries(
                     new Index() { Val = (uint)1 },
                     new Order() { Val = (uint)1 },
-                    new SeriesText(new NumericValue() { Text = "Medium" })
+                    new SeriesText(new NumericValue() { Text = "Medium" }),
+                    new ChartShapeProperties(
+                        new DocumentFormat.OpenXml.Drawing.SolidFill(
+                            new DocumentFormat.OpenXml.Drawing.RgbColorModelHex() { Val = "ED7D31" }
+                        )
+                    )
                 ));
             //Series Value
             string formulaVal2 = "SummaryRisk!$P$27:$P$" + (27 + results.Count - 1);
@@ -2423,7 +2432,12 @@ namespace BAL.PTT.Report
             BarChartSeries barChartSeries3 = barChart.AppendChild(new BarChartSeries(
                     new Index() { Val = (uint)2 },
                     new Order() { Val = (uint)2 },
-                    new SeriesText(new NumericValue() { Text = "High" })
+                    new SeriesText(new NumericValue() { Text = "High" }),
+                    new ChartShapeProperties(
+                        new DocumentFormat.OpenXml.Drawing.SolidFill(
+                            new DocumentFormat.OpenXml.Drawing.RgbColorModelHex() { Val = "A5A5A5" }
+                        )
+                    )
                 ));
             //Series Value
             string formulaVal3 = "SummaryRisk!$Q$27:$Q$" + (27 + results.Count - 1);
@@ -2897,11 +2911,23 @@ namespace BAL.PTT.Report
             barChart.AppendChild(new GapWidth() { Val = 250 });
             */
 
+            String color = "#546BC1";
+            ColumnReportDTO columnReportDTO = summaryRepareReport.Graph.Where(o => o.name == "Region").ToList().FirstOrDefault();
+            if(columnReportDTO != null && columnReportDTO.color != null)
+            {
+                color = columnReportDTO.color;
+            }
+
             // Create chart series
             BarChartSeries barChartSeries = barChart.AppendChild(new BarChartSeries(
                     new Index() { Val = (uint)0 },
                     new Order() { Val = (uint)0 },
-                    new SeriesText(new NumericValue() { Text = "Serie1" })
+                    new SeriesText(new NumericValue() { Text = "Serie1" }),
+                    new ChartShapeProperties(
+                        new DocumentFormat.OpenXml.Drawing.SolidFill(
+                            new DocumentFormat.OpenXml.Drawing.RgbColorModelHex() { Val = color.Replace("#","") }
+                        )
+                    )
                 ));
 
             /*
