@@ -97,7 +97,31 @@ namespace DTO.Util
            return obj;
        }
 
-       public static T GetReqeustRealForm<T>() where T : new()
+        public static T GetReqeustFormExactly<T>() where T : new()
+        {
+            var obj = new T();
+            var properties = typeof(T).GetProperties();
+            string proName = "";
+            foreach (var property in properties)
+            {
+                List<string> allKey = new List<string>();
+                allKey.AddRange(HttpContext.Current.Request.Form.AllKeys);
+                proName = allKey.Find(delegate (string data)
+                {
+                    return (data.ToLower().Equals(property.Name.ToLower()));
+                });
+                var valueAsString = HttpContext.Current.Request.Form[proName];
+                var value = Parse(property.PropertyType, valueAsString);
+
+                if (value == null)
+                    continue;
+
+                property.SetValue(obj, value, null);
+            }
+            return obj;
+        }
+
+        public static T GetReqeustRealForm<T>() where T : new()
        {
            var obj = new T();
            var properties = typeof(T).GetProperties();
