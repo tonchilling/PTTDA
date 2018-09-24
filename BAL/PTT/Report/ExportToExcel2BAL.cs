@@ -1197,12 +1197,16 @@ namespace BAL.PTT.Report
             chartPart.ChartSpace.AppendChild(new EditingLanguage() { Val = "en-US" });
             Chart chart = chartPart.ChartSpace.AppendChild(new Chart());
             //chart.AppendChild(new AutoTitleDeleted() { Val = true }); // We don't want to show the chart title
-            //chart.Legend = new Legend();
+            chart.Legend = new Legend(new LegendPosition() { Val = new EnumValue<LegendPositionValues>(LegendPositionValues.TopRight) });
             AddChartTitle(chart, "PM Transmission " + searchDto.Year);
 
             // Create a new Clustered Column Chart
             PlotArea plotArea = chart.AppendChild(new PlotArea());
             Layout layout = plotArea.AppendChild(new Layout());
+            ManualLayout manualLayout = layout.AppendChild(new ManualLayout());
+            manualLayout.Top = new Top() { Val = 0.2 };
+            manualLayout.Width = new Width() { Val = 0.9};
+            manualLayout.Height = new Height() { Val = 0.8 };
 
             BarChart barChart = plotArea.AppendChild(new BarChart(
                         new BarDirection() { Val = new EnumValue<BarDirectionValues>(BarDirectionValues.Column) },
@@ -1298,7 +1302,7 @@ namespace BAL.PTT.Report
             {
                 Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaCat }
             });
-            
+
             barChart.AppendChild(new DataLabels(
                                 new ShowLegendKey() { Val = true },
                                 new ShowValue() { Val = false },
@@ -1405,13 +1409,17 @@ namespace BAL.PTT.Report
             chartPart.ChartSpace.AppendChild(new EditingLanguage() { Val = "en-US" });
             Chart chart = chartPart.ChartSpace.AppendChild(new Chart());
             //chart.AppendChild(new AutoTitleDeleted() { Val = true }); // We don't want to show the chart title
-            //chart.Legend = new Legend();
+            chart.Legend = new Legend(new LegendPosition() { Val = new EnumValue<LegendPositionValues>(LegendPositionValues.TopRight) });
             AddChartTitle(chart, "PM Transmission " + searchDto.Year);
 
             // Create a new Clustered Column Chart
             PlotArea plotArea = chart.AppendChild(new PlotArea());
             Layout layout = plotArea.AppendChild(new Layout());
-            
+            ManualLayout manualLayout = layout.AppendChild(new ManualLayout());
+            manualLayout.Top = new Top() { Val = 0.2 };
+            manualLayout.Width = new Width() { Val = 0.9 };
+            manualLayout.Height = new Height() { Val = 0.8 };
+
             BarChart barChart = plotArea.AppendChild(new BarChart(
                         new BarDirection() { Val = new EnumValue<BarDirectionValues>(BarDirectionValues.Column) },
                         new BarGrouping() { Val = new EnumValue<BarGroupingValues>(BarGroupingValues.PercentStacked) },
@@ -2343,12 +2351,16 @@ namespace BAL.PTT.Report
             chartPart.ChartSpace.AppendChild(new EditingLanguage() { Val = "en-US" });
             Chart chart = chartPart.ChartSpace.AppendChild(new Chart());
             //chart.AppendChild(new AutoTitleDeleted() { Val = true }); // We don't want to show the chart title
-            //chart.Legend = new Legend();
+            chart.Legend = new Legend(new LegendPosition() { Val = new EnumValue<LegendPositionValues>(LegendPositionValues.TopRight) });
             AddChartTitle(chart, "ผลประเมินความเสี่ยง " + searchDto.Year);
 
             // Create a new Clustered Column Chart
             PlotArea plotArea = chart.AppendChild(new PlotArea());
             Layout layout = plotArea.AppendChild(new Layout());
+            ManualLayout manualLayout = layout.AppendChild(new ManualLayout());
+            manualLayout.Top = new Top() { Val = 0.2 };
+            manualLayout.Width = new Width() { Val = 0.9 };
+            manualLayout.Height = new Height() { Val = 0.8 };
 
             BarChart barChart = plotArea.AppendChild(new BarChart(
                         new BarDirection() { Val = new EnumValue<BarDirectionValues>(BarDirectionValues.Column) },
@@ -2890,12 +2902,16 @@ namespace BAL.PTT.Report
             chartPart.ChartSpace.AppendChild(new EditingLanguage() { Val = "en-US" });
             Chart chart = chartPart.ChartSpace.AppendChild(new Chart());
             //chart.AppendChild(new AutoTitleDeleted() { Val = true }); // We don't want to show the chart title
-            //chart.Legend = new Legend();
+            chart.Legend = new Legend(new LegendPosition() { Val = new EnumValue<LegendPositionValues>(LegendPositionValues.TopRight) });
             AddChartTitle(chart, "Summary Repair Report");
 
             // Create a new Clustered Column Chart
             PlotArea plotArea = chart.AppendChild(new PlotArea());
             Layout layout = plotArea.AppendChild(new Layout());
+            ManualLayout manualLayout = layout.AppendChild(new ManualLayout());
+            manualLayout.Top = new Top() { Val = 0.2 };
+            manualLayout.Width = new Width() { Val = 0.9 };
+            manualLayout.Height = new Height() { Val = 0.8 };
 
             BarChart barChart = plotArea.AppendChild(new BarChart(
                         new BarDirection() { Val = new EnumValue<BarDirectionValues>(BarDirectionValues.Column) },
@@ -2922,7 +2938,7 @@ namespace BAL.PTT.Report
             BarChartSeries barChartSeries = barChart.AppendChild(new BarChartSeries(
                     new Index() { Val = (uint)0 },
                     new Order() { Val = (uint)0 },
-                    new SeriesText(new NumericValue() { Text = "Serie1" }),
+                    new SeriesText(new NumericValue() { Text = "Region" }),
                     new ChartShapeProperties(
                         new DocumentFormat.OpenXml.Drawing.SolidFill(
                             new DocumentFormat.OpenXml.Drawing.RgbColorModelHex() { Val = color.Replace("#","") }
