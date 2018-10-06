@@ -15,6 +15,8 @@ using DTO.Util;
 using DTO.PTT.Report;
 using System.IO;
 using BAL.PTT.Util;
+using DTO.PTT.Util;
+
 namespace BAL.PTT.Report
 {
     public class ExportToExcel2BAL
@@ -2542,15 +2544,22 @@ namespace BAL.PTT.Report
             Row row = new Row();
             barChart.AppendChild(new Overlap() { Val = 100 });
             barChart.AppendChild(new GapWidth() { Val = 250 });
-            
+
             // Create chart series
+            String color = "#5B9BD5";
+            ColumnReportDTO columnReportDTO = summaryPlanReport.GraphReport.Where(o => o.name == "Low").ToList().FirstOrDefault();
+            if (columnReportDTO != null && columnReportDTO.color != null)
+            {
+                color = columnReportDTO.color;
+            }
+
             BarChartSeries barChartSeries = barChart.AppendChild(new BarChartSeries(
                     new Index() { Val = (uint)0 },
                     new Order() { Val = (uint)0 },
                     new SeriesText(new NumericValue() { Text = "Low" }),
                     new ChartShapeProperties(
                         new DocumentFormat.OpenXml.Drawing.SolidFill(
-                            new DocumentFormat.OpenXml.Drawing.RgbColorModelHex() { Val = "5B9BD5" }
+                            new DocumentFormat.OpenXml.Drawing.RgbColorModelHex() { Val = color.Replace("#", "") }
                         )
                     )
                 ));
@@ -2582,13 +2591,19 @@ namespace BAL.PTT.Report
                 Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaCat }
             });
 
+            color = "#ED7D31";
+            columnReportDTO = summaryPlanReport.GraphReport.Where(o => o.name == "Medium").ToList().FirstOrDefault();
+            if (columnReportDTO != null && columnReportDTO.color != null)
+            {
+                color = columnReportDTO.color;
+            }
             BarChartSeries barChartSeries2 = barChart.AppendChild(new BarChartSeries(
                     new Index() { Val = (uint)1 },
                     new Order() { Val = (uint)1 },
                     new SeriesText(new NumericValue() { Text = "Medium" }),
                     new ChartShapeProperties(
                         new DocumentFormat.OpenXml.Drawing.SolidFill(
-                            new DocumentFormat.OpenXml.Drawing.RgbColorModelHex() { Val = "ED7D31" }
+                            new DocumentFormat.OpenXml.Drawing.RgbColorModelHex() { Val = color.Replace("#", "") }
                         )
                     )
                 ));
@@ -2611,13 +2626,19 @@ namespace BAL.PTT.Report
                 Formula = new DocumentFormat.OpenXml.Drawing.Charts.Formula() { Text = formulaCat }
             });
 
+            color = "#A5A5A5";
+            columnReportDTO = summaryPlanReport.GraphReport.Where(o => o.name == "High").ToList().FirstOrDefault();
+            if (columnReportDTO != null && columnReportDTO.color != null)
+            {
+                color = columnReportDTO.color;
+            }
             BarChartSeries barChartSeries3 = barChart.AppendChild(new BarChartSeries(
                     new Index() { Val = (uint)2 },
                     new Order() { Val = (uint)2 },
                     new SeriesText(new NumericValue() { Text = "High" }),
                     new ChartShapeProperties(
                         new DocumentFormat.OpenXml.Drawing.SolidFill(
-                            new DocumentFormat.OpenXml.Drawing.RgbColorModelHex() { Val = "A5A5A5" }
+                            new DocumentFormat.OpenXml.Drawing.RgbColorModelHex() { Val = color.Replace("#", "") }
                         )
                     )
                 ));
