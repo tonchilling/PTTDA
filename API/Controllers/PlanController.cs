@@ -1,6 +1,7 @@
 ﻿using BAL.PTT.Plan;
 using DTO.PTT.Plan;
 using DTO.PTT.Report;
+using DTO.PTT.Util;
 using DTO.Util;
 using Newtonsoft.Json;
 using System;
@@ -117,7 +118,52 @@ namespace API.Controllers
             mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
             return mapMessage;
         }
-        
+
+        [HttpPost]
+        [Route("Add")]
+        public HttpResponseMessage Add()
+        {
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                T_PlaningMobileDTO planingDTO = GetRequestToObjectMobile(context);
+                T_PlaningCoatingRepairMobileDTO planingCoatingRepairDTO = ConvertX.GetReqeustForm<T_PlaningCoatingRepairMobileDTO>();
+
+                string UserID = context.Request.Form["UserID"];
+                if (ObjUtil.isEmpty(UserID))
+                {
+                    throw new Exception("UserID is require");
+                }
+                planingDTO.CreateBy = UserID;
+                planingDTO.UpdateBy = UserID;
+                planingCoatingRepairDTO.CreateBy = UserID;
+                planingCoatingRepairDTO.UpdateBy = UserID;
+
+                T_PlaningMobileBAL mobileBal = new T_PlaningMobileBAL();
+
+                logger.debug("PlanController Add planingDTO:" + planingDTO.ToString());
+                logger.debug("PlanController Add planingCoatingRepairDTO:" + planingCoatingRepairDTO.ToString());
+
+                string TPID = mobileBal.AddFromMobile(planingDTO, planingCoatingRepairDTO, null, null, null);
+
+                response.statusCode = true;
+                response.statusText = "TPID";
+                response.data = TPID;
+            }
+            catch (Exception ex)
+            {
+                logger.error("Add error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
         [HttpPost]
         [Route("Delete")]
         public HttpResponseMessage Delete()
@@ -301,6 +347,45 @@ namespace API.Controllers
         {
             HttpPostedFile postFile = null;
             T_PlaningDTO planingDTO = ConvertX.GetReqeustForm<T_PlaningDTO>();
+            if (context.Request.Files.Count > 0)
+            {
+                foreach (string fileUploadName in context.Request.Files)
+                {
+                    if (fileUploadName.ToLower().IndexOf("defect") > -1)
+                    {
+                        postFile = context.Request.Files[fileUploadName];
+                        var fileName = System.IO.Path.GetFileName(postFile.FileName);
+                        var ext = System.IO.Path.GetExtension(postFile.FileName);
+                        // fileName = string.Format("{0}.{1}", Guid.NewGuid(), ext);
+                        logger.debug("Save file as :" + context.Server.MapPath("~/Files/" + fileName));
+                        postFile.SaveAs(context.Server.MapPath("~/Files/" + fileName));
+
+                        if (fileUploadName.ToLower().Equals("defect-0"))
+                        {
+                            planingDTO.FileName1 = fileName;
+                        }
+                        if (fileUploadName.ToLower().Equals("defect-1"))
+                        {
+                            planingDTO.FileName2 = fileName;
+                        }
+                        if (fileUploadName.ToLower().Equals("defect-2"))
+                        {
+                            planingDTO.FileName3 = fileName;
+                        }
+                        if (fileUploadName.ToLower().Equals("defect-3"))
+                        {
+                            planingDTO.FileName4 = fileName;
+                        }
+                    }
+                }
+            }
+            return planingDTO;
+        }
+
+        T_PlaningMobileDTO GetRequestToObjectMobile(HttpContext context)
+        {
+            HttpPostedFile postFile = null;
+            T_PlaningMobileDTO planingDTO = ConvertX.GetReqeustForm<T_PlaningMobileDTO>();
             if (context.Request.Files.Count > 0)
             {
                 foreach (string fileUploadName in context.Request.Files)
