@@ -89,6 +89,135 @@ namespace API.Controllers
             return mapMessage;
         }
 
+        [HttpPost]
+        [Route("Add")]
+        public HttpResponseMessage Add()
+        {
+            var deserializer = new JavaScriptSerializer();
+            T_Planing_Action_AfterRemovalMobileBAL mobileBal = new T_Planing_Action_AfterRemovalMobileBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_PlaningFileMobileDTO file = null;
+            List<T_PlaningFileMobileDTO> fileList = new List<T_PlaningFileMobileDTO>();
+            string savedFileName = "";
+            T_Planing_Action_AfterRemovalMobileDTO dto = null;
+            List<T_Planing_Action_AfterRemoval_DefectMobileDTO> defectList = null;
+            List<T_Planing_Action_AfterRemoval_WallThicknessMobileDTO> wallThicknessList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+                context.Response.ContentType = "multipart/form-data";
+
+                dto = ConvertX.GetReqeustFormExactly<T_Planing_Action_AfterRemovalMobileDTO>();
+                string UserID = context.Request.Form["UserID"];
+                dto.CreateBy = UserID;
+                dto.UpdateBy = UserID;
+                dto.CreatedBy = UserID;
+                dto.UpdatedBy = UserID;
+                
+                defectList = deserializer.Deserialize<List<T_Planing_Action_AfterRemoval_DefectMobileDTO>>(context.Request.Form["defectInputList"]);
+                wallThicknessList = deserializer.Deserialize<List<T_Planing_Action_AfterRemoval_WallThicknessMobileDTO>>(context.Request.Form["wallThicknessInputList"]);
+                dto.DefectList = defectList; ;
+                dto.WallThicknessList = wallThicknessList;
+                
+                if (context.Request.Files.Count > 0)
+                {
+                    int no = 1;
+                    int fileType = 0;
+                    
+                    for (var i = 0; i < context.Request.Files.Count; i++)
+                    {
+                        string keyName = context.Request.Files.GetKey(i);
+                        logger.debug("keyName :" + keyName);
+                        
+                        fileType = 1;
+                        
+                        file = new T_PlaningFileMobileDTO();
+
+                        savedFileName = context.Server.MapPath(planPath) + @"\" + dto.PID + @"\" + fileType + @"\";
+                        no = Convert.ToInt32(keyName.Split('_')[1]);
+                        
+                        file.FullPath = savedFileName + System.IO.Path.GetFileName(context.Request.Files[i].FileName); ;
+                        file.DesPath = savedFileName;
+                        file.FileName = System.IO.Path.GetFileName(context.Request.Files[i].FileName);
+                        file.FileSize = context.Request.Files[i].ContentLength.ToString();
+                        file.UploadDate = string.Format("{0}/{1}/{2}", DateTime.Now.Month.ToString("##00"), DateTime.Now.Day.ToString("##00"), DateTime.Now.Year);
+                        file.No = no.ToString();
+                        file.PID = dto.PID;
+                        file.UploadType = fileType.ToString();
+                        file.PostFile = context.Request.Files[i];
+                        
+                        fileList.Add(file);
+                    }
+                    dto.UploadFileList = fileList;
+                }
+                
+                dto.DefectNumber = dto.DefectList.Count.ToString();
+
+                logger.debug("PlanActionAfterRemovalController Add dto:" + dto.ToString());
+                if (dto.DefectList != null && dto.DefectList.Count > 0)
+                {
+                    foreach (T_Planing_Action_AfterRemoval_DefectMobileDTO defect in dto.DefectList)
+                    {
+                        logger.debug("PlanActionAfterRemovalController Add defect:" + defect.ToString());
+                    }
+                }
+                if (dto.WallThicknessList != null && dto.WallThicknessList.Count > 0)
+                {
+                    foreach (T_Planing_Action_AfterRemoval_WallThicknessMobileDTO wall in dto.WallThicknessList)
+                    {
+                        logger.debug("PlanActionAfterRemovalController Add WallThickness:" + wall.ToString());
+                    }
+                }
+
+                response.statusCode = mobileBal.AddFromMobile(dto);
+                
+                if (response.statusCode)
+                {
+                    response.statusText = "Success";
+                    try {
+                        // For new upload
+                        if (fileList != null && fileList.Count > 0)
+                        {
+                            foreach (T_PlaningFileMobileDTO f in fileList)
+                            {
+                                if (DTO.PTT.Util.FileMng.HaveDirectory(f.DesPath))
+                                {
+                                    f.PostFile.SaveAs(f.FullPath);
+                                }
+                            }
+                        }
+
+                        // For delete old file
+                        if (dto.DeleteDefectFiles != null && dto.DeleteDefectFiles.Length > 0)
+                        {
+                            foreach (var fileName in dto.DeleteDefectFiles.Split(','))
+                            {
+                                if (fileName != "")
+                                {
+                                    var realDesFile = context.Server.MapPath(planPath) + @"\" + dto.PID + @"\" + fileName;
+                                    DTO.PTT.Util.FileMng.DeleteFile(realDesFile);
+                                }
+                            }
+                        }
+                    }catch(Exception e)
+                    {
+                        response.statusText = "Success but process file error :" + e.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.error("Add error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
         /*
         [HttpPost]
         [Route("Add")]

@@ -89,35 +89,37 @@ namespace API.Controllers
         [Route("Add")]
         public HttpResponseMessage Add()
         {
-            bal = new T_Planing_WeatherCollectionBAL();
+            T_Planing_WeatherCollectionMobileBAL mobileBal = new T_Planing_WeatherCollectionMobileBAL();
             ResposeType response = new ResposeType();
             HttpResponseMessage mapMessage = null;
             
-            T_Planing_WeatherCollectionDTO dto = null;
+            T_Planing_WeatherCollectionMobileDTO mobileDto = null;
 
             try
             {
                 var context = HttpContext.Current;
                 //context.Response.ContentType = "multipart/form-data";
 
-                dto = ConvertX.GetReqeustForm<T_Planing_WeatherCollectionDTO>();
+                mobileDto = ConvertX.GetReqeustFormExactly<T_Planing_WeatherCollectionMobileDTO>();
 
                 string UserID = context.Request.Form["UserID"];
                 if (ObjUtil.isEmpty(UserID))
                 {
                     throw new Exception("UserID is require");
                 }
-                dto.CreateBy = UserID;
-                dto.UpdateBy = UserID;
-                dto.ID = context.Request.Form["ID"];
-                dto.PID = context.Request.Form["PID"];
+                mobileDto.CreateBy = UserID;
+                mobileDto.UpdateBy = UserID;
 
-                logger.debug("Add dto:" + dto.ToString());
-                response.statusCode = bal.Add(dto);                
+                logger.debug("api/PlanWeatherCollection Add dto:" + mobileDto.ToString());
+                response.statusCode = mobileBal.AddFromMobile(mobileDto);
+                if (response.statusCode)
+                {
+                    response.statusText = "Success";
+                } 
             }
             catch (Exception ex)
             {
-                logger.error("Add error:" + ex.ToString());
+                logger.error("api/PlanWeatherCollection Add error:" + ex.ToString());
                 response.statusText = ex.ToString();
             }
 

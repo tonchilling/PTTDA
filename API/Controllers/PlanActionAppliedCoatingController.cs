@@ -97,20 +97,20 @@ namespace API.Controllers
         public HttpResponseMessage Add()
         {
             var deserializer = new JavaScriptSerializer();
-            bal = new T_Planing_Action_AppliedCoatingBAL();
+            T_Planing_Action_AppliedCoatingMobileBAL mobileBal = new T_Planing_Action_AppliedCoatingMobileBAL();
             ResposeType response = new ResposeType();
             HttpResponseMessage mapMessage = null;
             
-            T_Planing_Action_AppliedCoatingDTO dto = null;
-            List<T_Planing_File> fileList = null;
-            List<T_Planing_Action_AppliedCoating_InformationDTO> coatingInfomationList = null;
+            T_Planing_Action_AppliedCoatingMobileDTO dto = null;
+            List<T_PlaningFileMobileDTO> fileList = null;
+            List<T_Planing_Action_AppliedCoating_InformationMobileDTO> coatingInfomationList = null;
 
             try
             {
                 var context = HttpContext.Current;
                 context.Response.ContentType = "multipart/form-data";
 
-                dto = ConvertX.GetReqeustForm<T_Planing_Action_AppliedCoatingDTO>();
+                dto = ConvertX.GetReqeustFormExactly<T_Planing_Action_AppliedCoatingMobileDTO>();
 
                 //dto.ID = context.Request.Form["ID"];
                 //dto.PID = context.Request.Form["PID"];
@@ -120,11 +120,11 @@ namespace API.Controllers
                 dto.UpdateBy = UserID;
 
                 //fileList = deserializer.Deserialize<List<T_Planing_File>>(context.Request.Form["surfaceList"]);
-                coatingInfomationList = deserializer.Deserialize<List<T_Planing_Action_AppliedCoating_InformationDTO>>(context.Request.Form["coatingInfomationList"]);
+                coatingInfomationList = deserializer.Deserialize<List<T_Planing_Action_AppliedCoating_InformationMobileDTO>>(context.Request.Form["coatingInfomationList"]);
 
                 if (coatingInfomationList != null)
                 {
-                    foreach (T_Planing_Action_AppliedCoating_InformationDTO coatingDto in coatingInfomationList)
+                    foreach (T_Planing_Action_AppliedCoating_InformationMobileDTO coatingDto in coatingInfomationList)
                     {
                         coatingDto.InfoType = "1";
                         coatingDto.InfoDate = string.Format("{0}/{1}/{2}", DateTime.Now.Month.ToString("##00"), DateTime.Now.Day.ToString("##00"), DateTime.Now.Year.ToString());
@@ -138,12 +138,12 @@ namespace API.Controllers
                 int fileCount = context.Request.Files.Count;
                 if (fileCount > 0)
                 {
-                    fileList = new List<T_Planing_File>();
+                    fileList = new List<T_PlaningFileMobileDTO>();
                     for (var i = 0; i < fileCount; i++)
                     {
                         string savedFileName = context.Server.MapPath(planPath) + @"\" + dto.PID + @"\" + fileType + @"\" + System.IO.Path.GetFileName(context.Request.Files[i].FileName);
 
-                        T_Planing_File file = new T_Planing_File();
+                        T_PlaningFileMobileDTO file = new T_PlaningFileMobileDTO();
                         file.FullPath = savedFileName;
                         file.DesPath = context.Server.MapPath(planPath) + @"\" + dto.PID + @"\" + fileType;
                         file.FileName = System.IO.Path.GetFileName(context.Request.Files[i].FileName);
@@ -160,9 +160,17 @@ namespace API.Controllers
 
                     dto.UploadFileList = fileList;
                 }
+                
+                logger.debug("PlanActionAppliedCoatingController Add dto:" + dto.ToString());
+                if (dto.CoatingInfoList != null && dto.CoatingInfoList.Count > 0)
+                {
+                    foreach (T_Planing_Action_AppliedCoating_InformationMobileDTO coating in dto.CoatingInfoList)
+                    {
+                        logger.debug("PlanActionAppliedCoatingController Add coating:" + coating.ToString());
+                    }
+                }
 
-                logger.debug("Add dto:" + dto.ToString());
-                response.statusCode = bal.Add(dto);
+                response.statusCode = mobileBal.AddFromMobile(dto);
                 
                 if (response.statusCode)
                 {
@@ -171,7 +179,7 @@ namespace API.Controllers
                         // For new upload
                         if (fileList != null && fileList.Count > 0)
                         {
-                            foreach (T_Planing_File f in fileList)
+                            foreach (T_PlaningFileMobileDTO f in fileList)
                             {
                                 if (DTO.PTT.Util.FileMng.HaveDirectory(f.DesPath))
                                 {

@@ -1,4 +1,5 @@
 ﻿using BAL.PTT.Plan;
+using DTO.PTT.Master;
 using DTO.PTT.Plan;
 using DTO.Util;
 using System;
@@ -17,6 +18,7 @@ namespace API.Controllers
         Logger logger = new Logger("PlanActionSitePreparationController");
         string planPath = System.Configuration.ConfigurationManager.AppSettings["SitePreparationPath"];
         T_Planing_Action_SitePreparationBAL bal = null;
+        T_Planing_Action_SitePreparationMobileBAL mobileBal = null;
 
         [HttpPost]
         [Route("Search")]
@@ -96,24 +98,28 @@ namespace API.Controllers
         [Route("Add")]
         public HttpResponseMessage Add()
         {
-            bal = new T_Planing_Action_SitePreparationBAL();
+            mobileBal = new T_Planing_Action_SitePreparationMobileBAL();
             ResposeType response = new ResposeType();
             HttpResponseMessage mapMessage = null;
-            
-            T_Planing_Action_SitePreparationDTO dto = null;
-            List<T_Planing_File> fileList = null;
+
+            T_PlaningActionSitePreparationMobileDTO dto = null;
+            List<T_PlaningFileMobileDTO> fileList = null;
 
             try
             {
                 var context = HttpContext.Current;
                 context.Response.ContentType = "multipart/form-data";
 
-                dto = ConvertX.GetReqeustForm<T_Planing_Action_SitePreparationDTO>();
+                dto = ConvertX.GetReqeustFormExactly<T_PlaningActionSitePreparationMobileDTO>();
+
+                M_UndergroundMobileDTO[] undergroundDTOList = new JavaScriptSerializer().Deserialize<M_UndergroundMobileDTO[]>(context.Request.Form["objList"]);
+                dto.underGroundList = new List<M_UndergroundMobileDTO>();
+                dto.underGroundList.AddRange(undergroundDTOList);
 
                 int fileCount = context.Request.Files.Count;
                 if (fileCount > 0)
                 {
-                    fileList = new List<T_Planing_File>();
+                    fileList = new List<T_PlaningFileMobileDTO>();
                     int no = 1;
                     int fileType = 1;
 
@@ -132,7 +138,7 @@ namespace API.Controllers
 
                         string savedFileName = context.Server.MapPath(planPath) + @"\" + dto.PID + @"\" + fileType + @"\" + System.IO.Path.GetFileName(context.Request.Files[i].FileName);
 
-                        T_Planing_File file = new T_Planing_File();
+                        T_PlaningFileMobileDTO file = new T_PlaningFileMobileDTO();
                         file.FullPath = savedFileName;
                         file.DesPath = context.Server.MapPath(planPath) + @"\" + dto.PID + @"\" + fileType;
                         file.FileName = System.IO.Path.GetFileName(context.Request.Files[i].FileName);
@@ -150,7 +156,7 @@ namespace API.Controllers
                 }
 
                 logger.debug("Add dto :" + dto.ToString());
-                response.statusCode = bal.Add(dto);
+                response.statusCode = mobileBal.AddFromMobile(dto);
 
                 if (response.statusCode)
                 {
@@ -159,7 +165,7 @@ namespace API.Controllers
                         // For new upload
                         if (fileList != null && fileList.Count > 0)
                         {
-                            foreach (T_Planing_File f in fileList)
+                            foreach (T_PlaningFileMobileDTO f in fileList)
                             {
                                 if (DTO.PTT.Util.FileMng.HaveDirectory(f.DesPath))
                                 {
@@ -201,7 +207,7 @@ namespace API.Controllers
         [Route("Delete")]
         public HttpResponseMessage Delete()
         {
-            bal = new T_Planing_Action_SitePreparationBAL();
+            bal = new T_Planing_Action_SitePreparationMobileBAL();
             ResposeType response = new ResposeType();
             HttpResponseMessage mapMessage = null;
             

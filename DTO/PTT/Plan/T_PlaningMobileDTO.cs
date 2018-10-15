@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace DTO.PTT.Plan
 {
@@ -74,5 +75,21 @@ namespace DTO.PTT.Plan
         public string TimeLine { get; set; }
         public string DeleteFiles { get; set; }
         public string DeleteFileNames { get; set; }
+    }
+
+    public class T_PlaningFileMobileDTO : BaseDTO
+    {
+        public string TPID { get; set; }
+        public string PID { get; set; }
+        public string No { get; set; }
+        public string UploadDate { get; set; }
+        public string UploadType { get; set; }
+        public string FileName { get; set; }
+        public string Profile { get; set; }
+        public string FileSize { get; set; }
+        public HttpPostedFile PostFile { get; set; }
+        public string HtmlFile { get; set; }
+        public string FullPath { get; set; }
+        public string DesPath { get; set; }
     }
 }
