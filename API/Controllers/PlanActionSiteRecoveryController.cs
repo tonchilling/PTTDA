@@ -96,19 +96,19 @@ namespace API.Controllers
         [Route("Add")]
         public HttpResponseMessage Add()
         {
-            bal = new T_Planing_Action_SiteRecoveryBAL();
+            T_Planing_Action_SiteRecoveryMobileBAL mobileBal = new T_Planing_Action_SiteRecoveryMobileBAL();
             ResposeType response = new ResposeType();
             HttpResponseMessage mapMessage = null;
             
-            T_Planing_Action_SiteRecoveryDTO dto = null;
-            List<T_Planing_File> fileList = null;
+            T_Planing_Action_SiteRecoveryMobileDTO dto = null;
+            List<T_PlaningFileMobileDTO> fileList = null;
 
             try
             {
                 var context = HttpContext.Current;
                 context.Response.ContentType = "multipart/form-data";
 
-                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteRecoveryDTO>();
+                dto = ConvertX.GetReqeustFormExactly<T_Planing_Action_SiteRecoveryMobileDTO>();
 
                 string UserID = context.Request.Form["UserID"];
                 if (ObjUtil.isEmpty(UserID))
@@ -121,7 +121,7 @@ namespace API.Controllers
                 int fileCount = context.Request.Files.Count;
                 if (fileCount > 0)
                 {
-                    fileList = new List<T_Planing_File>();
+                    fileList = new List<T_PlaningFileMobileDTO>();
                     int no = 1;
                     int fileType = 1;
 
@@ -140,7 +140,7 @@ namespace API.Controllers
 
                         string savedFileName = context.Server.MapPath(planPath) + @"\" + dto.PID + @"\" + fileType + @"\" + System.IO.Path.GetFileName(context.Request.Files[i].FileName);
 
-                        T_Planing_File file = new T_Planing_File();
+                        T_PlaningFileMobileDTO file = new T_PlaningFileMobileDTO();
                         file.FullPath = savedFileName;
                         file.DesPath = context.Server.MapPath(planPath) + @"\" + dto.PID + @"\" + fileType;
                         file.FileName = System.IO.Path.GetFileName(context.Request.Files[i].FileName);
@@ -156,9 +156,10 @@ namespace API.Controllers
                     }
                     dto.UploadFileList = fileList;
                 }
+                
+                logger.debug("PlanActionSiteRecoveryController Add dto:" + dto.ToString());
 
-                logger.debug("Add dto :" + dto.ToString());
-                response.statusCode = bal.Add(dto);
+                response.statusCode = mobileBal.AddFromMobile(dto);
                 
                 if (response.statusCode)
                 {
@@ -167,7 +168,7 @@ namespace API.Controllers
                         // For new upload
                         if (fileList != null && fileList.Count > 0)
                         {
-                            foreach (T_Planing_File f in fileList)
+                            foreach (T_PlaningFileMobileDTO f in fileList)
                             {
                                 if (DTO.PTT.Util.FileMng.HaveDirectory(f.DesPath))
                                 {

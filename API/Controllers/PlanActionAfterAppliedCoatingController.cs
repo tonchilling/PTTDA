@@ -96,12 +96,12 @@ namespace API.Controllers
         public HttpResponseMessage Add()
         {
             var deserializer = new JavaScriptSerializer();
-            bal = new T_Planing_Action_AfterAppliedCoatingBAL();
+            T_Planing_Action_AfterAppliedCoatingMobileBAL mobileBal = new T_Planing_Action_AfterAppliedCoatingMobileBAL();
             ResposeType response = new ResposeType();
             HttpResponseMessage mapMessage = null;
 
             bool result = false;
-            T_Planing_Action_AfterAppliedCoatingDTO dto = null;
+            T_Planing_Action_AfterAppliedCoatingMobileDTO dto = null;
 
             response.statusCode = false;
             try
@@ -109,7 +109,7 @@ namespace API.Controllers
                 var context = HttpContext.Current;
                 context.Response.ContentType = "multipart/form-data";
 
-                dto = ConvertX.GetReqeustForm<T_Planing_Action_AfterAppliedCoatingDTO>();
+                dto = ConvertX.GetReqeustFormExactly<T_Planing_Action_AfterAppliedCoatingMobileDTO>();
                 string UserID = context.Request.Form["UserID"];
                 if (ObjUtil.isEmpty(UserID))
                 {
@@ -117,11 +117,11 @@ namespace API.Controllers
                 }
                 dto.CreateBy = UserID;
                 dto.UpdateBy = UserID;
-                List<T_Planing_Action_AfterAppliedCoating_DryFilmDTO> DryFilmList = deserializer.Deserialize<List<T_Planing_Action_AfterAppliedCoating_DryFilmDTO>>(context.Request.Form["DryFilmList"]);
+                List<T_Planing_Action_AfterAppliedCoating_DryFilmMobileDTO> DryFilmList = deserializer.Deserialize<List<T_Planing_Action_AfterAppliedCoating_DryFilmMobileDTO>>(context.Request.Form["DryFilmList"]);
 
                 if (!ObjUtil.isEmpty(DryFilmList))
                 {
-                    foreach(T_Planing_Action_AfterAppliedCoating_DryFilmDTO dryFilm in DryFilmList)
+                    foreach(T_Planing_Action_AfterAppliedCoating_DryFilmMobileDTO dryFilm in DryFilmList)
                     {
                         dryFilm.CreateBy = UserID;
                         dryFilm.UpdateBy = UserID;
@@ -130,11 +130,11 @@ namespace API.Controllers
 
                 dto.DryFilmThicknessList = DryFilmList;
 
-                List<T_Planing_File> fileList = null;
+                List<T_PlaningFileMobileDTO> fileList = null;
                 int fileCount = context.Request.Files.Count;
                 if (fileCount > 0)
                 {
-                    fileList = new List<T_Planing_File>();
+                    fileList = new List<T_PlaningFileMobileDTO>();
                     int no = 1;
                     int fileType = 1;
                     for (int i = 0; i < fileCount; i++)
@@ -152,7 +152,7 @@ namespace API.Controllers
 
                         string savedFileName = context.Server.MapPath(planPath) + @"\" + dto.PID + @"\" + fileType + @"\" + System.IO.Path.GetFileName(context.Request.Files[i].FileName);
 
-                        T_Planing_File file = new T_Planing_File();
+                        T_PlaningFileMobileDTO file = new T_PlaningFileMobileDTO();
                         file.FullPath = savedFileName;
                         file.DesPath = context.Server.MapPath(planPath) + @"\" + dto.PID + @"\" + fileType;
                         file.FileName = System.IO.Path.GetFileName(context.Request.Files[i].FileName);
@@ -170,7 +170,16 @@ namespace API.Controllers
                     dto.UploadFileList = fileList;
                 }
 
-                result = bal.Add(dto);
+                logger.debug("PlanActionAfterAppliedCoating Add dto:" + dto.ToString());
+                if (dto.DryFilmThicknessList != null && dto.DryFilmThicknessList.Count > 0)
+                {
+                    foreach (T_Planing_Action_AfterAppliedCoating_DryFilmMobileDTO dryFilm in dto.DryFilmThicknessList)
+                    {
+                        logger.debug("PlanActionAfterAppliedCoating Add DryFilmThickness:" + dryFilm.ToString());
+                    }
+                }
+
+                result = mobileBal.AddFromMobile(dto);
 
                 if (result)
                 {
@@ -181,7 +190,7 @@ namespace API.Controllers
                         // For new upload
                         if (fileList != null && fileList.Count > 0)
                         {
-                            foreach (T_Planing_File f in fileList)
+                            foreach (T_PlaningFileMobileDTO f in fileList)
                             {
                                 if (DTO.PTT.Util.FileMng.HaveDirectory(f.DesPath))
                                 {
