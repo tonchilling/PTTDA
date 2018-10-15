@@ -1,0 +1,96 @@
+.icon-blank{
+	background:url('Css/icons/blank.gif') no-repeat center center;
+}
+.icon-add{
+	background:url('Css/icons/edit_add.png') no-repeat center center;
+}
+.icon-edit{
+	background:url('Css/icons/pencil.png') no-repeat center center;
+}
+.icon-clear{
+	background:url('Css/icons/clear.png') no-repeat center center;
+}
+.icon-remove{
+	background:url('Css/icons/edit_remove.png') no-repeat center center;
+}
+.icon-save{
+	background:url('Css/icons/filesave.png') no-repeat center center;
+}
+.icon-cut{
+	background:url('Css/icons/cut.png') no-repeat center center;
+}
+.icon-ok{
+	background:url('Css/icons/ok.png') no-repeat center center;
+}
+.icon-no{
+	background:url('Css/icons/no.png') no-repeat center center;
+}
+.icon-cancel{
+	background:url('Css/icons/cancel.png') no-repeat center center;
+}
+.icon-reload{
+	background:url('Css/icons/reload.png') no-repeat center center;
+}
+.icon-search{
+	background:url('Css/icons/search.png') no-repeat center center;
+}
+.icon-print{
+	background:url('Css/icons/print.png') no-repeat center center;
+}
+.icon-help{
+	background:url('Css/icons/help.png') no-repeat center center;
+}
+.icon-undo{
+	background:url('Css/icons/undo.png') no-repeat center center;
+}
+.icon-redo{
+	background:url('Css/icons/redo.png') no-repeat center center;
+}
+.icon-back{
+	background:url('Css/icons/back.png') no-repeat center center;
+}
+.icon-sum{
+	background:url('Css/icons/sum.png') no-repeat center center;
+}
+.icon-tip{
+	background:url('Css/icons/tip.png') no-repeat center center;
+}
+.icon-filter{
+	background:url('Css/icons/filter.png') no-repeat center center;
+}
+.icon-man{
+	background:url('Css/icons/man.png') no-repeat center center;
+}
+.icon-lock{
+	background:url('Css/icons/lock.png') no-repeat center center;
+}
+.icon-more{
+	background:url('Css/icons/more.png') no-repeat center center;
+}
+
+
+.icon-mini-add{
+	background:url('Css/icons/mini_add.png') no-repeat center center;
+}
+.icon-mini-edit{
+	background:url('Css/icons/mini_edit.png') no-repeat center center;
+}
+.icon-mini-refresh{
+	background:url('Css/icons/mini_refresh.png') no-repeat center center;
+}
+
+.icon-large-picture{
+	background:url('Css/icons/large_picture.png') no-repeat center center;
+}
+.icon-large-clipart{
+	background:url('Css/icons/large_clipart.png') no-repeat center center;
+}
+.icon-large-shapes{
+	background:url('Css/icons/large_shapes.png') no-repeat center center;
+}
+.icon-large-smartart{
+	background:url('Css/icons/large_smartart.png') no-repeat center center;
+}
+.icon-large-chart{
+	background:url('Css/icons/large_chart.png') no-repeat center center;
+}

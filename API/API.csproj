@@ -739,7 +739,6 @@
       <DependentUpon>SummaryRiskReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Util\AnitForegacy.cs" />
     <Compile Include="WebTest.aspx.cs">
       <DependentUpon>WebTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -880,10 +879,6 @@
     <ProjectReference Include="..\BAL\BAL.csproj">
       <Project>{652a6a70-b549-4e90-8304-a526d5d005bb}</Project>
       <Name>BAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAO\DAO.csproj">
-      <Project>{0077297a-7b44-4650-8846-500802301de1}</Project>
-      <Name>DAO</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{f8aba6a6-ea56-4bea-9a2b-6e35ca85c945}</Project>

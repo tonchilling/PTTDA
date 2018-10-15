@@ -85,7 +85,8 @@
             }
             formData.append("UserID", UserID);
             formData.append("UserGroupID", SetDefaultUserGroup);
-
+            formData.append("UserGroupID", SetDefaultUserGroup);
+            formData.append("PTTDAToken", $(antiforgery).val());
             if (isValid) {
 
                 $.confirm({
@@ -191,7 +192,7 @@
             formData.append("SetDefaultUserGroup", SetDefaultUserGroup)
 
             formData.append("Action", "Add");
-
+            formData.append("PTTDAToken", $(antiforgery).val());
 
             if (isValid) {
 
@@ -397,7 +398,8 @@ function LoadRequest() {
     $('.btnSearch').invisible();
 
         formData.append("Action", action);
-    formData.append("UserID", UserID);
+        formData.append("UserID", UserID);
+        formData.append("PTTDAToken", $(antiforgery).val());
     $.ajax({
         url: currentURL,
         type: "POST",
@@ -704,6 +706,7 @@ function Search() {
     var html = '';
     var formData = new FormData();
     formData.append("Action", "Search");
+    formData.append("PTTDAToken", $(antiforgery).val());
 
     $.ajax({
         url: currentURL,
@@ -817,7 +820,7 @@ function LoadPopup(id)
  {
     formData.append("Action", "Search");
     formData.append("UserID", id);
-
+    formData.append("PTTDAToken", $(antiforgery).val());
     $.ajax({
         url: currentURL,
         type: "POST",
@@ -960,7 +963,7 @@ function LoadDropdownlist(SelectUSERRoleID) {
     var html = '';
     var formData = new FormData();
     formData.append("Action", "loadUserRole");
-
+    formData.append("PTTDAToken", $(antiforgery).val());
     $.ajax({
         url: currentURL,
         type: "POST",

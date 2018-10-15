@@ -433,6 +433,8 @@ function SetControl(item) {
             $(".txtActionEDate").disabled();
 
             $(".btn").invisible();
+
+            $('.btnSave').invisible();
         }
 
 

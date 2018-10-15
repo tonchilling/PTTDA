@@ -14,3 +14,11 @@ D:\Web\PTTAPI\API\DAO\bin\Release\DTO.pdb
 D:\Web\PTTAPI\API\DAO\obj\Release\DAO.csprojResolveAssemblyReference.cache
 D:\Web\PTTAPI\API\DAO\obj\Release\DAO.dll
 D:\Web\PTTAPI\API\DAO\obj\Release\DAO.pdb
+E:\Github\PTTDA\DAO\bin\Release\DAO.dll
+E:\Github\PTTDA\DAO\bin\Release\DAO.pdb
+E:\Github\PTTDA\DAO\bin\Release\DTO.dll
+E:\Github\PTTDA\DAO\bin\Release\itextsharp.dll
+E:\Github\PTTDA\DAO\bin\Release\DTO.pdb
+E:\Github\PTTDA\DAO\obj\Release\DAO.csprojResolveAssemblyReference.cache
+E:\Github\PTTDA\DAO\obj\Release\DAO.dll
+E:\Github\PTTDA\DAO\obj\Release\DAO.pdb

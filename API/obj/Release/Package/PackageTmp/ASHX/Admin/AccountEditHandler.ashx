@@ -32,87 +32,120 @@ public class AccountEditHandler : IHttpHandler, IRequiresSessionState
 
 
         context.Response.ContentType = "multipart/form-data";
-        //  context.Response.Expires = -1;
 
-
-        //  context.Response.Write(DateTime.Now.Ticks.ToString());
-
-        if (context.Request.Form.Count > 0)
+        if (HttpContext.Current.Request.HttpMethod == "POST")
         {
+            // The action is a POST.
 
-            if (context.Request.Form["Action"] != null)
+
+            if (context.Request.Form.Count > 0 && context.Request.Form["PTTDAToken"] != null)
             {
-                switch (context.Request.Form["Action"])
+
+                Guid stored = (Guid)context.Session["AntiforgeryToken"];
+                Guid sent = new Guid(context.Request.Form["PTTDAToken"]);
+                if (sent != stored)
                 {
-                    case "Add": result = Action(context);
-                        break;
-                    case "SetUserGroup": result = SetDefaultUerGroup(context);
+                    ResponseErrorText(context, 403, " Invalid Token");
 
-                        break;
-                    case "Search": list = FindByCondition();
-                        json = new JavaScriptSerializer();
-                        jsonString = json.Serialize(list);
-                        context.Response.Write(jsonString);
-                        break;
-
-                    case "Login":
-
-
-                        lDap=new PTTLDap();
-                        tempDTO=ConvertX.GetReqeustForm<UserDTO>();
-                        bool isAutorize = true;
-                        tempDTO.LDAP = true;
-                        if (tempDTO.UserType == "0" || tempDTO.UserType == "1" || tempDTO.UserType == "2")
-                        {
-                            tempDTO.LDAP = lDap.Authenticated(userTypeName[ConvertX.ToInt(tempDTO.UserType)], tempDTO.UserLogin, tempDTO.Password);
-                        }
-                        //bool isAutorize = true;
-                        if (isAutorize && tempDTO.LDAP)
-                        {
-                            dto = FindByLogin();
-                            dto.LDAP = tempDTO.LDAP;
-                            json = new JavaScriptSerializer();
-                            jsonString = json.Serialize(dto);
-                        } else if (!tempDTO.LDAP){
-                            dto = new UserDTO();
-                            dto.LDAP = tempDTO.LDAP;
-                        }
-                        if (dto != null)
-                        {
-                            CreateUserSession(dto);
-                            context.Response.Write(jsonString);
-                        }
-                        else
-                        {
-                            context.Response.StatusCode = 400;
-                            context.Response.StatusDescription = "Invalid user";
-                        }
-                        break;
-
-
-                    case "VIEW": list = FindByCondition();
-                        json = new JavaScriptSerializer();
-                        jsonString = json.Serialize(list);
-                        context.Response.Write(jsonString);
-                        break;
-                    case "loadUserRole": userRoleList = FindUserRole();
-                        json = new JavaScriptSerializer();
-                        jsonString = json.Serialize(userRoleList);
-                        context.Response.Write(jsonString);
-                        break;
 
 
                 }
+                else if (context.Request.Form["Action"] != null)
+                {
+                    switch (context.Request.Form["Action"])
+                    {
+                        case "Add":
+                            result = Action(context);
+                            break;
+                        case "SetUserGroup":
+                            result = SetDefaultUerGroup(context);
+
+                            break;
+                        case "Search":
+                            list = FindByCondition();
+                            json = new JavaScriptSerializer();
+                            jsonString = json.Serialize(list);
+                            context.Response.Write(jsonString);
+                            break;
+
+                        case "Login":
+
+
+                            lDap = new PTTLDap();
+                            tempDTO = ConvertX.GetReqeustForm<UserDTO>();
+                            bool isAutorize = true;
+                            tempDTO.LDAP = true;
+                            if (tempDTO.UserType == "0" || tempDTO.UserType == "1" || tempDTO.UserType == "2")
+                            {
+                                tempDTO.LDAP = lDap.Authenticated(userTypeName[ConvertX.ToInt(tempDTO.UserType)], tempDTO.UserLogin, tempDTO.Password);
+                            }
+                            //bool isAutorize = true;
+                            if (isAutorize && tempDTO.LDAP)
+                            {
+                                dto = FindByLogin();
+                                dto.LDAP = tempDTO.LDAP;
+                                json = new JavaScriptSerializer();
+                                jsonString = json.Serialize(dto);
+                            }
+                            else if (!tempDTO.LDAP)
+                            {
+                                dto = new UserDTO();
+                                dto.LDAP = tempDTO.LDAP;
+                            }
+                            if (dto != null)
+                            {
+                                CreateUserSession(dto);
+                                context.Response.Write(jsonString);
+                            }
+                            else
+                            {
+                                context.Response.StatusCode = 400;
+                                context.Response.StatusDescription = "Invalid user";
+                            }
+                            break;
+
+
+                        case "VIEW":
+                            list = FindByCondition();
+                            json = new JavaScriptSerializer();
+                            jsonString = json.Serialize(list);
+                            context.Response.Write(jsonString);
+                            break;
+                        case "loadUserRole":
+                            userRoleList = FindUserRole();
+                            json = new JavaScriptSerializer();
+                            jsonString = json.Serialize(userRoleList);
+                            context.Response.Write(jsonString);
+                            break;
+
+
+                    }
+                }
+
             }
-            else
-            {
+            else {
 
-
-
+                      ResponseErrorText(context,403," Invalid Token");
             }
+        }
+        else {
+
+            ResponseErrorText(context,403," cannot submit by GET");
         }
     }
 
+
+
+    public void ResponseErrorText(HttpContext context,int errorCode,string errorText)
+    {
+        context.Response.ClearHeaders();
+        context.Response.ClearContent();
+        context.Response.Write(errorCode+errorText);
+        context.Response.Status = errorCode+errorText;
+        context.Response.StatusCode = errorCode;
+        context.Response.End();
+        // context.ApplicationInstance.CompleteRequest();
+    }
 
     public void CreateUserSession(UserDTO userLogin)
     {

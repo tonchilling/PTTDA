@@ -7,7 +7,7 @@
   <script src="<%= ResolveUrl("~/Js/bootstrap-datepicker.js") %>" type="text/javascript"></script>
     <script src="<%= ResolveUrl("~/Js/bootstrap.fd.js") %>" type="text/javascript"></script>
 
-  <script src="<%= ResolveUrl("~/Js/ui/Plan/CreatePlan.js") %>" type="text/javascript"></script>
+  <script src="<%= ResolveUrl("~/Js/ui/Plan/CreatePlan.js?ver=1.0") %>" type="text/javascript"></script>
 
      
 <script language="javascript">

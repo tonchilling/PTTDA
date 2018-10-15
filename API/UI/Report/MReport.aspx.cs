@@ -74,6 +74,7 @@ public partial class UI_Report_MReport : System.Web.UI.Page
 
         try
         {
+            
             report = new ReportDocument();
 
             T_PlaningDTO requestObj = new T_PlaningDTO();
@@ -1056,7 +1057,7 @@ public partial class UI_Report_MReport : System.Web.UI.Page
 
                 {
                     dtAfterCoatinRemoval = planReportAllDTO.T_Planing_AFRemovalDT.Copy();
-
+                   
 
                     dtAfterCoatinRemoval.Columns.Add("AFImg", typeof(byte[]));
                     dtAfterCoatinRemoval.Columns.Add("WTImg", typeof(byte[]));
