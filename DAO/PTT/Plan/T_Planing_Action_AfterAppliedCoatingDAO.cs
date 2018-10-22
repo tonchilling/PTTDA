@@ -370,5 +370,85 @@ namespace DAO.PTT.Plan
             return objList;
         }
 
+        public List<T_Planing_File> FindAllFiles(object data)
+        {
+            List<SqlParameter> parameterList = new List<SqlParameter>();
+            List<T_Planing_File> fileList = new List<T_Planing_File>();
+            dataTable = null;
+
+            string procName = "sp_T_Planing_Action_AfterAppliedCoating_FindAllFiles";
+            SqlConnection conn = null;
+            try
+            {
+                if (data != null)
+                {
+                    dataTable = new DataTable();
+                    adapter = new SqlDataAdapter();
+                    conn = OpenConnection();
+                    parameterList.AddRange(GetParameters(procName, data).ToArray());
+
+                    command = new SqlCommand(procName, conn);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddRange(parameterList.ToArray());
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        fileList = ConvertX.GetListFromDataReader<T_Planing_File>(reader).ToList();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return fileList;
+        }
+
+        public List<T_Planing_Action_AfterAppliedCoating_DryFilmDTO> FindAllDryFilms(object data)
+        {
+            List<SqlParameter> parameterList = new List<SqlParameter>();
+            List<T_Planing_Action_AfterAppliedCoating_DryFilmDTO> list = new List<T_Planing_Action_AfterAppliedCoating_DryFilmDTO>();
+            dataTable = null;
+
+            string procName = "sp_T_Planing_Action_AfterAppliedCoating_FindAllDryFilms";
+            SqlConnection conn = null;
+            try
+            {
+                if (data != null)
+                {
+                    dataTable = new DataTable();
+                    adapter = new SqlDataAdapter();
+                    conn = OpenConnection();
+                    parameterList.AddRange(GetParameters(procName, data).ToArray());
+
+                    command = new SqlCommand(procName, conn);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddRange(parameterList.ToArray());
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        list = ConvertX.GetListFromDataReader<T_Planing_Action_AfterAppliedCoating_DryFilmDTO>(reader).ToList();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return list;
+        }
+
     }
 }
