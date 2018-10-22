@@ -50,6 +50,105 @@ namespace API.Controllers
         }
 
         [HttpPost]
+        [Route("SearchAllFiles")]
+        public HttpResponseMessage SearchAllFiles()
+        {
+            bal = new T_Planing_Action_AfterRemovalBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_AfterRemovalDTO dto = null;
+            List<T_Planing_File> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_AfterRemovalDTO>();
+
+                logger.debug("PlanActionAfterRemovalController SearchAllFiles dto:" + dto.ToString());
+                objList = bal.FindAllFiles(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionAfterRemovalController SearchAllFiles error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
+        [Route("SearchAllDefects")]
+        public HttpResponseMessage SearchAllDefects()
+        {
+            bal = new T_Planing_Action_AfterRemovalBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_AfterRemovalDTO dto = null;
+            List<T_Planing_Action_AfterRemoval_DefectDTO> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_AfterRemovalDTO>();
+
+                logger.debug("PlanActionAfterRemovalController SearchAllDefects dto:" + dto.ToString());
+                objList = bal.FindAllDefects(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionAfterRemovalController SearchAllDefects error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
+        [Route("SearchAllWallThickness")]
+        public HttpResponseMessage SearchAllWallThickness()
+        {
+            bal = new T_Planing_Action_AfterRemovalBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_AfterRemovalDTO dto = null;
+            List<T_Planing_Action_AfterRemoval_WallThicknessDTO> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_AfterRemovalDTO>();
+
+                logger.debug("PlanActionAfterRemovalController SearchAllWallThickness dto:" + dto.ToString());
+                objList = bal.FindAllWallThickness(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionAfterRemovalController SearchAllWallThickness error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
         [Route("View")]
         public HttpResponseMessage View()
         {
