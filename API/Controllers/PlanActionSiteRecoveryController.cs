@@ -53,6 +53,72 @@ namespace API.Controllers
         }
 
         [HttpPost]
+        [Route("SearchAllFiles")]
+        public HttpResponseMessage SearchAllFiles()
+        {
+            bal = new T_Planing_Action_SiteRecoveryBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_SiteRecoveryDTO dto = null;
+            List<T_Planing_File> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteRecoveryDTO>();
+
+                logger.debug("PlanActionSiteRecoveryController SearchAllFiles dto:" + dto.ToString());
+                objList = bal.FindAllFiles(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionSiteRecoveryController SearchAllFiles error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
+        [Route("SearchAllApprovalHistory")]
+        public HttpResponseMessage SearchAllApprovalHistory()
+        {
+            bal = new T_Planing_Action_SiteRecoveryBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_SiteRecoveryDTO dto = null;
+            List<T_Planing_ApprovalHistoryDTO> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteRecoveryDTO>();
+
+                logger.debug("PlanActionSiteRecoveryController SearchAllApprovalHistory dto:" + dto.ToString());
+                objList = bal.FindAllApprovalHistory(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionSiteRecoveryController SearchAllApprovalHistory error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
         [Route("View")]
         public HttpResponseMessage View()
         {
