@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using DAO.PTT.Plan;
 using DTO.PTT.Plan;
+using DTO.PTT.Master;
 
 /// <summary>
 /// Summary description for CustomerBL
@@ -81,7 +82,16 @@ namespace BAL.PTT.Plan
             return dao.FindByObjList(dto);
         }
 
-     
+
+        public List<T_Planing_File> FindAllFiles(object dto)
+        {
+            return dao.FindAllFiles(dto);
+        }
+
+        public List<M_UndergroundDTO> FindAllUndergrounds(object dto)
+        {
+            return dao.FindAllUndergrounds(dto);
+        }
 
         public override System.Data.DataTable FindByColumn(object data)
         {

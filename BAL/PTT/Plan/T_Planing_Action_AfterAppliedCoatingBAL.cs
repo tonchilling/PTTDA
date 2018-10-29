@@ -86,7 +86,16 @@ namespace BAL.PTT.Plan
             return dao.FindByObjList(dto);
         }
 
-     
+
+        public List<T_Planing_File> FindAllFiles(object dto)
+        {
+            return dao.FindAllFiles(dto);
+        }
+
+        public List<T_Planing_Action_AfterAppliedCoating_DryFilmDTO> FindAllDryFilms(object dto)
+        {
+            return dao.FindAllDryFilms(dto);
+        }
 
         public override System.Data.DataTable FindByColumn(object data)
         {

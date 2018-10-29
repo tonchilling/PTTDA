@@ -53,6 +53,39 @@ namespace API.Controllers
         }
 
         [HttpPost]
+        [Route("SearchAllFiles")]
+        public HttpResponseMessage SearchAllFiles()
+        {
+            bal = new T_Planing_Action_SiteSurveyBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_SiteSurveyDTO dto = null;
+            List<T_Planing_File> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteSurveyDTO>();
+
+                logger.debug("PlanActionSiteSurveyController SearchAllFiles dto:" + dto.ToString());
+                objList = bal.FindAllFiles(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionSiteSurveyController SearchAllFiles error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
         [Route("View")]
         public HttpResponseMessage View()
         {

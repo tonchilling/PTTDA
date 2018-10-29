@@ -81,7 +81,21 @@ namespace BAL.PTT.Plan
             return dao.FindByObjList(dto);
         }
 
-     
+        public List<T_Planing_File> FindAllFiles(object dto)
+        {
+            return dao.FindAllFiles(dto);
+        }
+
+        public List<T_Planing_Action_AfterRemoval_DefectDTO> FindAllDefects(object dto)
+        {
+            return dao.FindAllDefects(dto);
+        }
+
+        public List<T_Planing_Action_AfterRemoval_WallThicknessDTO> FindAllWallThickness(object dto)
+        {
+            return dao.FindAllWallThickness(dto);
+        }
+
 
         public override System.Data.DataTable FindByColumn(object data)
         {

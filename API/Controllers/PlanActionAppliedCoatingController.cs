@@ -38,12 +38,89 @@ namespace API.Controllers
                 logger.debug("Search dto:" + dto.ToString());
                 objList = bal.FindByObjList(dto);
 
+                foreach (T_Planing_Action_AppliedCoatingDTO mainDTO in objList)
+                {
+                    //Find detail and push to main object in list
+                    T_Planing_Action_AppliedCoatingDTO detailDTO = new T_Planing_Action_AppliedCoatingDTO();
+                    detailDTO.PID = mainDTO.PID;
+                    detailDTO = bal.FindByPK(detailDTO);
+
+                    mainDTO.UploadFileList = detailDTO.UploadFileList;
+                    mainDTO.CoatingInfoList = detailDTO.CoatingInfoList;
+                }
+
                 response.statusCode = true;
                 response.data = objList;
             }
             catch (Exception ex)
             {
                 logger.error("Search error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
+        [Route("SearchAllFiles")]
+        public HttpResponseMessage SearchAllFiles()
+        {
+            bal = new T_Planing_Action_AppliedCoatingBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_AppliedCoatingDTO dto = null;
+            List<T_Planing_File> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_AppliedCoatingDTO>();
+
+                logger.debug("PlanActionAppliedCoatingController SearchAllFiles dto:" + dto.ToString());
+                objList = bal.FindAllFiles(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionAppliedCoatingController SearchAllFiles error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
+        [Route("SearchAllInformations")]
+        public HttpResponseMessage SearchAllInformations()
+        {
+            bal = new T_Planing_Action_AppliedCoatingBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_AppliedCoatingDTO dto = null;
+            List<T_Planing_Action_AppliedCoating_InformationDTO> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_AppliedCoatingDTO>();
+
+                logger.debug("PlanActionAppliedCoatingController SearchAllInformations dto:" + dto.ToString());
+                objList = bal.FindAllImformations(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionAppliedCoatingController SearchAllInformations error:" + ex.ToString());
                 response.statusText = ex.ToString();
             }
 

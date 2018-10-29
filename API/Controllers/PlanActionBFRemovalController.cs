@@ -38,12 +38,90 @@ namespace API.Controllers
                 logger.debug("Search dto:" + dto.ToString());
                 objList = bal.FindByObjList(dto);
 
+                foreach(T_Planing_Action_BFRemovalDTO bfDTO in objList)
+                {
+                    //Find detail and push to main object in list
+                    T_Planing_Action_BFRemovalDTO detailDTO = new T_Planing_Action_BFRemovalDTO();
+                    detailDTO.PID = bfDTO.PID;
+                    detailDTO = bal.FindByPK(detailDTO);
+
+                    bfDTO.ConditionList = detailDTO.ConditionList;
+                    bfDTO.UploadFileList = detailDTO.UploadFileList;
+                    bfDTO.UploadDefectFileList = detailDTO.UploadDefectFileList;
+                }
+
                 response.statusCode = true;
                 response.data = objList;
             }
             catch (Exception ex)
             {
                 logger.error("Search error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
+        [Route("SearchAllFiles")]
+        public HttpResponseMessage SearchAllFiles()
+        {
+            bal = new T_Planing_Action_BFRemovalBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_BFRemovalDTO dto = null;
+            List<T_Planing_File> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_BFRemovalDTO>();
+
+                logger.debug("PlanActionBFRemovalController SearchAllFiles dto:" + dto.ToString());
+                objList = bal.FindAllFiles(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionBFRemovalController SearchAllFiles error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
+        [Route("SearchAllConditions")]
+        public HttpResponseMessage SearchAllConditions()
+        {
+            bal = new T_Planing_Action_BFRemovalBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_BFRemovalDTO dto = null;
+            List<T_Planing_Action_BFRemoval_ConditionDTO> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_BFRemovalDTO>();
+
+                logger.debug("PlanActionBFRemovalController SearchAllConditions dto:" + dto.ToString());
+                objList = bal.FindAllImformations(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionBFRemovalController SearchAllConditions error:" + ex.ToString());
                 response.statusText = ex.ToString();
             }
 

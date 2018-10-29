@@ -55,6 +55,72 @@ namespace API.Controllers
         }
 
         [HttpPost]
+        [Route("SearchAllFiles")]
+        public HttpResponseMessage SearchAllFiles()
+        {
+            bal = new T_Planing_Action_SitePreparationBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_SitePreparationDTO dto = null;
+            List<T_Planing_File> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_SitePreparationDTO>();
+
+                logger.debug("PlanActionSitePreparationController SearchAllFiles dto:" + dto.ToString());
+                objList = bal.FindAllFiles(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionSitePreparationController SearchAllFiles error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
+        [Route("SearchAllUndergrounds")]
+        public HttpResponseMessage SearchAllUndergrounds()
+        {
+            bal = new T_Planing_Action_SitePreparationBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_SitePreparationDTO dto = null;
+            List<M_UndergroundDTO> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_SitePreparationDTO>();
+
+                logger.debug("PlanActionSitePreparationController SearchAllUndergrounds dto:" + dto.ToString());
+                objList = bal.FindAllUndergrounds(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionSitePreparationController SearchAllUndergrounds error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
         [Route("View")]
         public HttpResponseMessage View()
         {

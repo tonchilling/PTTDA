@@ -38,12 +38,89 @@ namespace API.Controllers
 
                 objList = bal.FindByObjList(dto);
 
+                foreach (T_Planing_Action_AfterAppliedCoatingDTO mainDTO in objList)
+                {
+                    //Find detail and push to main object in list
+                    T_Planing_Action_AfterAppliedCoatingDTO detailDTO = new T_Planing_Action_AfterAppliedCoatingDTO();
+                    detailDTO.PID = mainDTO.PID;
+                    detailDTO = bal.FindByPK(detailDTO);
+
+                    mainDTO.UploadFileList = detailDTO.UploadFileList;
+                    mainDTO.DryFilmThicknessList = detailDTO.DryFilmThicknessList;
+                }
+
                 response.statusCode = true;
                 response.data = objList;
             }
             catch (Exception ex)
             {
                 logger.error("Search error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
+        [Route("SearchAllFiles")]
+        public HttpResponseMessage SearchAllFiles()
+        {
+            bal = new T_Planing_Action_AfterAppliedCoatingBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_AfterAppliedCoatingDTO dto = null;
+            List<T_Planing_File> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_AfterAppliedCoatingDTO>();
+
+                logger.debug("PlanActionAfterAppliedCoatingController SearchAllFiles dto:" + dto.ToString());
+                objList = bal.FindAllFiles(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionAfterAppliedCoatingController SearchAllFiles error:" + ex.ToString());
+                response.statusText = ex.ToString();
+            }
+
+            mapMessage = Request.CreateResponse(HttpStatusCode.OK, response);
+            return mapMessage;
+        }
+
+        [HttpPost]
+        [Route("SearchAllDryFilms")]
+        public HttpResponseMessage SearchAllDryFilms()
+        {
+            bal = new T_Planing_Action_AfterAppliedCoatingBAL();
+            ResposeType response = new ResposeType();
+            HttpResponseMessage mapMessage = null;
+
+            T_Planing_Action_AfterAppliedCoatingDTO dto = null;
+            List<T_Planing_Action_AfterAppliedCoating_DryFilmDTO> objList = null;
+
+            try
+            {
+                var context = HttpContext.Current;
+
+                dto = ConvertX.GetReqeustForm<T_Planing_Action_AfterAppliedCoatingDTO>();
+
+                logger.debug("PlanActionAfterAppliedCoatingController SearchAllDryFilms dto:" + dto.ToString());
+                objList = bal.FindAllDryFilms(dto);
+
+                response.statusCode = true;
+                response.data = objList;
+            }
+            catch (Exception ex)
+            {
+                logger.error("PlanActionAfterAppliedCoatingController SearchAllDryFilms error:" + ex.ToString());
                 response.statusText = ex.ToString();
             }
 

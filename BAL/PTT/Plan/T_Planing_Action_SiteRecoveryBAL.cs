@@ -94,7 +94,16 @@ namespace BAL.PTT.Plan
             return dao.FindByObjList(dto);
         }
 
-     
+
+        public List<T_Planing_File> FindAllFiles(object dto)
+        {
+            return dao.FindAllFiles(dto);
+        }
+
+        public List<T_Planing_ApprovalHistoryDTO> FindAllApprovalHistory(object dto)
+        {
+            return dao.FindAllApprovalHistory(dto);
+        }
 
         public override System.Data.DataTable FindByColumn(object data)
         {
