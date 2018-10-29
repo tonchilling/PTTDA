@@ -38,6 +38,17 @@ namespace API.Controllers
 
                 objList = bal.FindByObjList(dto);
 
+                foreach (T_Planing_Action_AfterAppliedCoatingDTO mainDTO in objList)
+                {
+                    //Find detail and push to main object in list
+                    T_Planing_Action_AfterAppliedCoatingDTO detailDTO = new T_Planing_Action_AfterAppliedCoatingDTO();
+                    detailDTO.PID = mainDTO.PID;
+                    detailDTO = bal.FindByPK(detailDTO);
+
+                    mainDTO.UploadFileList = detailDTO.UploadFileList;
+                    mainDTO.DryFilmThicknessList = detailDTO.DryFilmThicknessList;
+                }
+
                 response.statusCode = true;
                 response.data = objList;
             }

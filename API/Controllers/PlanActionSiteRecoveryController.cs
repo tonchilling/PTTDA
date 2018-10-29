@@ -39,6 +39,17 @@ namespace API.Controllers
                 logger.debug("Search dto :" + dto.ToString());
                 objList = bal.FindByObjList(dto);
 
+                foreach (T_Planing_Action_SiteRecoveryDTO mainDTO in objList)
+                {
+                    //Find detail and push to main object in list
+                    T_Planing_Action_SiteRecoveryDTO detailDTO = new T_Planing_Action_SiteRecoveryDTO();
+                    detailDTO.PID = mainDTO.PID;
+                    detailDTO = bal.FindByPK(detailDTO);
+
+                    mainDTO.UploadFileList = detailDTO.UploadFileList;
+                    mainDTO.LogApporveHistorys = detailDTO.LogApporveHistorys;
+                }
+
                 response.statusCode = true;
                 response.data = objList;
             }
