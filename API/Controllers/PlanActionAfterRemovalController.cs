@@ -36,6 +36,20 @@ namespace API.Controllers
 
                 objList = bal.FindByObjList(dto);
 
+                foreach (T_Planing_Action_AfterRemovalDTO mainDTO in objList)
+                {
+                    //Find detail and push to main object in list
+                    T_Planing_Action_AfterRemovalDTO detailDTO = new T_Planing_Action_AfterRemovalDTO();
+                    detailDTO.PID = mainDTO.PID;
+                    detailDTO = bal.FindByPK(detailDTO);
+
+                    mainDTO.RepairLength = detailDTO.RepairLength;
+                    mainDTO.WallThicknessNumber = detailDTO.WallThicknessNumber;
+                    mainDTO.RepairLength = detailDTO.RepairLength;
+                    mainDTO.DefectList = detailDTO.DefectList;
+                    mainDTO.WallThicknessList = detailDTO.WallThicknessList;
+                }
+
                 response.statusCode = true;
                 response.data = objList;
             }
