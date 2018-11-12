@@ -39,6 +39,26 @@ namespace API.Controllers
                 logger.debug("Search dto:" + dto.ToString());
                 objList = bal.FindByObjList(dto);
 
+                foreach (T_Planing_Action_SiteSurveyDTO mainDTO in objList)
+                {
+                    //Find detail and push to main object in list
+                    T_Planing_Action_SiteSurveyDTO detailDTO = new T_Planing_Action_SiteSurveyDTO();
+                    detailDTO.PID = mainDTO.PID;
+                    detailDTO = bal.FindByPK(detailDTO);
+
+                    mainDTO.UploadFileList = detailDTO.UploadFileList;
+
+                    if (!ObjUtil.isEmpty(mainDTO.UploadFileList))
+                    {
+                        foreach (T_Planing_File file in mainDTO.UploadFileList)
+                        {
+                            file.HtmlFile = System.Web.VirtualPathUtility.ToAbsolute(planPath + "/" + file.PID + "/" + file.UploadType + "/" + file.FileName);
+                            string fullPath = context.Server.MapPath(planPath) + @"\" + file.PID + @"\" + file.UploadType + @"\" + file.FileName;
+                            file.Base64File = Utility.convertFileToBase64(fullPath);
+                        }
+                    }
+                }
+
                 response.statusCode = true;
                 response.data = objList;
             }
@@ -71,6 +91,16 @@ namespace API.Controllers
 
                 logger.debug("PlanActionSiteSurveyController SearchAllFiles dto:" + dto.ToString());
                 objList = bal.FindAllFiles(dto);
+
+                if (!ObjUtil.isEmpty(objList))
+                {
+                    foreach (T_Planing_File file in objList)
+                    {
+                        file.HtmlFile = System.Web.VirtualPathUtility.ToAbsolute(planPath + "/" + file.PID + "/" + file.UploadType + "/" + file.FileName);
+                        string fullPath = context.Server.MapPath(planPath) + @"\" + file.PID + @"\" + file.UploadType + @"\" + file.FileName;
+                        file.Base64File = Utility.convertFileToBase64(fullPath);
+                    }
+                }
 
                 response.statusCode = true;
                 response.data = objList;
@@ -110,6 +140,8 @@ namespace API.Controllers
                     foreach (var uploadFile in dto.UploadFileList)
                     {
                         uploadFile.HtmlFile = System.Web.VirtualPathUtility.ToAbsolute(planPath + "/" + dto.PID + "/" + uploadFile.UploadType + "/" + uploadFile.FileName);
+                        string fullPath = context.Server.MapPath(planPath) + @"\" + uploadFile.PID + @"\" + uploadFile.UploadType + @"\" + uploadFile.FileName;
+                        uploadFile.Base64File = Utility.convertFileToBase64(fullPath);
                     }
                 }
                 response.statusCode = true;

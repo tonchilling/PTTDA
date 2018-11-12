@@ -87,9 +87,9 @@ namespace DTO.PTT.Plan
         public string FileName { get; set; }
         public string Profile { get; set; }
         public string FileSize { get; set; }
-        public HttpPostedFile PostFile { get; set; }
         public string HtmlFile { get; set; }
         public string FullPath { get; set; }
         public string DesPath { get; set; }
+        public string Base64File { get; set; }
     }
 }

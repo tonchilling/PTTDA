@@ -48,6 +48,16 @@ namespace API.Controllers
                     mainDTO.RepairLength = detailDTO.RepairLength;
                     mainDTO.DefectList = detailDTO.DefectList;
                     mainDTO.WallThicknessList = detailDTO.WallThicknessList;
+
+                    if (!ObjUtil.isEmpty(mainDTO.UploadFileList))
+                    {
+                        foreach (T_Planing_File file in mainDTO.UploadFileList)
+                        {
+                            file.HtmlFile = System.Web.VirtualPathUtility.ToAbsolute(planPath + "/" + file.PID + "/" + file.UploadType + "/" + file.FileName);
+                            string fullPath = context.Server.MapPath(planPath) + @"\" + file.PID + @"\" + file.UploadType + @"\" + file.FileName;
+                            file.Base64File = Utility.convertFileToBase64(fullPath);
+                        }
+                    }
                 }
 
                 response.statusCode = true;
@@ -82,6 +92,17 @@ namespace API.Controllers
 
                 logger.debug("PlanActionAfterRemovalController SearchAllFiles dto:" + dto.ToString());
                 objList = bal.FindAllFiles(dto);
+
+                if (!ObjUtil.isEmpty(objList))
+                {
+                    foreach (T_Planing_File file in objList)
+                    {
+                        file.HtmlFile = System.Web.VirtualPathUtility.ToAbsolute(planPath + "/" + file.PID + "/" + file.UploadType + "/" + file.FileName);
+                        string fullPath = context.Server.MapPath(planPath) + @"\" + file.PID + @"\" + file.UploadType + @"\" + file.FileName;
+                        logger.debug("fullPath:" + fullPath);
+                        file.Base64File = Utility.convertFileToBase64(fullPath);
+                    }
+                }
 
                 response.statusCode = true;
                 response.data = objList;
@@ -186,6 +207,8 @@ namespace API.Controllers
                     foreach (var uploadFile in dto.UploadFileList)
                     {
                         uploadFile.HtmlFile = System.Web.VirtualPathUtility.ToAbsolute(planPath + "/" + dto.PID + "/" + uploadFile.UploadType + "/" + uploadFile.FileName);
+                        string fullPath = context.Server.MapPath(planPath) + @"\" + uploadFile.PID + @"\" + uploadFile.UploadType + @"\" + uploadFile.FileName;
+                        uploadFile.Base64File = Utility.convertFileToBase64(fullPath);
                     }
                 }
 
@@ -210,10 +233,7 @@ namespace API.Controllers
             T_Planing_Action_AfterRemovalMobileBAL mobileBal = new T_Planing_Action_AfterRemovalMobileBAL();
             ResposeType response = new ResposeType();
             HttpResponseMessage mapMessage = null;
-
-            T_PlaningFileMobileDTO file = null;
-            List<T_PlaningFileMobileDTO> fileList = new List<T_PlaningFileMobileDTO>();
-            string savedFileName = "";
+            
             T_Planing_Action_AfterRemovalMobileDTO dto = null;
             List<T_Planing_Action_AfterRemoval_DefectMobileDTO> defectList = null;
             List<T_Planing_Action_AfterRemoval_WallThicknessMobileDTO> wallThicknessList = null;
@@ -234,39 +254,19 @@ namespace API.Controllers
                 wallThicknessList = deserializer.Deserialize<List<T_Planing_Action_AfterRemoval_WallThicknessMobileDTO>>(context.Request.Form["wallThicknessInputList"]);
                 dto.DefectList = defectList; ;
                 dto.WallThicknessList = wallThicknessList;
-                
-                if (context.Request.Files.Count > 0)
-                {
-                    int no = 1;
-                    int fileType = 0;
-                    
-                    for (var i = 0; i < context.Request.Files.Count; i++)
-                    {
-                        string keyName = context.Request.Files.GetKey(i);
-                        logger.debug("keyName :" + keyName);
-                        
-                        fileType = 1;
-                        
-                        file = new T_PlaningFileMobileDTO();
 
-                        savedFileName = context.Server.MapPath(planPath) + @"\" + dto.PID + @"\" + fileType + @"\";
-                        no = Convert.ToInt32(keyName.Split('_')[1]);
-                        
-                        file.FullPath = savedFileName + System.IO.Path.GetFileName(context.Request.Files[i].FileName); ;
-                        file.DesPath = savedFileName;
-                        file.FileName = System.IO.Path.GetFileName(context.Request.Files[i].FileName);
-                        file.FileSize = context.Request.Files[i].ContentLength.ToString();
-                        file.UploadDate = string.Format("{0}/{1}/{2}", DateTime.Now.Month.ToString("##00"), DateTime.Now.Day.ToString("##00"), DateTime.Now.Year);
-                        file.No = no.ToString();
-                        file.PID = dto.PID;
-                        file.UploadType = fileType.ToString();
-                        file.PostFile = context.Request.Files[i];
-                        
-                        fileList.Add(file);
+                dto.UploadFileList = deserializer.Deserialize<List<T_PlaningFileMobileDTO>>(context.Request.Form["fileList"]);
+
+                if (dto.UploadFileList != null && dto.UploadFileList.Count > 0)
+                {
+                    foreach (T_PlaningFileMobileDTO file in dto.UploadFileList)
+                    {
+                        file.DesPath = context.Server.MapPath(planPath) + @"\" + file.PID + @"\" + file.UploadType;
+                        file.FullPath = file.DesPath + @"\" + file.FileName;
+                        logger.debug("PlanActionAfterAppliedCoating Add file:" + file.ToString());
                     }
-                    dto.UploadFileList = fileList;
                 }
-                
+                                
                 dto.DefectNumber = dto.DefectList.Count.ToString();
 
                 logger.debug("PlanActionAfterRemovalController Add dto:" + dto.ToString());
@@ -292,13 +292,14 @@ namespace API.Controllers
                     response.statusText = "Success";
                     try {
                         // For new upload
-                        if (fileList != null && fileList.Count > 0)
+                        if (dto.UploadFileList != null && dto.UploadFileList.Count > 0)
                         {
-                            foreach (T_PlaningFileMobileDTO f in fileList)
+                            foreach (T_PlaningFileMobileDTO f in dto.UploadFileList)
                             {
                                 if (DTO.PTT.Util.FileMng.HaveDirectory(f.DesPath))
                                 {
-                                    f.PostFile.SaveAs(f.FullPath);
+                                    logger.debug("Save file to :" + f.FullPath);
+                                    Utility.saveBase64File(f.FullPath, f.Base64File);
                                 }
                             }
                         }

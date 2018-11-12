@@ -273,9 +273,29 @@ namespace DTO.Util
         }
 
 
+        public static string convertFileToBase64(string filePath)
+        {
+            try
+            {
+                byte[] imageArray = System.IO.File.ReadAllBytes(filePath);
+                return Convert.ToBase64String(imageArray);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
 
-
-
+        public static void saveBase64File(string filePath, string fileBase64)
+        {
+            var bytes = Convert.FromBase64String(fileBase64);
+            using (var imageFile = new FileStream(filePath, FileMode.Create))
+            {
+                imageFile.Write(bytes, 0, bytes.Length);
+                imageFile.Flush();
+            }
+        }
+        
         public static DataTable ToDataTable<T>(List<T> items)
         {
             DataTable dataTable = new DataTable(typeof(T).Name);
