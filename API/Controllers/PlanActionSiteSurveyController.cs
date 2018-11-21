@@ -161,19 +161,19 @@ namespace API.Controllers
         [Route("Add")]
         public HttpResponseMessage Add()
         {
-            bal = new T_Planing_Action_SiteSurveyBAL();
+            var deserializer = new JavaScriptSerializer();
+            T_Planing_Action_SiteSurveyMobileBAL mobileBal = new T_Planing_Action_SiteSurveyMobileBAL();
             ResposeType response = new ResposeType();
             HttpResponseMessage mapMessage = null;
             
-            T_Planing_Action_SiteSurveyDTO dto = null;
-            List<T_Planing_File> fileList = null;
+            T_Planing_Action_SiteSurveyMobileDTO dto = null;
 
             try
             {
                 var context = HttpContext.Current;
                 context.Response.ContentType = "multipart/form-data";
 
-                dto = ConvertX.GetReqeustForm<T_Planing_Action_SiteSurveyDTO>();
+                dto = ConvertX.GetReqeustFormExactly<T_Planing_Action_SiteSurveyMobileDTO>();
                 string UserID = context.Request.Form["UserID"];
                 if (ObjUtil.isEmpty(UserID))
                 {
@@ -182,60 +182,33 @@ namespace API.Controllers
                 dto.CreateBy = UserID;
                 dto.UpdateBy = UserID;
 
-                int fileCount = context.Request.Files.Count;
-                if (fileCount > 0)
+                dto.UploadFileList = deserializer.Deserialize<List<T_PlaningFileMobileDTO>>(context.Request.Form["fileList"]);
+
+                if (dto.UploadFileList != null && dto.UploadFileList.Count > 0)
                 {
-                    fileList = new List<T_Planing_File>();
-                    int no = 1;
-                    int fileType = 1;
-                    
-                    for (var i = 0; i < fileCount; i++)
+                    foreach (T_PlaningFileMobileDTO file in dto.UploadFileList)
                     {
-                        string keyName = context.Request.Files.GetKey(i);
-                        if (keyName.IndexOf("file1") > -1)
-                        {
-                            fileType = 1;
-                        }
-                        else if (keyName.IndexOf("file2") > -1)
-                        {
-                            fileType = 2;
-                        }
-                        string Path = planPath;
-
-                        string savedFileName = context.Server.MapPath(planPath) + @"\" + dto.PID + @"\" + fileType + @"\" + System.IO.Path.GetFileName(context.Request.Files[i].FileName);
-
-                        T_Planing_File file = new T_Planing_File();
-                        file.FullPath = savedFileName;
-                        file.DesPath = context.Server.MapPath(planPath) + @"\" + dto.PID + @"\" + fileType;
-                        file.FileName = System.IO.Path.GetFileName(context.Request.Files[i].FileName);
-                        file.FileSize = context.Request.Files[i].ContentLength.ToString();
-                        file.UploadDate = string.Format("{0}/{1}/{2}", DateTime.Now.Month.ToString("##00"), DateTime.Now.Day.ToString("##00"), DateTime.Now.Year);
-                        file.No = no.ToString();
-                        file.PID = dto.PID;
-                        file.UploadType = fileType.ToString();
-                        file.PostFile = context.Request.Files[i];
-                        no++;
-
-                        fileList.Add(file);
+                        file.DesPath = context.Server.MapPath(planPath) + @"\" + file.PID + @"\" + file.UploadType;
+                        file.FullPath = file.DesPath + @"\" + file.FileName;
+                        logger.debug("Add file:" + file.ToString());
                     }
-                    dto.UploadFileList = fileList;
                 }
 
                 logger.debug("Add dto:" + dto.ToString());
-                response.statusCode = bal.Add(dto);
+                response.statusCode = mobileBal.AddFromMobile(dto);
                 
                 if (response.statusCode)
                 {
                     response.statusText = "Success";
                     try {
                         // For new upload
-                        if (fileList != null && fileList.Count > 0)
                         {
-                            foreach (T_Planing_File f in fileList)
+                            foreach (T_PlaningFileMobileDTO f in dto.UploadFileList)
                             {
                                 if (DTO.PTT.Util.FileMng.HaveDirectory(f.DesPath))
                                 {
-                                    f.PostFile.SaveAs(f.FullPath);
+                                    logger.debug("Save file to :" + f.FullPath);
+                                    Utility.saveBase64File(f.FullPath, f.Base64File);
                                 }
                             }
                         }

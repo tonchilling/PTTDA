@@ -202,7 +202,6 @@ namespace API.Controllers
             HttpResponseMessage mapMessage = null;
 
             T_PlaningActionSitePreparationMobileDTO dto = null;
-            List<T_PlaningFileMobileDTO> fileList = null;
 
             try
             {
