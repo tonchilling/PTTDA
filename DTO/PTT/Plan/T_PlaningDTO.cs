@@ -22,7 +22,7 @@ namespace DTO.PTT.Plan
 
      public int Index { get; set; }
      public string PID { get; set; }
-
+     public string TPID { get; set; }
      public string DIGFromID { get; set; }
      public string DIGFrom { get; set; }
      public string DIGFromName { get; set; }
@@ -477,6 +477,7 @@ namespace DTO.PTT.Plan
       public string HtmlFile { get; set; }
       public string FullPath { get; set; }
       public string DesPath { get; set; }
+      public string Base64File { get; set; }
     }
 
 

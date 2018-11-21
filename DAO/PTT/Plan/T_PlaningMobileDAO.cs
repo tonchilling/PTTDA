@@ -12,6 +12,7 @@ namespace DAO.PTT.Plan
 {
     public class T_PlaningMobileDAO : PTTMobileDB
     {
+        Logger logger = new Logger("T_PlaningMobileDAO");
         public string AddFromMobile(object planObj
                         , object coatingRepairObj
                         , List<object> coatingDefectObj
@@ -86,6 +87,7 @@ namespace DAO.PTT.Plan
                     {
                         transaction.Rollback();
                     }
+                    logger.error("AddFromMobile error :" + ex.ToString());
                     throw ex;
                 }
                 finally
@@ -94,6 +96,45 @@ namespace DAO.PTT.Plan
                 }
             }
             return TPID;
-        }        
+        }
+
+        public List<T_PlaningMobileDTO> FindByObjListV2(object data)
+        {
+            List<SqlParameter> parameterList = new List<SqlParameter>();
+            List<T_PlaningMobileDTO> objList = new List<T_PlaningMobileDTO>();
+            dataTable = null;
+
+            string procName = "sp_T_Planing_FindByFindByConditonV2";
+            try
+            {
+                SqlConnection conn = null;
+                if (data != null)
+                {
+                    dataTable = new DataTable();
+                    adapter = new SqlDataAdapter();
+                    conn = OpenConnection();
+
+                    parameterList.AddRange(GetParameters(procName, data).ToArray());
+                    command = new SqlCommand(procName, conn);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddRange(parameterList.ToArray());
+                    
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        objList = ConvertX.GetListFromDataReader<T_PlaningMobileDTO>(reader).ToList();
+                    }
+                }
+            }
+            catch (Exception ex) {
+                logger.error("FindByObjListV2 error :" + ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return objList;
+        }
     }
 }
